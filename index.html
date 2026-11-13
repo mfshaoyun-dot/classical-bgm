@@ -167,6 +167,13 @@ h3 { font-family: var(--heading); font-weight: 600; font-size: 17px; margin: 0 0
 
 .list .grp { font-size: 12px; letter-spacing: 0.14em; color: var(--muted); font-weight: 600; margin: 10px 0 0; }
 .list .grp:first-child { margin-top: 0; }
+.shelf-hint { margin: -4px 0 2px; font-size: 12.5px; color: var(--muted); }
+.item.playing .t::before { content: "♪ "; color: var(--v0); }
+.item[aria-current="true"].playing .t::before { color: var(--on-sel); }
+.fxlab { cursor: default; }
+@media (min-width: 901px) { .shelf { max-height: calc(100vh - 32px); overflow-y: auto; padding-right: 4px; } }
+@media (max-width: 900px) { .list { max-height: 52vh; overflow-y: auto; padding-right: 2px; } }
+
 .styles { display: flex; flex-direction: column; gap: 14px; border-top: 1px solid var(--rule); padding-top: 24px; }
 .styles-head h2 { font-family: var(--heading); font-size: 22px; margin: 0; }
 .styles-head p { margin: 4px 0 0; color: var(--muted); max-width: 52em; }
@@ -218,7 +225,8 @@ pre { margin: 0; padding: 14px 16px; font-family: var(--mono); font-size: 12.5px
   <div class="layout">
     <nav class="shelf" aria-label="曲目">
       <h2>曲目</h2>
-      <ol class="list" id="list"><li class="grp">古典</li><li><button type="button" class="item" data-id="inventio" aria-current="false"><span class="t">d 小调二声部创意曲</span><span class="m">巴赫 · 第一版 · 4/4 · d 小调</span></button></li><li><button type="button" class="item" data-id="boss-chip" aria-current="false"><span class="t">Boss 战创意曲</span><span class="m">8 位机 · Boss 战 · 3/4 · d 小调</span></button></li><li><button type="button" class="item" data-id="boss-bach" aria-current="false"><span class="t">Boss 战创意曲 · 巴赫版</span><span class="m">巴赫 · Boss 战 · 3/4 · d 小调</span></button></li><li><button type="button" class="item" data-id="fugue" aria-current="true"><span class="t">魔王城赋格</span><span class="m">巴赫 · 最终迷宫 · 魔王城 · 4/4 · c 小调</span></button></li><li><button type="button" class="item" data-id="mozart" aria-current="false"><span class="t">城堡大厅</span><span class="m">莫扎特 · 城镇 · 城堡 · 4/4 · G 大调</span></button></li><li><button type="button" class="item" data-id="canon" aria-current="false"><span class="t">存档点卡农</span><span class="m">卡农 · 存档点 · 片尾 · 4/4 · D 大调</span></button></li><li><button type="button" class="item" data-id="elise" aria-current="false"><span class="t">月夜宅邸</span><span class="m">致爱丽丝变奏 · 宅邸 · 夜晚 · 3/8 · a 小调</span></button></li><li><button type="button" class="item" data-id="trout" aria-current="false"><span class="t">溪边钓鱼</span><span class="m">鳟鱼 · 钓鱼 · 村庄 · 2/4 · ♭B 大调</span></button></li><li><button type="button" class="item" data-id="grieg" aria-current="false"><span class="new">新写</span><span class="t">矿洞追逐</span><span class="m">格里格 · 潜入 · 追逐 · 4/4 · e 小调</span></button></li><li><button type="button" class="item" data-id="satie" aria-current="false"><span class="new">新写</span><span class="t">壁炉边小憩</span><span class="m">萨蒂 · 存档点 · 旅店 · 3/4 · C 大调</span></button></li><li><button type="button" class="item" data-id="macabre" aria-current="false"><span class="new">新写</span><span class="t">墓园骷髅舞会</span><span class="m">圣-桑 · 墓地 · 万圣节 · 3/4 · g 小调</span></button></li><li class="grp">电子 · DJ 曲风</li><li><button type="button" class="item" data-id="trance" aria-current="false"><span class="new">新写</span><span class="t">星门跃迁</span><span class="m">Trance · 飞行 · 宇宙航行 · 4/4 · a 小调</span></button></li><li><button type="button" class="item" data-id="walker" aria-current="false"><span class="new">新写</span><span class="t">霓虹主界面</span><span class="m">Alan Walker · 手游主界面 · 大厅 · 4/4 · b 小调</span></button></li><li><button type="button" class="item" data-id="techno" aria-current="false"><span class="new">新写</span><span class="t">轨道城核心</span><span class="m">Melodic Techno · 科幻 · 赛博都市 · 4/4 · f 小调</span></button></li></ol>
+      <p class="shelf-hint">点曲名直接开始播放，再点一次停止。</p>
+      <ol class="list" id="list"><li class="grp">古典</li><li><button type="button" class="item" data-id="inventio" aria-current="false"><span class="t">d 小调二声部创意曲</span><span class="m">巴赫 · 第一版 · 4/4 · d 小调</span></button></li><li><button type="button" class="item" data-id="boss-chip" aria-current="false"><span class="t">Boss 战创意曲</span><span class="m">8 位机 · Boss 战 · 3/4 · d 小调</span></button></li><li><button type="button" class="item" data-id="boss-bach" aria-current="false"><span class="t">Boss 战创意曲 · 巴赫版</span><span class="m">巴赫 · Boss 战 · 3/4 · d 小调</span></button></li><li><button type="button" class="item" data-id="fugue" aria-current="true"><span class="t">魔王城赋格</span><span class="m">巴赫 · 最终迷宫 · 魔王城 · 4/4 · c 小调</span></button></li><li><button type="button" class="item" data-id="mozart" aria-current="false"><span class="t">城堡大厅</span><span class="m">莫扎特 · 城镇 · 城堡 · 4/4 · G 大调</span></button></li><li><button type="button" class="item" data-id="canon" aria-current="false"><span class="t">存档点卡农</span><span class="m">卡农 · 存档点 · 片尾 · 4/4 · D 大调</span></button></li><li><button type="button" class="item" data-id="elise" aria-current="false"><span class="t">月夜宅邸</span><span class="m">致爱丽丝变奏 · 宅邸 · 夜晚 · 3/8 · a 小调</span></button></li><li><button type="button" class="item" data-id="trout" aria-current="false"><span class="t">溪边钓鱼</span><span class="m">鳟鱼 · 钓鱼 · 村庄 · 2/4 · ♭B 大调</span></button></li><li><button type="button" class="item" data-id="grieg" aria-current="false"><span class="new">新写</span><span class="t">矿洞追逐</span><span class="m">格里格 · 潜入 · 追逐 · 4/4 · e 小调</span></button></li><li><button type="button" class="item" data-id="satie" aria-current="false"><span class="new">新写</span><span class="t">壁炉边小憩</span><span class="m">萨蒂 · 存档点 · 旅店 · 3/4 · C 大调</span></button></li><li><button type="button" class="item" data-id="macabre" aria-current="false"><span class="new">新写</span><span class="t">墓园骷髅舞会</span><span class="m">圣-桑 · 墓地 · 万圣节 · 3/4 · g 小调</span></button></li><li><button type="button" class="item" data-id="vivaldi" aria-current="false"><span class="new">新写</span><span class="t">暴风雨追逐</span><span class="m">维瓦尔第 · 追逐 · 暴风雨关卡 · 4/4 · g 小调</span></button></li><li><button type="button" class="item" data-id="handel" aria-current="false"><span class="new">新写</span><span class="t">加冕大典</span><span class="m">亨德尔 · 加冕 · 胜利 · 王城 · 4/4 · D 大调</span></button></li><li><button type="button" class="item" data-id="scarlatti" aria-current="false"><span class="new">新写</span><span class="t">小酒馆解谜</span><span class="m">斯卡拉蒂 · 小游戏 · 解谜 · 3/8 · a 小调</span></button></li><li><button type="button" class="item" data-id="haydn" aria-current="false"><span class="new">新写</span><span class="t">机关大厅</span><span class="m">海顿 · 惊吓 · 机关触发 · 2/4 · C 大调</span></button></li><li><button type="button" class="item" data-id="chopin" aria-current="false"><span class="new">新写</span><span class="t">雨夜城镇</span><span class="m">肖邦 · 夜晚城镇 · 回忆 · 6/8 · ♭E 大调</span></button></li><li><button type="button" class="item" data-id="liszt" aria-current="false"><span class="new">新写</span><span class="t">魔法学院</span><span class="m">李斯特 · 魔法学院 · Boss 二阶段 · 2/4 · a 小调</span></button></li><li><button type="button" class="item" data-id="mendelssohn" aria-current="false"><span class="new">新写</span><span class="t">精灵森林</span><span class="m">门德尔松 · 精灵森林 · 2/4 · e 小调</span></button></li><li><button type="button" class="item" data-id="brahms" aria-current="false"><span class="new">新写</span><span class="t">集市酒馆</span><span class="m">勃拉姆斯 · 集市 · 酒馆 · 2/4 · ♯f 小调</span></button></li><li><button type="button" class="item" data-id="tchaikovsky" aria-current="false"><span class="new">新写</span><span class="t">八音盒商店</span><span class="m">柴可夫斯基 · 八音盒 · 商店 · 圣诞活动 · 2/4 · e 小调</span></button></li><li><button type="button" class="item" data-id="mussorgsky" aria-current="false"><span class="new">新写</span><span class="t">大地图漫步</span><span class="m">穆索尔斯基 · 大地图移动 · 5/4 · ♭B 大调</span></button></li><li><button type="button" class="item" data-id="rimsky" aria-current="false"><span class="new">新写</span><span class="t">限时飞行</span><span class="m">里姆斯基-科萨科夫 · 限时关卡 · 2/4 · a 小调</span></button></li><li><button type="button" class="item" data-id="dvorak" aria-current="false"><span class="new">新写</span><span class="t">启程</span><span class="m">德沃夏克 · 启程 · 开拓 · 4/4 · ♭D 大调</span></button></li><li><button type="button" class="item" data-id="strauss" aria-current="false"><span class="new">新写</span><span class="t">贵族舞会</span><span class="m">小约翰·施特劳斯 · 舞会 · 贵族 · 3/4 · D 大调</span></button></li><li><button type="button" class="item" data-id="rossini" aria-current="false"><span class="new">新写</span><span class="t">骑乘竞速</span><span class="m">罗西尼 · 竞速 · 骑乘 · 2/4 · E 大调</span></button></li><li><button type="button" class="item" data-id="bizet" aria-current="false"><span class="new">新写</span><span class="t">赌场</span><span class="m">比才 · 狡猾的反派 · 赌场 · 2/4 · d 小调</span></button></li><li><button type="button" class="item" data-id="wagner" aria-current="false"><span class="new">新写</span><span class="t">出征空战</span><span class="m">瓦格纳 · 空战 · 出征 · 6/8 · b 小调</span></button></li><li><button type="button" class="item" data-id="debussy" aria-current="false"><span class="new">新写</span><span class="t">水下遗迹</span><span class="m">德彪西 · 水域 · 梦境 · 记忆碎片 · 4/4 · 全音阶 / 五声音阶</span></button></li><li><button type="button" class="item" data-id="ravel" aria-current="false"><span class="new">新写</span><span class="t">逐层升级</span><span class="m">拉威尔 · 动态配器 · 逐步升级 · 3/4 · C 大调</span></button></li><li><button type="button" class="item" data-id="holst" aria-current="false"><span class="new">新写</span><span class="t">星际战争</span><span class="m">霍尔斯特 · 星际战争 · 5/4 · C 调（G 持续音）</span></button></li><li class="grp">20 世纪与游戏影视</li><li><button type="button" class="item" data-id="rachmaninoff" aria-current="false"><span class="new">新写</span><span class="t">终章告白</span><span class="m">拉赫玛尼诺夫 · 结局 · 告白 · 4/4 · c 小调</span></button></li><li><button type="button" class="item" data-id="prokofiev" aria-current="false"><span class="new">新写</span><span class="t">反派登场</span><span class="m">普罗科菲耶夫 · 角色主题 · 反派登场 · 4/4 · e 小调</span></button></li><li><button type="button" class="item" data-id="stravinsky" aria-current="false"><span class="new">新写</span><span class="t">远古部落</span><span class="m">斯特拉文斯基 · 原始部落 · 远古 Boss · 2/4 · 复合和弦</span></button></li><li><button type="button" class="item" data-id="gershwin" aria-current="false"><span class="new">新写</span><span class="t">都市侦探</span><span class="m">格什温 · 都市 · 侦探 · 4/4 · ♭B 大调</span></button></li><li><button type="button" class="item" data-id="reich" aria-current="false"><span class="new">新写</span><span class="t">无限循环</span><span class="m">史蒂夫·赖希、菲利普·格拉斯 · 无限循环的 BGM · 3/4 · D 大调</span></button></li><li><button type="button" class="item" data-id="part" aria-current="false"><span class="new">新写</span><span class="t">遗迹冥想</span><span class="m">阿沃·帕特 · 冥想 · 遗迹 · 3/4 · F 大调</span></button></li><li><button type="button" class="item" data-id="kondo" aria-current="false"><span class="new">新写</span><span class="t">蘑菇平原</span><span class="m">近藤浩治 · 平台跳跃 · 野外探索 · 4/4 · C 大调</span></button></li><li><button type="button" class="item" data-id="uematsu" aria-current="false"><span class="new">新写</span><span class="t">遭遇战</span><span class="m">植松伸夫 · JRPG 战斗 · 4/4 · a 小调</span></button></li><li><button type="button" class="item" data-id="shimomura" aria-current="false"><span class="new">新写</span><span class="t">主菜单回忆</span><span class="m">下村阳子 · 主菜单 · 回忆 · 4/4 · G 大调</span></button></li><li><button type="button" class="item" data-id="sugiyama" aria-current="false"><span class="new">新写</span><span class="t">王城序曲</span><span class="m">杉山浩一 · 王城 · 冒险启程 · 4/4 · F 大调</span></button></li><li><button type="button" class="item" data-id="hisaishi" aria-current="false"><span class="new">新写</span><span class="t">温暖日常</span><span class="m">久石让 · 温暖的日常 · 飞行 · 4/4 · F 大调</span></button></li><li><button type="button" class="item" data-id="zimmer" aria-current="false"><span class="new">新写</span><span class="t">穿越虫洞</span><span class="m">汉斯·季默 · 宇宙 · 史诗时刻 · 4/4 · a 小调</span></button></li><li><button type="button" class="item" data-id="chenzhiyi" aria-current="false"><span class="new">新写</span><span class="t">山间港城</span><span class="m">陈致逸 · 开放世界各地区 · 4/4 · D 宫调式</span></button></li><li class="grp">电子 · DJ 曲风</li><li><button type="button" class="item" data-id="trance" aria-current="false"><span class="new">新写</span><span class="t">星门跃迁</span><span class="m">Trance · 飞行 · 宇宙航行 · 4/4 · a 小调</span></button></li><li><button type="button" class="item" data-id="walker" aria-current="false"><span class="new">新写</span><span class="t">霓虹主界面</span><span class="m">Alan Walker · 手游主界面 · 大厅 · 4/4 · b 小调</span></button></li><li><button type="button" class="item" data-id="techno" aria-current="false"><span class="new">新写</span><span class="t">轨道城核心</span><span class="m">Melodic Techno · 科幻 · 赛博都市 · 4/4 · f 小调</span></button></li><li><button type="button" class="item" data-id="bigroom" aria-current="false"><span class="new">新写</span><span class="t">竞技开场</span><span class="m">Big Room · 竞技开场 · 结算界面 · 4/4 · g 小调</span></button></li><li><button type="button" class="item" data-id="warehouse" aria-current="false"><span class="new">新写</span><span class="t">地下工业区</span><span class="m">Techno · 地下城 · 工业区 · 4/4 · a 小调</span></button></li><li><button type="button" class="item" data-id="techhouse" aria-current="false"><span class="new">新写</span><span class="t">大厅菜单</span><span class="m">Tech House · 菜单 · 大厅 · 4/4 · c 小调</span></button></li><li><button type="button" class="item" data-id="house" aria-current="false"><span class="new">新写</span><span class="t">海岛经营</span><span class="m">House · 休闲经营 · 海岛 · 城市漫步 · 4/4 · F 大调</span></button></li><li><button type="button" class="item" data-id="fredagain" aria-current="false"><span class="new">新写</span><span class="t">剧情回忆</span><span class="m">Fred again.. · 剧情过场 · 回忆 · 4/4 · ♭E 大调</span></button></li><li><button type="button" class="item" data-id="dubstep" aria-current="false"><span class="new">新写</span><span class="t">机甲 Boss</span><span class="m">Dubstep · Boss 战 · 机甲 · 4/4 · f 小调</span></button></li><li><button type="button" class="item" data-id="prydz" aria-current="false"><span class="new">新写</span><span class="t">远景平原</span><span class="m">Progressive House · 开放世界 · 4/4 · d 小调</span></button></li><li><button type="button" class="item" data-id="avicii" aria-current="false"><span class="new">新写</span><span class="t">开阔冒险</span><span class="m">Avicii · Daft Punk · 开阔的冒险 · 4/4 · G 大调</span></button></li><li><button type="button" class="item" data-id="porter" aria-current="false"><span class="new">新写</span><span class="t">天空之城</span><span class="m">Porter Robinson · Madeon · 日系 RPG · 动漫风格 · 4/4 · A 大调</span></button></li></ol>
     </nav>
 
     <main class="player">
@@ -243,7 +251,7 @@ pre { margin: 0; padding: 14px 16px; font-family: var(--mono); font-size: 12.5px
           <span class="lbl">配器</span>
           <div class="presets" id="presets"><button class="preset" type="button" aria-pressed="false">羽管键琴</button><button class="preset" type="button" aria-pressed="false">钢琴</button><button class="preset" type="button" aria-pressed="false">弦乐</button><button class="preset" type="button" aria-pressed="true">管风琴</button><button class="preset" type="button" aria-pressed="false">八音盒</button><button class="preset" type="button" aria-pressed="false">8 位机</button></div>
         </div>
-        <div class="tracks" id="tracks"><div class="track"><label class="mute" style="--c: var(--v0);"><input type="checkbox" id="on-fugue-0"><span>高声部</span></label><select id="inst-fugue-0" aria-label="高声部的乐器"><optgroup label="古典"><option value="harpsichord">羽管键琴</option><option value="piano">钢琴</option><option value="organ">管风琴</option><option value="strings">弦乐</option><option value="pizz">弦乐拨奏</option><option value="bassoon">大管</option><option value="flute">长笛</option><option value="xylophone">木琴</option><option value="musicbox">八音盒</option></optgroup><optgroup label="8 位"><option value="pulse">方波（8 位）</option><option value="triangle">三角波（8 位）</option></optgroup><optgroup label="电子"><option value="supersaw">超级锯齿</option><option value="pluck">拨弦合成器</option><option value="lead">锯齿主音</option><option value="pad">铺底</option><option value="synthbass">合成贝斯</option><option value="sub">超低音</option></optgroup></select></div><div class="track"><label class="mute" style="--c: var(--v1);"><input type="checkbox" id="on-fugue-1"><span>中声部</span></label><select id="inst-fugue-1" aria-label="中声部的乐器"><optgroup label="古典"><option value="harpsichord">羽管键琴</option><option value="piano">钢琴</option><option value="organ">管风琴</option><option value="strings">弦乐</option><option value="pizz">弦乐拨奏</option><option value="bassoon">大管</option><option value="flute">长笛</option><option value="xylophone">木琴</option><option value="musicbox">八音盒</option></optgroup><optgroup label="8 位"><option value="pulse">方波（8 位）</option><option value="triangle">三角波（8 位）</option></optgroup><optgroup label="电子"><option value="supersaw">超级锯齿</option><option value="pluck">拨弦合成器</option><option value="lead">锯齿主音</option><option value="pad">铺底</option><option value="synthbass">合成贝斯</option><option value="sub">超低音</option></optgroup></select></div><div class="track"><label class="mute" style="--c: var(--v2);"><input type="checkbox" id="on-fugue-2"><span>低声部</span></label><select id="inst-fugue-2" aria-label="低声部的乐器"><optgroup label="古典"><option value="harpsichord">羽管键琴</option><option value="piano">钢琴</option><option value="organ">管风琴</option><option value="strings">弦乐</option><option value="pizz">弦乐拨奏</option><option value="bassoon">大管</option><option value="flute">长笛</option><option value="xylophone">木琴</option><option value="musicbox">八音盒</option></optgroup><optgroup label="8 位"><option value="pulse">方波（8 位）</option><option value="triangle">三角波（8 位）</option></optgroup><optgroup label="电子"><option value="supersaw">超级锯齿</option><option value="pluck">拨弦合成器</option><option value="lead">锯齿主音</option><option value="pad">铺底</option><option value="synthbass">合成贝斯</option><option value="sub">超低音</option></optgroup></select></div><div class="track"><label class="mute" style="--c: var(--vd);"><input type="checkbox" id="on-fugue-drums"><span>打击乐</span></label><select id="kit-fugue" aria-label="打击乐音色"><option value="off">关</option><option value="chip">8 位噪声</option><option value="soft">轻打击</option><option value="edm">电子鼓</option></select></div></div>
+        <div class="tracks" id="tracks"><div class="track"><label class="mute" style="--c: var(--v0);"><input type="checkbox" id="on-fugue-0"><span>高声部</span></label><select id="inst-fugue-0" aria-label="高声部的乐器"><optgroup label="古典"><option value="harpsichord">羽管键琴</option><option value="piano">钢琴</option><option value="organ">管风琴</option><option value="strings">弦乐</option><option value="pizz">弦乐拨奏</option><option value="bassoon">大管</option><option value="flute">长笛</option><option value="xylophone">木琴</option><option value="musicbox">八音盒</option><option value="brass">小号 / 铜管</option><option value="horn">圆号</option><option value="harp">竖琴</option><option value="celesta">钢片琴</option><option value="guitar">古典吉他</option><option value="zheng">古筝</option></optgroup><optgroup label="8 位"><option value="pulse">方波（8 位）</option><option value="triangle">三角波（8 位）</option></optgroup><optgroup label="电子"><option value="supersaw">超级锯齿</option><option value="pluck">拨弦合成器</option><option value="lead">锯齿主音</option><option value="pad">铺底</option><option value="synthbass">合成贝斯</option><option value="sub">超低音</option><option value="epiano">电钢琴</option><option value="bell">FM 钟琴</option><option value="vox">人声切片</option><option value="bigroom">大房主音</option><option value="stab">和弦刺</option><option value="acid">303 酸性贝斯</option><option value="wobble">摇摆贝斯</option></optgroup></select></div><div class="track"><label class="mute" style="--c: var(--v1);"><input type="checkbox" id="on-fugue-1"><span>中声部</span></label><select id="inst-fugue-1" aria-label="中声部的乐器"><optgroup label="古典"><option value="harpsichord">羽管键琴</option><option value="piano">钢琴</option><option value="organ">管风琴</option><option value="strings">弦乐</option><option value="pizz">弦乐拨奏</option><option value="bassoon">大管</option><option value="flute">长笛</option><option value="xylophone">木琴</option><option value="musicbox">八音盒</option><option value="brass">小号 / 铜管</option><option value="horn">圆号</option><option value="harp">竖琴</option><option value="celesta">钢片琴</option><option value="guitar">古典吉他</option><option value="zheng">古筝</option></optgroup><optgroup label="8 位"><option value="pulse">方波（8 位）</option><option value="triangle">三角波（8 位）</option></optgroup><optgroup label="电子"><option value="supersaw">超级锯齿</option><option value="pluck">拨弦合成器</option><option value="lead">锯齿主音</option><option value="pad">铺底</option><option value="synthbass">合成贝斯</option><option value="sub">超低音</option><option value="epiano">电钢琴</option><option value="bell">FM 钟琴</option><option value="vox">人声切片</option><option value="bigroom">大房主音</option><option value="stab">和弦刺</option><option value="acid">303 酸性贝斯</option><option value="wobble">摇摆贝斯</option></optgroup></select></div><div class="track"><label class="mute" style="--c: var(--v2);"><input type="checkbox" id="on-fugue-2"><span>低声部</span></label><select id="inst-fugue-2" aria-label="低声部的乐器"><optgroup label="古典"><option value="harpsichord">羽管键琴</option><option value="piano">钢琴</option><option value="organ">管风琴</option><option value="strings">弦乐</option><option value="pizz">弦乐拨奏</option><option value="bassoon">大管</option><option value="flute">长笛</option><option value="xylophone">木琴</option><option value="musicbox">八音盒</option><option value="brass">小号 / 铜管</option><option value="horn">圆号</option><option value="harp">竖琴</option><option value="celesta">钢片琴</option><option value="guitar">古典吉他</option><option value="zheng">古筝</option></optgroup><optgroup label="8 位"><option value="pulse">方波（8 位）</option><option value="triangle">三角波（8 位）</option></optgroup><optgroup label="电子"><option value="supersaw">超级锯齿</option><option value="pluck">拨弦合成器</option><option value="lead">锯齿主音</option><option value="pad">铺底</option><option value="synthbass">合成贝斯</option><option value="sub">超低音</option><option value="epiano">电钢琴</option><option value="bell">FM 钟琴</option><option value="vox">人声切片</option><option value="bigroom">大房主音</option><option value="stab">和弦刺</option><option value="acid">303 酸性贝斯</option><option value="wobble">摇摆贝斯</option></optgroup></select></div><div class="track"><label class="mute" style="--c: var(--vd);"><input type="checkbox" id="on-fugue-drums"><span>打击乐</span></label><select id="kit-fugue" aria-label="打击乐音色"><option value="off">关</option><option value="chip">8 位噪声</option><option value="soft">轻打击</option><option value="edm">电子鼓</option></select></div><div class="track"><span class="mute fxlab">效果</span><select id="fx-fugue" aria-label="整体效果"><option value="none">无</option><option value="hall">大厅混响</option><option value="chorus">合唱加宽</option><option value="flanger">镶边</option><option value="phaser">相位</option><option value="autofilter">自动滤波</option><option value="tape">磁带延迟</option><option value="lofi">低保真</option></select></div></div>
         <div class="export" id="export">
           <span class="lbl">导出 MP3</span>
           <select id="passes" aria-label="循环次数">
@@ -312,9 +320,9 @@ V:3 clef=bass
   <section class="styles" aria-label="风格库">
     <div class="styles-head">
       <h2>风格库</h2>
-      <p id="styles-sum">共 41 位（组）作曲家、12 组 DJ 曲风，已写 12 种。深色边框的已经有曲子，点曲名直接跳过去；其余标着“待写”。古典作曲家的作品已进入公有领域，可以直接引用原曲；20 世纪以后的作曲家和 DJ 只学写法与曲风，不引用旋律。</p>
+      <p id="styles-sum">共 41 位（组）作曲家、12 组 DJ 曲风，已写 53 种。深色边框的已经有曲子，点曲名直接跳过去；其余标着“待写”。古典作曲家的作品已进入公有领域，可以直接引用原曲；20 世纪以后的作曲家和 DJ 只学写法与曲风，不引用旋律。</p>
     </div>
-    <div id="styles"><div class="sgroup"><div class="sgroup-h"><h3>巴洛克</h3><span class="line">古典线</span><span class="right pd">可引用原曲</span></div><div class="scards"><article class="sty done"><h4>巴赫</h4><p class="works">《平均律钢琴曲集》、二声部创意曲、《赋格的艺术》</p><p class="how">多条独立旋律线同时进行的对位与赋格 → 迷宫、魔王城、Boss 战</p><div class="foot"><a class="chip" href="#inventio">d 小调二声部创意曲</a><a class="chip" href="#boss-bach">Boss 战创意曲 · 巴赫版</a><a class="chip" href="#fugue">魔王城赋格</a></div></article><article class="sty done"><h4>帕赫贝尔</h4><p class="works">D 大调《卡农》</p><p class="how">同一组低音反复，几个声部错开进入同一条旋律 → 存档点、片尾</p><div class="foot"><a class="chip" href="#canon">存档点卡农</a></div></article><article class="sty"><h4>维瓦尔第</h4><p class="works">《四季》（《夏》第三乐章、《冬》第一乐章）</p><p class="how">弦乐齐奏的快速重复音和琶音 → 追逐、暴风雨关卡</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>亨德尔</h4><p class="works">《弥赛亚》“哈利路亚”、《水上音乐》</p><p class="how">宏大的号角式主调和声 → 加冕、胜利、王城</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>斯卡拉蒂</h4><p class="works">555 首键盘奏鸣曲</p><p class="how">单乐章、短小，带西班牙吉他味的跳音 → 小游戏、解谜</p><div class="foot"><span class="todo">待写</span></div></article></div></div><div class="sgroup"><div class="sgroup-h"><h3>古典时期</h3><span class="line">古典线</span><span class="right pd">可引用原曲</span></div><div class="scards"><article class="sty done"><h4>莫扎特</h4><p class="works">钢琴奏鸣曲 K.545、《小夜曲》</p><p class="how">阿尔贝蒂低音配 4+4 小节问答句 → 城镇、城堡大厅</p><div class="foot"><a class="chip" href="#mozart">城堡大厅</a></div></article><article class="sty"><h4>海顿</h4><p class="works">《惊愕交响曲》、《皇帝四重奏》</p><p class="how">安静中突然一记强奏 → 惊吓、机关触发</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty done"><h4>贝多芬</h4><p class="works">《致爱丽丝》、《月光奏鸣曲》、第五交响曲</p><p class="how">短动机的反复与变奏 → 宅邸、夜晚、命运时刻</p><div class="foot"><a class="chip" href="#elise">月夜宅邸</a></div></article></div></div><div class="sgroup"><div class="sgroup-h"><h3>浪漫派</h3><span class="line">古典线</span><span class="right pd">可引用原曲</span></div><div class="scards"><article class="sty done"><h4>舒伯特</h4><p class="works">《鳟鱼》、《魔王》</p><p class="how">伴奏音型描绘画面，像水流、马蹄 → 村庄、钓鱼</p><div class="foot"><a class="chip" href="#trout">溪边钓鱼</a></div></article><article class="sty"><h4>肖邦</h4><p class="works">降 E 大调夜曲 Op.9 No.2、幻想即兴曲、革命练习曲</p><p class="how">左手大跨度分解和弦，右手带装饰音的歌唱旋律 → 夜晚城镇、回忆</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>李斯特</h4><p class="works">《钟》、《爱之梦》第 3 首、第 2 号匈牙利狂想曲</p><p class="how">炫技的高音区重复音 → 魔法学院、Boss 二阶段</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>门德尔松</h4><p class="works">《仲夏夜之梦》</p><p class="how">轻快的断奏弦乐 → 精灵森林</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>勃拉姆斯</h4><p class="works">第 5 号匈牙利舞曲、《摇篮曲》</p><p class="how">吉普赛式的忽快忽慢 → 集市、酒馆</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>柴可夫斯基</h4><p class="works">《胡桃夹子》（糖梅仙子之舞）、《天鹅湖》</p><p class="how">钢片琴配拨弦 → 八音盒、商店、圣诞活动</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty done"><h4>格里格</h4><p class="works">《培尔·金特》：《山魔王的大厅》、《晨景》</p><p class="how">同一动机反复，越来越快、越来越响 → 潜入转追逐、新手村清晨</p><div class="foot"><a class="chip" href="#grieg">矿洞追逐</a></div></article><article class="sty"><h4>穆索尔斯基</h4><p class="works">《图画展览会》、《荒山之夜》</p><p class="how">“漫步”主题串起各段 → 大地图移动、亡灵</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>里姆斯基-科萨科夫</h4><p class="works">《野蜂飞舞》、《天方夜谭》</p><p class="how">连续快速的半音阶跑动 → 限时关卡、沙漠与异域</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty done"><h4>圣-桑</h4><p class="works">《骷髅之舞》、《动物狂欢节》</p><p class="how">三全音、木琴模仿骨头、圆舞曲 → 墓地、万圣节</p><div class="foot"><a class="chip" href="#macabre">墓园骷髅舞会</a></div></article><article class="sty"><h4>德沃夏克</h4><p class="works">《自新大陆》交响曲、《幽默曲》</p><p class="how">五声音阶的思乡旋律 → 启程、开拓</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>小约翰·施特劳斯</h4><p class="works">《蓝色多瑙河》、《皇帝圆舞曲》</p><p class="how">维也纳圆舞曲的“嘭-恰-恰” → 舞会、贵族</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>罗西尼</h4><p class="works">《威廉·退尔》序曲终曲</p><p class="how">马蹄般的加洛普节奏 → 竞速、骑乘</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>比才</h4><p class="works">《卡门》（哈巴涅拉、斗牛士之歌）</p><p class="how">哈巴涅拉节奏型 → 狡猾的反派、赌场</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>瓦格纳</h4><p class="works">《女武神的骑行》</p><p class="how">铜管主导动机 → 空战、出征</p><div class="foot"><span class="todo">待写</span></div></article></div></div><div class="sgroup"><div class="sgroup-h"><h3>印象派与世纪之交</h3><span class="line">古典线</span><span class="right pd">可引用原曲</span></div><div class="scards"><article class="sty"><h4>德彪西</h4><p class="works">《月光》、《亚麻色头发的少女》、《大海》</p><p class="how">全音阶、平行和弦、踏板延音 → 水域、梦境、记忆碎片</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty done"><h4>萨蒂</h4><p class="works">《裸体歌舞》第 1 首</p><p class="how">慢三拍，两个和弦来回摆 → 存档点、安静的室内</p><div class="foot"><a class="chip" href="#satie">壁炉边小憩</a></div></article><article class="sty"><h4>拉威尔</h4><p class="works">《波莱罗》、《小丑的晨歌》</p><p class="how">一条旋律反复，只靠配器逐层叠加推向高潮 → 动态配器、逐步升级</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>霍尔斯特</h4><p class="works">《行星》（火星、木星）</p><p class="how">5/4 拍的固定低音 → 星际战争</p><div class="foot"><span class="todo">待写</span></div></article></div></div><div class="sgroup"><div class="sgroup-h"><h3>20 世纪与现代</h3><span class="line">古典线</span><span class="right">只学写法</span></div><div class="scards"><article class="sty"><h4>拉赫玛尼诺夫</h4><p class="works">第二钢琴协奏曲、帕格尼尼主题狂想曲</p><p class="how">浓烈的俄式钢琴浪漫 → 结局、告白</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>普罗科菲耶夫</h4><p class="works">《彼得与狼》、《罗密欧与朱丽叶》骑士之舞</p><p class="how">一个角色对应一种乐器 → 角色主题、反派登场</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>斯特拉文斯基</h4><p class="works">《春之祭》</p><p class="how">不规则重音、多调叠置 → 原始部落、远古 Boss</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>格什温</h4><p class="works">《蓝色狂想曲》</p><p class="how">爵士与古典的混合 → 都市、侦探</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>史蒂夫·赖希、菲利普·格拉斯</h4><p class="works">《18 位音乐家的音乐》、《Koyaanisqatsi》</p><p class="how">极简主义的重复与缓慢相位偏移 → 无限循环的 BGM</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>阿沃·帕特</h4><p class="works">《镜中镜》</p><p class="how">极简的“钟鸣”技法 → 冥想、遗迹</p><div class="foot"><span class="todo">待写</span></div></article></div></div><div class="sgroup"><div class="sgroup-h"><h3>游戏与影视</h3><span class="line">古典线</span><span class="right">只学写法</span></div><div class="scards"><article class="sty done"><h4>8 位机芯片音乐</h4><p class="works">红白机时代的《超级马里奥兄弟》《恶魔城》</p><p class="how">两个方波、一个三角波加噪声，只靠两三条旋律线撑起整首 → 复古关卡、Boss 战</p><div class="foot"><a class="chip" href="#boss-chip">Boss 战创意曲</a></div></article><article class="sty"><h4>近藤浩治</h4><p class="works">《超级马里奥》、《塞尔达传说》</p><p class="how">短小好记、可无限循环的主题 → 平台跳跃、野外探索</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>植松伸夫</h4><p class="works">《最终幻想》系列</p><p class="how">管弦乐与摇滚结合的战斗曲 → JRPG 战斗、城镇</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>下村阳子</h4><p class="works">《王国之心》</p><p class="how">钢琴为主的抒情主题 → 主菜单、回忆</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>杉山浩一</h4><p class="works">《勇者斗恶龙》</p><p class="how">古典交响写法的序曲与进行曲 → 王城、冒险启程</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>久石让</h4><p class="works">宫崎骏电影（《千与千寻》《龙猫》）</p><p class="how">简单的钢琴旋律配弦乐 → 温暖的日常、飞行</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>汉斯·季默</h4><p class="works">《星际穿越》、《盗梦空间》</p><p class="how">管风琴长音与持续的节奏脉冲 → 宇宙、史诗时刻</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>陈致逸</h4><p class="works">《原神》</p><p class="how">管弦乐融入各地民族乐器 → 开放世界各地区</p><div class="foot"><span class="todo">待写</span></div></article></div></div><div class="sgroup"><div class="sgroup-h"><h3>Trance</h3><span class="line">电子线</span><span class="right">只学曲风</span></div><div class="scards"><article class="sty done"><h4>Armin van Buuren · Tiësto</h4><span class="rank">DJ Mag 2026 第 7、第 22</span><p class="works">《This Is What It Feels Like》、《Adagio for Strings》</p><p class="how">138 BPM，十六分音符琶音，超级锯齿主旋律，长 build-up → 飞行、宇宙航行</p><div class="foot"><a class="chip" href="#trance">星门跃迁</a></div></article></div></div><div class="sgroup"><div class="sgroup-h"><h3>旋律电音</h3><span class="line">电子线</span><span class="right">只学曲风</span></div><div class="scards"><article class="sty done"><h4>Alan Walker · Marshmello</h4><span class="rank">DJ Mag 2026 第 32、第 53</span><p class="works">《Faded》、《Alone》</p><p class="how">拨弦主旋律，四和弦循环，简单好记 → 手游主界面</p><div class="foot"><a class="chip" href="#walker">霓虹主界面</a></div></article></div></div><div class="sgroup"><div class="sgroup-h"><h3>Melodic Techno</h3><span class="line">电子线</span><span class="right">只学曲风</span></div><div class="scards"><article class="sty done"><h4>Anyma</h4><span class="rank">DJ Mag 2026 第 3</span><p class="works">《Hypnotized》（与 Ellie Goulding 合作）</p><p class="how">三音循环琶音，暗色铺底，长音主旋律 → 科幻、赛博、巨型建筑</p><div class="foot"><a class="chip" href="#techno">轨道城核心</a></div></article></div></div><div class="sgroup"><div class="sgroup-h"><h3>其他曲风</h3><span class="line">电子线</span><span class="right">只学曲风</span></div><div class="scards"><article class="sty"><h4>David Guetta · Martin Garrix · Timmy Trumpet</h4><span class="rank">DJ Mag 2026 第 1、2、8</span><p class="works">《Titanium》、《Animals》、《Freaks》</p><p class="how">Big Room：大音量的底鼓与短促的主音“drop” → 竞技开场、结算界面</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>Charlotte de Witte</h4><span class="rank">DJ Mag 2026 第 6，No.1 Techno DJ</span><p class="works">以 DJ 现场为主</p><p class="how">Techno：冷硬的四拍底鼓、工业质感 → 地下城、工业区</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>FISHER</h4><span class="rank">DJ Mag 2026 第 9</span><p class="works">《Losing It》</p><p class="how">Tech House：律动重复，适合长时间循环 → 菜单、大厅</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>Calvin Harris · Peggy Gou · Black Coffee</h4><span class="rank">DJ Mag 2026 第 11、13、14</span><p class="works">《Summer》、《(It Goes Like) Nanana》、《Drive》</p><p class="how">House 与非洲浩室：明亮、轻松的律动 → 休闲经营、海岛、城市漫步</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>Fred again..</h4><span class="rank">DJ Mag 2026 第 16</span><p class="works">《Marea (We've Lost Dancing)》、《Rumble》</p><p class="how">情绪化浩室 / UK Garage，人声采样讲故事 → 剧情过场、回忆</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>Skrillex</h4><span class="rank">DJ Mag 2026 第 25</span><p class="works">《Scary Monsters and Nice Sprites》</p><p class="how">Dubstep：半速的重低音“wobble” → Boss 战、机甲</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>Eric Prydz</h4><span class="rank">DJ Mag 2026 第 62</span><p class="works">《Opus》</p><p class="how">Progressive House：漫长的渐进铺垫 → 开放世界</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>Avicii · Daft Punk</h4><span class="rank">已故 · 已解散</span><p class="works">《Levels》、《Wake Me Up》；《One More Time》、《创：战纪》原声</p><p class="how">民谣电音；法式浩室与电影配乐 → 开阔的冒险、赛博叙事</p><div class="foot"><span class="todo">待写</span></div></article><article class="sty"><h4>Porter Robinson · Madeon</h4><p class="works">《Shelter》、《Language》</p><p class="how">动漫感的明亮合成器与情绪化和声 → 日系 RPG、动漫风格作品</p><div class="foot"><span class="todo">待写</span></div></article></div></div></div>
+    <div id="styles"><div class="sgroup"><div class="sgroup-h"><h3>巴洛克</h3><span class="line">古典线</span><span class="right pd">可引用原曲</span></div><div class="scards"><article class="sty done"><h4>巴赫</h4><p class="works">《平均律钢琴曲集》、二声部创意曲、《赋格的艺术》</p><p class="how">多条独立旋律线同时进行的对位与赋格 → 迷宫、魔王城、Boss 战</p><div class="foot"><a class="chip" href="#inventio">d 小调二声部创意曲</a><a class="chip" href="#boss-bach">Boss 战创意曲 · 巴赫版</a><a class="chip" href="#fugue">魔王城赋格</a></div></article><article class="sty done"><h4>帕赫贝尔</h4><p class="works">D 大调《卡农》</p><p class="how">同一组低音反复，几个声部错开进入同一条旋律 → 存档点、片尾</p><div class="foot"><a class="chip" href="#canon">存档点卡农</a></div></article><article class="sty done"><h4>维瓦尔第</h4><p class="works">《四季》（《夏》第三乐章、《冬》第一乐章）</p><p class="how">弦乐齐奏的快速重复音和琶音 → 追逐、暴风雨关卡</p><div class="foot"><a class="chip" href="#vivaldi">暴风雨追逐</a></div></article><article class="sty done"><h4>亨德尔</h4><p class="works">《弥赛亚》“哈利路亚”、《水上音乐》</p><p class="how">宏大的号角式主调和声 → 加冕、胜利、王城</p><div class="foot"><a class="chip" href="#handel">加冕大典</a></div></article><article class="sty done"><h4>斯卡拉蒂</h4><p class="works">555 首键盘奏鸣曲</p><p class="how">单乐章、短小，带西班牙吉他味的跳音 → 小游戏、解谜</p><div class="foot"><a class="chip" href="#scarlatti">小酒馆解谜</a></div></article></div></div><div class="sgroup"><div class="sgroup-h"><h3>古典时期</h3><span class="line">古典线</span><span class="right pd">可引用原曲</span></div><div class="scards"><article class="sty done"><h4>莫扎特</h4><p class="works">钢琴奏鸣曲 K.545、《小夜曲》</p><p class="how">阿尔贝蒂低音配 4+4 小节问答句 → 城镇、城堡大厅</p><div class="foot"><a class="chip" href="#mozart">城堡大厅</a></div></article><article class="sty done"><h4>海顿</h4><p class="works">《惊愕交响曲》、《皇帝四重奏》</p><p class="how">安静中突然一记强奏 → 惊吓、机关触发</p><div class="foot"><a class="chip" href="#haydn">机关大厅</a></div></article><article class="sty done"><h4>贝多芬</h4><p class="works">《致爱丽丝》、《月光奏鸣曲》、第五交响曲</p><p class="how">短动机的反复与变奏 → 宅邸、夜晚、命运时刻</p><div class="foot"><a class="chip" href="#elise">月夜宅邸</a></div></article></div></div><div class="sgroup"><div class="sgroup-h"><h3>浪漫派</h3><span class="line">古典线</span><span class="right pd">可引用原曲</span></div><div class="scards"><article class="sty done"><h4>舒伯特</h4><p class="works">《鳟鱼》、《魔王》</p><p class="how">伴奏音型描绘画面，像水流、马蹄 → 村庄、钓鱼</p><div class="foot"><a class="chip" href="#trout">溪边钓鱼</a></div></article><article class="sty done"><h4>肖邦</h4><p class="works">降 E 大调夜曲 Op.9 No.2、幻想即兴曲、革命练习曲</p><p class="how">左手大跨度分解和弦，右手带装饰音的歌唱旋律 → 夜晚城镇、回忆</p><div class="foot"><a class="chip" href="#chopin">雨夜城镇</a></div></article><article class="sty done"><h4>李斯特</h4><p class="works">《钟》、《爱之梦》第 3 首、第 2 号匈牙利狂想曲</p><p class="how">炫技的高音区重复音 → 魔法学院、Boss 二阶段</p><div class="foot"><a class="chip" href="#liszt">魔法学院</a></div></article><article class="sty done"><h4>门德尔松</h4><p class="works">《仲夏夜之梦》</p><p class="how">轻快的断奏弦乐 → 精灵森林</p><div class="foot"><a class="chip" href="#mendelssohn">精灵森林</a></div></article><article class="sty done"><h4>勃拉姆斯</h4><p class="works">第 5 号匈牙利舞曲、《摇篮曲》</p><p class="how">吉普赛式的忽快忽慢 → 集市、酒馆</p><div class="foot"><a class="chip" href="#brahms">集市酒馆</a></div></article><article class="sty done"><h4>柴可夫斯基</h4><p class="works">《胡桃夹子》（糖梅仙子之舞）、《天鹅湖》</p><p class="how">钢片琴配拨弦 → 八音盒、商店、圣诞活动</p><div class="foot"><a class="chip" href="#tchaikovsky">八音盒商店</a></div></article><article class="sty done"><h4>格里格</h4><p class="works">《培尔·金特》：《山魔王的大厅》、《晨景》</p><p class="how">同一动机反复，越来越快、越来越响 → 潜入转追逐、新手村清晨</p><div class="foot"><a class="chip" href="#grieg">矿洞追逐</a></div></article><article class="sty done"><h4>穆索尔斯基</h4><p class="works">《图画展览会》、《荒山之夜》</p><p class="how">“漫步”主题串起各段 → 大地图移动、亡灵</p><div class="foot"><a class="chip" href="#mussorgsky">大地图漫步</a></div></article><article class="sty done"><h4>里姆斯基-科萨科夫</h4><p class="works">《野蜂飞舞》、《天方夜谭》</p><p class="how">连续快速的半音阶跑动 → 限时关卡、沙漠与异域</p><div class="foot"><a class="chip" href="#rimsky">限时飞行</a></div></article><article class="sty done"><h4>圣-桑</h4><p class="works">《骷髅之舞》、《动物狂欢节》</p><p class="how">三全音、木琴模仿骨头、圆舞曲 → 墓地、万圣节</p><div class="foot"><a class="chip" href="#macabre">墓园骷髅舞会</a></div></article><article class="sty done"><h4>德沃夏克</h4><p class="works">《自新大陆》交响曲、《幽默曲》</p><p class="how">五声音阶的思乡旋律 → 启程、开拓</p><div class="foot"><a class="chip" href="#dvorak">启程</a></div></article><article class="sty done"><h4>小约翰·施特劳斯</h4><p class="works">《蓝色多瑙河》、《皇帝圆舞曲》</p><p class="how">维也纳圆舞曲的“嘭-恰-恰” → 舞会、贵族</p><div class="foot"><a class="chip" href="#strauss">贵族舞会</a></div></article><article class="sty done"><h4>罗西尼</h4><p class="works">《威廉·退尔》序曲终曲</p><p class="how">马蹄般的加洛普节奏 → 竞速、骑乘</p><div class="foot"><a class="chip" href="#rossini">骑乘竞速</a></div></article><article class="sty done"><h4>比才</h4><p class="works">《卡门》（哈巴涅拉、斗牛士之歌）</p><p class="how">哈巴涅拉节奏型 → 狡猾的反派、赌场</p><div class="foot"><a class="chip" href="#bizet">赌场</a></div></article><article class="sty done"><h4>瓦格纳</h4><p class="works">《女武神的骑行》</p><p class="how">铜管主导动机 → 空战、出征</p><div class="foot"><a class="chip" href="#wagner">出征空战</a></div></article></div></div><div class="sgroup"><div class="sgroup-h"><h3>印象派与世纪之交</h3><span class="line">古典线</span><span class="right pd">可引用原曲</span></div><div class="scards"><article class="sty done"><h4>德彪西</h4><p class="works">《月光》、《亚麻色头发的少女》、《大海》</p><p class="how">全音阶、平行和弦、踏板延音 → 水域、梦境、记忆碎片</p><div class="foot"><a class="chip" href="#debussy">水下遗迹</a></div></article><article class="sty done"><h4>萨蒂</h4><p class="works">《裸体歌舞》第 1 首</p><p class="how">慢三拍，两个和弦来回摆 → 存档点、安静的室内</p><div class="foot"><a class="chip" href="#satie">壁炉边小憩</a></div></article><article class="sty done"><h4>拉威尔</h4><p class="works">《波莱罗》、《小丑的晨歌》</p><p class="how">一条旋律反复，只靠配器逐层叠加推向高潮 → 动态配器、逐步升级</p><div class="foot"><a class="chip" href="#ravel">逐层升级</a></div></article><article class="sty done"><h4>霍尔斯特</h4><p class="works">《行星》（火星、木星）</p><p class="how">5/4 拍的固定低音 → 星际战争</p><div class="foot"><a class="chip" href="#holst">星际战争</a></div></article></div></div><div class="sgroup"><div class="sgroup-h"><h3>20 世纪与现代</h3><span class="line">古典线</span><span class="right">只学写法</span></div><div class="scards"><article class="sty done"><h4>拉赫玛尼诺夫</h4><p class="works">第二钢琴协奏曲、帕格尼尼主题狂想曲</p><p class="how">浓烈的俄式钢琴浪漫 → 结局、告白</p><div class="foot"><a class="chip" href="#rachmaninoff">终章告白</a></div></article><article class="sty done"><h4>普罗科菲耶夫</h4><p class="works">《彼得与狼》、《罗密欧与朱丽叶》骑士之舞</p><p class="how">一个角色对应一种乐器 → 角色主题、反派登场</p><div class="foot"><a class="chip" href="#prokofiev">反派登场</a></div></article><article class="sty done"><h4>斯特拉文斯基</h4><p class="works">《春之祭》</p><p class="how">不规则重音、多调叠置 → 原始部落、远古 Boss</p><div class="foot"><a class="chip" href="#stravinsky">远古部落</a></div></article><article class="sty done"><h4>格什温</h4><p class="works">《蓝色狂想曲》</p><p class="how">爵士与古典的混合 → 都市、侦探</p><div class="foot"><a class="chip" href="#gershwin">都市侦探</a></div></article><article class="sty done"><h4>史蒂夫·赖希、菲利普·格拉斯</h4><p class="works">《18 位音乐家的音乐》、《Koyaanisqatsi》</p><p class="how">极简主义的重复与缓慢相位偏移 → 无限循环的 BGM</p><div class="foot"><a class="chip" href="#reich">无限循环</a></div></article><article class="sty done"><h4>阿沃·帕特</h4><p class="works">《镜中镜》</p><p class="how">极简的“钟鸣”技法 → 冥想、遗迹</p><div class="foot"><a class="chip" href="#part">遗迹冥想</a></div></article></div></div><div class="sgroup"><div class="sgroup-h"><h3>游戏与影视</h3><span class="line">古典线</span><span class="right">只学写法</span></div><div class="scards"><article class="sty done"><h4>8 位机芯片音乐</h4><p class="works">红白机时代的《超级马里奥兄弟》《恶魔城》</p><p class="how">两个方波、一个三角波加噪声，只靠两三条旋律线撑起整首 → 复古关卡、Boss 战</p><div class="foot"><a class="chip" href="#boss-chip">Boss 战创意曲</a></div></article><article class="sty done"><h4>近藤浩治</h4><p class="works">《超级马里奥》、《塞尔达传说》</p><p class="how">短小好记、可无限循环的主题 → 平台跳跃、野外探索</p><div class="foot"><a class="chip" href="#kondo">蘑菇平原</a></div></article><article class="sty done"><h4>植松伸夫</h4><p class="works">《最终幻想》系列</p><p class="how">管弦乐与摇滚结合的战斗曲 → JRPG 战斗、城镇</p><div class="foot"><a class="chip" href="#uematsu">遭遇战</a></div></article><article class="sty done"><h4>下村阳子</h4><p class="works">《王国之心》</p><p class="how">钢琴为主的抒情主题 → 主菜单、回忆</p><div class="foot"><a class="chip" href="#shimomura">主菜单回忆</a></div></article><article class="sty done"><h4>杉山浩一</h4><p class="works">《勇者斗恶龙》</p><p class="how">古典交响写法的序曲与进行曲 → 王城、冒险启程</p><div class="foot"><a class="chip" href="#sugiyama">王城序曲</a></div></article><article class="sty done"><h4>久石让</h4><p class="works">宫崎骏电影（《千与千寻》《龙猫》）</p><p class="how">简单的钢琴旋律配弦乐 → 温暖的日常、飞行</p><div class="foot"><a class="chip" href="#hisaishi">温暖日常</a></div></article><article class="sty done"><h4>汉斯·季默</h4><p class="works">《星际穿越》、《盗梦空间》</p><p class="how">管风琴长音与持续的节奏脉冲 → 宇宙、史诗时刻</p><div class="foot"><a class="chip" href="#zimmer">穿越虫洞</a></div></article><article class="sty done"><h4>陈致逸</h4><p class="works">《原神》</p><p class="how">管弦乐融入各地民族乐器 → 开放世界各地区</p><div class="foot"><a class="chip" href="#chenzhiyi">山间港城</a></div></article></div></div><div class="sgroup"><div class="sgroup-h"><h3>Trance</h3><span class="line">电子线</span><span class="right">只学曲风</span></div><div class="scards"><article class="sty done"><h4>Armin van Buuren · Tiësto</h4><span class="rank">DJ Mag 2026 第 7、第 22</span><p class="works">《This Is What It Feels Like》、《Adagio for Strings》</p><p class="how">138 BPM，十六分音符琶音，超级锯齿主旋律，长 build-up → 飞行、宇宙航行</p><div class="foot"><a class="chip" href="#trance">星门跃迁</a></div></article></div></div><div class="sgroup"><div class="sgroup-h"><h3>旋律电音</h3><span class="line">电子线</span><span class="right">只学曲风</span></div><div class="scards"><article class="sty done"><h4>Alan Walker · Marshmello</h4><span class="rank">DJ Mag 2026 第 32、第 53</span><p class="works">《Faded》、《Alone》</p><p class="how">拨弦主旋律，四和弦循环，简单好记 → 手游主界面</p><div class="foot"><a class="chip" href="#walker">霓虹主界面</a></div></article></div></div><div class="sgroup"><div class="sgroup-h"><h3>Melodic Techno</h3><span class="line">电子线</span><span class="right">只学曲风</span></div><div class="scards"><article class="sty done"><h4>Anyma</h4><span class="rank">DJ Mag 2026 第 3</span><p class="works">《Hypnotized》（与 Ellie Goulding 合作）</p><p class="how">三音循环琶音，暗色铺底，长音主旋律 → 科幻、赛博、巨型建筑</p><div class="foot"><a class="chip" href="#techno">轨道城核心</a></div></article></div></div><div class="sgroup"><div class="sgroup-h"><h3>其他曲风</h3><span class="line">电子线</span><span class="right">只学曲风</span></div><div class="scards"><article class="sty done"><h4>David Guetta · Martin Garrix · Timmy Trumpet</h4><span class="rank">DJ Mag 2026 第 1、2、8</span><p class="works">《Titanium》、《Animals》、《Freaks》</p><p class="how">Big Room：大音量的底鼓与短促的主音“drop” → 竞技开场、结算界面</p><div class="foot"><a class="chip" href="#bigroom">竞技开场</a></div></article><article class="sty done"><h4>Charlotte de Witte</h4><span class="rank">DJ Mag 2026 第 6，No.1 Techno DJ</span><p class="works">以 DJ 现场为主</p><p class="how">Techno：冷硬的四拍底鼓、工业质感 → 地下城、工业区</p><div class="foot"><a class="chip" href="#warehouse">地下工业区</a></div></article><article class="sty done"><h4>FISHER</h4><span class="rank">DJ Mag 2026 第 9</span><p class="works">《Losing It》</p><p class="how">Tech House：律动重复，适合长时间循环 → 菜单、大厅</p><div class="foot"><a class="chip" href="#techhouse">大厅菜单</a></div></article><article class="sty done"><h4>Calvin Harris · Peggy Gou · Black Coffee</h4><span class="rank">DJ Mag 2026 第 11、13、14</span><p class="works">《Summer》、《(It Goes Like) Nanana》、《Drive》</p><p class="how">House 与非洲浩室：明亮、轻松的律动 → 休闲经营、海岛、城市漫步</p><div class="foot"><a class="chip" href="#house">海岛经营</a></div></article><article class="sty done"><h4>Fred again..</h4><span class="rank">DJ Mag 2026 第 16</span><p class="works">《Marea (We've Lost Dancing)》、《Rumble》</p><p class="how">情绪化浩室 / UK Garage，人声采样讲故事 → 剧情过场、回忆</p><div class="foot"><a class="chip" href="#fredagain">剧情回忆</a></div></article><article class="sty done"><h4>Skrillex</h4><span class="rank">DJ Mag 2026 第 25</span><p class="works">《Scary Monsters and Nice Sprites》</p><p class="how">Dubstep：半速的重低音“wobble” → Boss 战、机甲</p><div class="foot"><a class="chip" href="#dubstep">机甲 Boss</a></div></article><article class="sty done"><h4>Eric Prydz</h4><span class="rank">DJ Mag 2026 第 62</span><p class="works">《Opus》</p><p class="how">Progressive House：漫长的渐进铺垫 → 开放世界</p><div class="foot"><a class="chip" href="#prydz">远景平原</a></div></article><article class="sty done"><h4>Avicii · Daft Punk</h4><span class="rank">已故 · 已解散</span><p class="works">《Levels》、《Wake Me Up》；《One More Time》、《创：战纪》原声</p><p class="how">民谣电音；法式浩室与电影配乐 → 开阔的冒险、赛博叙事</p><div class="foot"><a class="chip" href="#avicii">开阔冒险</a></div></article><article class="sty done"><h4>Porter Robinson · Madeon</h4><p class="works">《Shelter》、《Language》</p><p class="how">动漫感的明亮合成器与情绪化和声 → 日系 RPG、动漫风格作品</p><div class="foot"><a class="chip" href="#porter">天空之城</a></div></article></div></div></div>
   </section>
 </div>
 
@@ -637,7 +645,47 @@ a.length>D&&(D=a.length,p=0|1.25*D+7200,r=new Int8Array(p));a=u.lame_encode_buff
      Pieces. Every bar is one ABC string at L:1/16. Voices are listed top to bottom.
      role: melody | inner | bass decides which instrument a preset gives the voice.
      ===================================================================== */
-  function rest(n) { var o = []; for (var i = 0; i < n; i++) o.push("z16"); return o; }
+  /* Builders used by the piece data. A chord is written low to high without brackets, e.g. "C,EG". */
+  function rest(n, u) { var o = []; for (var i = 0; i < n; i++) o.push("z" + (u || 16)); return o; }
+  function T(c) { return c.match(/[_^=]?[A-Ga-g][,']*/g); }
+  function Ln(u) { return u === 1 ? "" : String(u); }
+  function rpt(s, n) { var o = []; for (var i = 0; i < n; i++) o.push(s); return o.join(" "); }
+  function times(list, n) { var o = []; for (var i = 0; i < n; i++) o = o.concat(list); return o; }
+  function walk(seq, u, total) { var o = []; for (var k = 0, i = 0; k < total; k += u, i++) o.push(seq[i % seq.length] + Ln(u)); return o.join(""); }
+  var F = {
+    pulse: function (c, u, total) { var o = []; for (var k = 0; k < total; k += u) o.push("[" + c + "]" + Ln(u)); return o.join(""); },
+    arp: function (c, u, total) { var t = T(c); return walk(t.concat(t.slice(1, -1).reverse()), u, total); },
+    up: function (c, u, total) { return walk(T(c), u, total); },
+    alberti: function (c, u, total) { var t = T(c); return walk([t[0], t[2], t[1], t[2]], u, total); },
+    noct: function (c, u, total) { var t = T(c); return walk([t[0], t[1], t[2], t[3] || t[2], t[2], t[1]], u, total); },
+    waltz: function (b, c) { return b + "4 [" + c + "]4 [" + c + "]4"; },
+    oom: function (b, f, c) { return b + "2z2[" + c + "]2z2" + f + "2z2[" + c + "]2z2"; },
+    oom2: function (b, f, c) { return b + "2[" + c + "]2" + f + "2[" + c + "]2"; },
+    stride: function (b, f, c) { return b + "4[" + c + "]4" + f + "4[" + c + "]4"; },
+    stab: function (c) { var x = "[" + c + "]"; return x + "3" + x + "3" + x + "2 " + x + "3" + x + "3" + x + "2"; },
+    octs: function (lo, hi, u, total) { return walk([lo, hi], u, total); },
+    off: function (n, total) { var o = []; for (var k = 0; k < total; k += 4) o.push("z2" + n + "2"); return o.join(" "); },
+    trem: function (a, b, total) { return walk([a, b], 1, total); }
+  };
+  function st(s) { return s.replace(/([_^=]?[A-Ga-g][,']*)/g, ".$1"); }
+  function up8(s) {
+    return s.replace(/([_^=]?)([A-Ga-g])([,']*)/g, function (_, a, n, m) {
+      if (m.indexOf(",") >= 0) return a + n + m.slice(1);
+      if (n === n.toUpperCase()) return a + n.toLowerCase() + m;
+      return a + n + m + "'";
+    });
+  }
+  function drumsFrom(rows, kind, extra) {
+    var beat = [], defs = {};
+    rows.forEach(function (r, b) {
+      var d = {}; d[kind] = [];
+      for (var i = 0; i < r.length; i++) if (r[i] === "x") d[kind].push(i * 2);
+      if (extra && extra[b]) for (var k in extra[b]) d[k] = extra[b][k];
+      defs["r" + b] = d; beat.push("r" + b);
+    });
+    return { beat: beat, defs: defs };
+  }
+  var RITE_ROWS = ["x...", "....", ".x..", "..x.", "x...", ".x.x", "....", "x.x.", "...x", ".x..", "x..x", "....", ".xx.", "x...", "..x.", "x.xx"];
   var PIECES = [
     {
       id: "inventio", isNew: false, group: "classical",
@@ -1133,7 +1181,1078 @@ a.length>D&&(D=a.length,p=0|1.25*D+7200,r=new Int8Array(p));a=u.lame_encode_buff
         { from: 9, to: 16, name: "主旋律", desc: "锯齿主音奏一个以长音为主的旋律钩子，第 15 小节起后半句往上走。铺底、琶音、低音都被底鼓压着“呼吸”。" }
       ]
     }
+,
+    {
+      id: "vivaldi", isNew: true, group: "classical",
+      title: "暴风雨追逐", latin: "Presto · tempo impetuoso", scene: "追逐 · 暴风雨关卡", style: "维瓦尔第",
+      meter: "4/4", key: "Gm", keyName: "g 小调", tempo: "vivace", loopFrom: 0,
+      lines: [4, 2, 1], drums: "4/4", drumsOn: false, ensemble: "strings", mix: [1.5, 0.7, 1, 1],
+      lede: "维瓦尔第《四季·夏》第三乐章的写法：弦乐齐奏同一个音的快速重复，紧接着整条音阶冲下来，下方是不停的八分音符和弦与八度低音，像暴雨一阵阵打过来。旋律是新写的。8 小节循环。",
+      voices: [
+        { name: "小提琴", clef: "treble", role: "melody", bars: [
+          "gggg gggg gfed cBAG", "^FGAB cdef gggg g4", "cccc cccc cBAG FEDC", "D^FAd ^fad'a ^fd^FA D4",
+          "gggg gggg bagf gfed", "eeee eeee gfed edcB", "cBAG FEDC D^FAd ^f4", "g2d2 B2d2 G4 z4"
+        ]},
+        { name: "中提琴", clef: "treble", role: "inner", bars: [
+          F.pulse("G,B,D", 2, 16), F.pulse("G,B,D", 2, 16), F.pulse("CEG", 2, 16), F.pulse("D^FA", 2, 16),
+          F.pulse("G,B,D", 2, 16), F.pulse("B,EG", 2, 16), F.pulse("CEG", 2, 8) + " " + F.pulse("D^FA", 2, 8), "[G,B,D]4 [G,B,D]4 [G,B,D]4 z4"
+        ]},
+        { name: "大提琴", clef: "bass", role: "bass", bars: [
+          F.octs("G,,", "G,", 2, 16), F.octs("G,,", "G,", 2, 16), F.octs("C,", "C", 2, 16), F.octs("D,", "D", 2, 16),
+          F.octs("G,,", "G,", 2, 16), F.octs("E,,", "E,", 2, 16), F.octs("C,", "C", 2, 8) + " " + F.octs("D,", "D", 2, 8), "G,,2G,2G,,2G,2 G,,4 z4"
+        ]}
+      ],
+      segments: [
+        { from: 1, to: 2, name: "雨点与狂风", desc: "同一个 G 连打八下，再顺音阶一口气冲下八度；第 2 小节从导音 ♯F 爬回来。" },
+        { from: 3, to: 4, name: "下属与属", desc: "同样的手法搬到 c 小调，再把 D 大三和弦从低到高扫一遍。" },
+        { from: 5, to: 8, name: "第二轮", desc: "重复音换到降 E 大调和弦上，最后经 D 大和弦落回 g 小调，接回开头。" }
+      ]
+    },
+    {
+      id: "handel", isNew: true, group: "classical",
+      title: "加冕大典", latin: "Maestoso", scene: "加冕 · 胜利 · 王城", style: "亨德尔",
+      meter: "4/4", key: "D", keyName: "D 大调", tempo: "moderato", loopFrom: 0,
+      lines: [4, 2, 1], drums: "4/4", drumsOn: true, kit: "soft", ensemble: "handel", presets: ["handel", "organ", "strings", "chip"],
+      mix: [2.0, 0.8, 1, 0.8],
+      beat: ["c", "a", "a", "b", "a", "a", "a", "e"],
+      beatDefs: { a: { kick: [0, 8] }, b: { kick: [0, 8], snare: [12, 14] }, c: { kick: [0, 8], crash: [0] }, e: { kick: [0, 4, 8], snare: [12, 13, 14, 15] } },
+      lede: "亨德尔《弥赛亚》“哈利路亚”式的宣叙：小号奏附点节奏的号角音型，弦乐整齐地按拍子砸和弦，定音鼓一拍一拍跟着。旋律是新写的。8 小节循环。",
+      voices: [
+        { name: "小号", clef: "treble", role: "melody", bars: [
+          "d4 f3e d4 A4", "c4 e3d c4 A4", "d2d2 f2a2 g4 B4", "A2B2 c2e2 d8",
+          "f4 f3f f4 d4", "g4 e4 c4 A4", "d2f2 a4 g2f2 e4", "d4 A4 d8"
+        ]},
+        { name: "弦乐", clef: "treble", role: "inner", bars: [
+          F.pulse("F,A,D", 4, 16), F.pulse("E,A,C", 4, 16), "[F,A,D]4[F,A,D]4 [G,B,D]4[G,B,D]4", "[E,A,C]4[E,A,C]4 [F,A,D]8",
+          F.pulse("F,B,D", 4, 16), "[G,B,E]8 [E,A,C]8", "[F,A,D]8 [G,B,D]4 [E,A,C]4", "[F,A,D]4[E,A,C]4 [F,A,D]8"
+        ]},
+        { name: "低音", clef: "bass", role: "bass", bars: [
+          "D,4 F,4 A,4 F,4", "A,,4 C,4 E,4 A,,4", "D,4 F,4 G,,4 B,,4", "A,,4 A,,4 D,8",
+          "B,,4 D,4 F,4 B,,4", "E,4 G,4 A,,4 C,4", "D,4 F,4 G,4 A,4", "D,4 A,,4 D,,8"
+        ]}
+      ],
+      segments: [
+        { from: 1, to: 2, name: "号角", desc: "长–附点–短–长的宣叙节奏，第一句在主和弦，第二句移到属和弦。" },
+        { from: 3, to: 4, name: "上行", desc: "旋律一路爬到高音 A，再经属和弦完满终止。" },
+        { from: 5, to: 8, name: "第二段", desc: "转到关系小调 b 小调，同音反复更有力，最后经 IV–V 回到 D 大调。" }
+      ]
+    },
+    {
+      id: "scarlatti", isNew: true, group: "classical",
+      title: "小酒馆解谜", latin: "Sonata · Allegro", scene: "小游戏 · 解谜", style: "斯卡拉蒂",
+      meter: "3/8", key: "Am", keyName: "a 小调", tempo: "allegro", loopFrom: 0,
+      lines: [8, 6, 4], drums: "3/8", drumsOn: false, ensemble: "harpsichord", presets: ["harpsichord", "guitar", "piano", "chip"],
+      mix: [1.6, 0.8],
+      lede: "斯卡拉蒂键盘奏鸣曲的写法：3/8 拍、单乐章、短小，左手像西班牙吉他一样在弱拍反复扫和弦。第 12 小节在 E 大和弦上放了还原 F，就是弗拉门戈那种弗里几亚终止。旋律是新写的。16 小节循环。",
+      voices: [
+        { name: "右手", clef: "treble", role: "melody", bars: [
+          "e2a2c'2", "bc'ba^ga", "^g2b2e'2", "d'c'b^ge2", "c'2a2e2", "fafdf2", "e^gbe'd'2", "c'2a4",
+          "c'2a2f2", "agfac'2", "b2^g2e2", "fedcB^G", "A2d2f2", "e2^g2b2", "aec'ae2", "^g2e4"
+        ]},
+        { name: "左手", clef: "bass", role: "bass", bars: (function () {
+          function g(b, c) { return b + "2 [" + c + "]2 [" + c + "]2"; }
+          var Am = g("A,,", "A,C"), E = g("E,,", "^G,B,"), Dm = g("D,,", "F,A,"), Fm = g("F,,", "A,C");
+          return [Am, Am, E, E, Am, Dm, E, Am, Fm, Fm, E, E, Dm, E, Am, E];
+        })() }
+      ],
+      segments: [
+        { name: "左手", desc: "第一拍是低音，后两拍反复扫同一个和弦，模仿吉他。" },
+        { from: 1, to: 8, name: "第一句", desc: "右手在 a 小调和 E 大调之间跳动，大跳和同音反复交替。" },
+        { from: 9, to: 12, name: "弗里几亚终止", desc: "F 大调和弦之后落到 E 大调，右手一路下滑经过还原 F，带出西班牙味。" },
+        { from: 13, to: 16, name: "收束", desc: "d 小调–E 大调–a 小调，停在 E 上接回开头。" }
+      ]
+    },
+    {
+      id: "haydn", isNew: true, group: "classical",
+      title: "机关大厅", latin: "Andante · con sorpresa", scene: "惊吓 · 机关触发", style: "海顿",
+      meter: "2/4", key: "C", keyName: "C 大调", tempo: "andante", loopFrom: 0,
+      lines: [8, 4, 2], drums: "2/4", drumsOn: true, kit: "soft", ensemble: "strings", mix: [1.4, 0.8, 1.2],
+      dyn: [0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.52, 0.52, 0.52, 0.52, 0.52, 0.52, 0.52, 1.6],
+      beat: ["n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "bang"],
+      beatDefs: { n: {}, bang: { kick: [0], crash: [0] } },
+      lede: "海顿《惊愕交响曲》的玩笑：一段轻轻的主题演奏两遍，第二遍更轻，正当人放松时，最后一小节全体加定音鼓突然一记强奏。适合机关、陷阱、惊吓。旋律是新写的。16 小节循环。",
+      voices: [
+        { name: "旋律", clef: "treble", role: "melody", bars: (function () {
+          var A = ["e2g2 e2c2", "d2f2 B2G2", "c2e2 g2c'2", "b4 z4", "a2c'2 a2f2", "g2e2 c2e2", "d2f2 B2d2"];
+          return A.concat(["c4 z4"], A, ["[cegc']4 z4"]);
+        })() },
+        { name: "伴奏", clef: "bass", role: "bass", bars: (function () {
+          var C = F.alberti("C,E,G,", 2, 8), G7 = F.alberti("B,,F,G,", 2, 8), G = F.alberti("B,,D,G,", 2, 8), Fc = F.alberti("A,,C,F,", 2, 8);
+          var A = [C, G7, C, G, Fc, C, G7];
+          return A.concat([C], A, ["[C,,C,]4 z4"]);
+        })() }
+      ],
+      segments: [
+        { from: 1, to: 8, name: "主题", desc: "弦乐断奏的简单主题，左手阿尔贝蒂低音。" },
+        { from: 9, to: 15, name: "更轻的重复", desc: "同样的主题再来一遍，音量再降一档。" },
+        { from: 16, to: 16, name: "惊吓", desc: "全体奏 C 大三和弦，定音鼓和镲一起砸下去，然后接回开头。" }
+      ]
+    },
+    {
+      id: "chopin", isNew: true, group: "classical",
+      title: "雨夜城镇", latin: "Notturno · Andante", scene: "夜晚城镇 · 回忆", style: "肖邦",
+      meter: "6/8", key: "Eb", keyName: "♭E 大调", tempo: "andante", loopFrom: 0,
+      lines: [4, 2, 1], drums: "6/8", drumsOn: false, ensemble: "piano", mix: [1.6, 0.8],
+      lede: "肖邦降 E 大调夜曲的写法：左手大跨度地上下分解和弦，右手像唱歌一样慢慢走，偶尔用一个半音经过音。旋律是新写的。8 小节循环。",
+      voices: [
+        { name: "右手", clef: "treble", role: "melody", bars: [
+          "g6 f2 e2 f2", "g4 c'2 b6", "a4 g2 f2 e2 c2", "d6 B2 c2 d2",
+          "e6 g2 b2 e'2", "e'4 c'2 a4 f2", "g4 f2 =e2 f2 d2", "e8 z4"
+        ]},
+        { name: "左手", clef: "bass", role: "bass", bars: [
+          F.noct("E,,B,,E,G,", 2, 12), F.noct("C,,G,,C,E,", 2, 12), F.noct("A,,E,A,C", 2, 12), F.noct("B,,F,A,D", 2, 12),
+          F.noct("E,,B,,E,G,", 2, 12), F.noct("A,,E,A,C", 2, 12), "B,,2E,2G,2 B,,2F,2A,2", F.noct("E,,B,,E,G,", 2, 12)
+        ]}
+      ],
+      segments: [
+        { name: "左手", desc: "每小节六个八分音符：低音、五度、八度、十度再折回来，手要张得很开。" },
+        { from: 1, to: 4, name: "第一句", desc: "♭E–c–♭A–♭B7，旋律从 G 起，在 c 小调上升到高音 C。" },
+        { from: 5, to: 8, name: "第二句", desc: "旋律冲到高音 ♭E，再经过半音 E 慢慢落回主音。" }
+      ]
+    },
+    {
+      id: "liszt", isNew: true, group: "classical",
+      title: "魔法学院", latin: "Allegretto · campanella", scene: "魔法学院 · Boss 二阶段", style: "李斯特",
+      meter: "2/4", key: "Am", keyName: "a 小调", tempo: "allegro", loopFrom: 0,
+      lines: [4, 2, 1], drums: "2/4", drumsOn: false, ensemble: "piano", presets: ["piano", "celesta", "harpsichord", "chip"], mix: [1.4, 0.8],
+      lede: "李斯特《钟》的写法：右手每隔一个音就跳回高音区敲同一个“钟声”，旋律藏在中间的那些音里，需要很快的大跳。旋律是新写的。16 小节循环。",
+      voices: [
+        { name: "右手", clef: "treble", role: "melody", bars: (function () {
+          function bell(t, ns) { return ns.map(function (n) { return n + t; }).join(""); }
+          return [
+            bell("e'", ["a", "c'", "b", "a"]), bell("e'", ["^g", "a", "b", "c'"]), bell("e'", ["b", "^g", "e", "^g"]), bell("e'", ["b", "d'", "c'", "b"]),
+            bell("e'", ["c'", "a", "e", "a"]), bell("e'", ["c'", "b", "a", "^g"]), bell("f'", ["d'", "a", "f", "a"]), bell("e'", ["^g", "b", "d'", "b"]),
+            bell("f'", ["c'", "a", "f", "a"]), bell("f'", ["c'", "d'", "c'", "a"]), bell("e'", ["g", "c'", "e", "g"]), bell("e'", ["b", "^g", "e", "^g"]),
+            bell("e'", ["a", "c'", "b", "a"]), bell("f'", ["d'", "a", "f", "a"]), bell("e'", ["^g", "b", "d'", "b"]), "aecA e4"
+          ];
+        })() },
+        { name: "左手", clef: "bass", role: "bass", bars: (function () {
+          function g(b, c) { return b + "2[" + c + "]2 z2[" + c + "]2"; }
+          var Am = g("A,,", "A,CE"), E = g("E,,", "^G,B,E"), Dm = g("D,,", "A,DF"), Fm = g("F,,", "A,CF"), C = g("C,", "G,CE");
+          return [Am, Am, E, E, Am, Am, Dm, E, Fm, Fm, C, E, Am, Dm, E, Am];
+        })() }
+      ],
+      segments: [
+        { name: "钟声", desc: "右手的十六分音符一半是旋律，一半是高音区反复敲的同一个音（E 或 F）。" },
+        { from: 1, to: 8, name: "第一句", desc: "a 小调与 E 大调之间来回，第 7 小节换到 d 小调，钟声跟着升到 F。" },
+        { from: 9, to: 16, name: "第二句", desc: "经 F 大调和 C 大调绕一圈，最后一小节收回中音区，接回开头。" }
+      ]
+    },
+    {
+      id: "mendelssohn", isNew: true, group: "classical",
+      title: "精灵森林", latin: "Allegro di molto · leggiero", scene: "精灵森林", style: "门德尔松",
+      meter: "2/4", key: "Em", keyName: "e 小调", tempo: "allegro", loopFrom: 0,
+      lines: [4, 2, 1], drums: "2/4", drumsOn: false, ensemble: "fairy", presets: ["fairy", "strings", "celesta", "chip"], mix: [1.9, 0.8, 1, 1],
+      lede: "门德尔松《仲夏夜之梦》序曲的写法：很轻很快的断奏十六分音符，像精灵在树叶间跳；下方只用拨弦轻轻点和弦。旋律是新写的。16 小节循环。",
+      voices: [
+        { name: "长笛", clef: "treble", role: "melody", bars: [
+          "BeBe gfeB", "BeBe gbag", "f^dBd fbaf", "^defa b4",
+          "BeBe gfeB", "BeBe gbe'b", "c'bag ac'e'c'", "baf^d B4",
+          "egc'g egc'g", "e'c'ge c'4", "dgbg dgbg", "afdA f4",
+          "BeBe gbag", "c'eae c'e'c'a", "baf^d fbaf", "e2B2 E4"
+        ].map(st) },
+        { name: "拨弦", clef: "treble", role: "inner", bars: (function () {
+          function o(c) { return "z2.[" + c + "]2 z2.[" + c + "]2"; }
+          var Em = o("G,B,E"), B7 = o("A,B,^D"), Am = o("A,CE"), C = o("G,CE"), G = o("G,B,D"), D = o("F,A,D");
+          return [Em, Em, B7, B7, Em, Em, Am, B7, C, C, G, D, Em, Am, B7, Em];
+        })() },
+        { name: "低音", clef: "bass", role: "bass", bars: (function () {
+          var Em = ".E,2z2 .B,,2z2", B7 = ".B,,2z2 .F,2z2", Am = ".A,,2z2 .E,2z2", C = ".C,2z2 .G,,2z2", G = ".G,,2z2 .D,2z2", D = ".D,2z2 .A,,2z2";
+          return [Em, Em, B7, B7, Em, Em, Am, B7, C, C, G, D, Em, Am, B7, Em];
+        })() }
+      ],
+      segments: [
+        { name: "轻盈", desc: "每个音都断开，音量很小，拨弦只在弱拍上点一下。" },
+        { from: 1, to: 8, name: "第一句", desc: "e 小调里绕着 B 和 E 打转，第 3–4 小节转到属七和弦 B7。" },
+        { from: 9, to: 12, name: "转亮", desc: "C 大调–G 大调–D 大调，旋律升到高音区。" },
+        { from: 13, to: 16, name: "回到 e 小调", desc: "主题再现，最后一小节落回低音 E。" }
+      ]
+    },
+    {
+      id: "brahms", isNew: true, group: "classical",
+      title: "集市酒馆", latin: "Allegro · alla zingarese", scene: "集市 · 酒馆", style: "勃拉姆斯",
+      meter: "2/4", key: "F#m", keyName: "♯f 小调", tempo: "allegro", loopFrom: 0,
+      lines: [4, 2, 1], drums: "2/4", drumsOn: false, ensemble: "gypsy", presets: ["gypsy", "strings", "piano", "chip"], mix: [2.2, 0.7],
+      lede: "勃拉姆斯匈牙利舞曲的写法：吉普赛小提琴式的旋律，附点、切分和和声小调的增二度（♯E–D），伴奏是“低音–和弦”交替的二拍子。旋律是新写的。16 小节循环。",
+      voices: [
+        { name: "小提琴", clef: "treble", role: "melody", bars: [
+          "F2c4BA", "B2A2 F4", "^E2G2 B2d2", "c2A2 F4",
+          "f2c'4ba", "b2a2 f2d2", "^e2g2 b2^e2", "f4 z4",
+          "e3e e2c2", "a3g a2e2", "g3f e2B2", "c4 A4",
+          "d3e f2a2", "g3^e g2b2", "a2f2 c2A2", "F4 z4"
+        ]},
+        { name: "伴奏", clef: "bass", role: "bass", bars: (function () {
+          var Fm = F.oom2("F,,", "C,", "A,C"), C7 = F.oom2("C,", "G,,", "^E,B,"), Bm = F.oom2("B,,", "F,", "B,D"),
+              A = F.oom2("A,,", "E,", "CE"), E = F.oom2("E,,", "B,,", "B,E"), D = F.oom2("D,", "A,,", "A,D");
+          return [Fm, Fm, C7, Fm, Fm, Bm, C7, Fm, A, A, E, A, D, C7, Fm, Fm];
+        })() }
+      ],
+      segments: [
+        { from: 1, to: 8, name: "♯f 小调", desc: "旋律从低音 ♯F 跳上去再慢慢落回；属和弦 ♯C7 里的 ♯E 与 D 构成增二度，这是吉普赛音阶的味道。" },
+        { from: 9, to: 12, name: "A 大调", desc: "转到关系大调，换成附点的同音反复。" },
+        { from: 13, to: 16, name: "回归", desc: "经 D 大调和 ♯C7 回到 ♯f 小调，接回开头。" }
+      ]
+    },
+    {
+      id: "tchaikovsky", isNew: true, group: "classical",
+      title: "八音盒商店", latin: "Andante non troppo", scene: "八音盒 · 商店 · 圣诞活动", style: "柴可夫斯基",
+      meter: "2/4", key: "Em", keyName: "e 小调", tempo: "andante", loopFrom: 0,
+      lines: [4, 2, 1], drums: "2/4", drumsOn: false, ensemble: "celesta", presets: ["celesta", "musicbox", "strings", "chip"], mix: [1.4, 0.7, 1],
+      lede: "柴可夫斯基《胡桃夹子》“糖梅仙子之舞”的写法：钢片琴奏一个音一个音断开的旋律，拨弦轻轻垫着，安静、有点神秘。旋律是新写的。16 小节循环。",
+      voices: [
+        { name: "钢片琴", clef: "treble", role: "melody", bars: [
+          "ezgzfzez", "Bzezg2z2", "fz^dzfzaz", "g2f2^d2z2",
+          "ezgzbze'z", "d'zc'zb2z2", "azc'ze'2c'2", "bzazfz^dz",
+          "ezgzfzez", "Bzezg2b2", "c'zbzazgz", "e2g2c'2z2",
+          "azc'zbzaz", "^dzfzazbz", "e2B2G2B2", "E4 z4"
+        ]},
+        { name: "拨弦和弦", clef: "treble", role: "inner", bars: (function () {
+          function o(c) { return "z2[" + c + "]2 z2[" + c + "]2"; }
+          var Em = o("G,B,"), B7 = o("A,^D"), Am = o("A,C"), C = o("G,C");
+          return [Em, Em, B7, B7, Em, Em, Am, B7, Em, Em, C, C, Am, B7, Em, Em];
+        })() },
+        { name: "低音", clef: "bass", role: "bass", bars: (function () {
+          var Em = "E,2z2 B,,2z2", B7 = "B,,2z2 F,2z2", Am = "A,,2z2 E,2z2", C = "C,2z2 G,,2z2";
+          return [Em, Em, B7, B7, Em, Em, Am, B7, Em, Em, C, C, Am, B7, Em, Em];
+        })() }
+      ],
+      segments: [
+        { from: 1, to: 8, name: "第一句", desc: "每个音后面都跟一个十六分休止，钢片琴的声音像糖粒一颗颗落下。" },
+        { from: 9, to: 16, name: "第二句", desc: "经 C 大调和 a 小调转一圈，再回到 e 小调，接回开头。" }
+      ]
+    },
+    {
+      id: "mussorgsky", isNew: true, group: "classical",
+      title: "大地图漫步", latin: "Promenade · Allegro giusto", scene: "大地图移动", style: "穆索尔斯基",
+      meter: "5/4", key: "Bb", keyName: "♭B 大调", tempo: "moderato", loopFrom: 0,
+      lines: [2, 2, 1], drums: "5/4", drumsOn: false, ensemble: "brasschoir", presets: ["brasschoir", "piano", "organ", "chip"], mix: [2.2, 0.6, 1],
+      lede: "穆索尔斯基《图画展览会》“漫步”主题的写法：5/4 拍，五声音阶，先由小号独自奏出一句，再由整个铜管组用块状和弦齐声回答，像在画廊里一步步走。旋律是新写的。8 小节循环。",
+      voices: [
+        { name: "小号", clef: "treble", role: "melody", bars: [
+          "F4 G4 B4 c2d2 B4", "c4 d4 f4 d2c2 B4", "F4 G4 B4 c2d2 f4", "g4 f4 d4 c4 B4",
+          "d4 c4 B4 G2F2 G4", "B4 c4 d4 c2B2 G4", "F4 G4 B4 c4 d4", "B12 z8"
+        ]},
+        { name: "圆号", clef: "treble", role: "inner", bars: [
+          "z20", "z20", "[D,F,B,]12 [F,A,C]8", "[G,B,D]8 [F,A,C]8 [D,F,B,]4",
+          "[D,F,B,]12 [D,G,B,]8", "[E,G,B,]8 [D,F,B,]8 [D,G,B,]4", "[D,F,B,]12 [F,A,C]8", "[D,F,B,]12 z8"
+        ]},
+        { name: "低音", clef: "bass", role: "bass", bars: [
+          "z20", "z20", "B,,12 F,,8", "G,,8 F,,8 B,,4", "B,,12 G,,8", "E,,8 B,,8 G,,4", "B,,12 F,,8", "B,,12 z8"
+        ]}
+      ],
+      segments: [
+        { from: 1, to: 2, name: "独奏", desc: "小号独自奏出主题，只用五声音阶里的音，每小节五拍。" },
+        { from: 3, to: 8, name: "齐奏", desc: "铜管组加入，旋律底下的每一步都配上块状和弦，像合唱团在回答。" }
+      ]
+    },
+    {
+      id: "rimsky", isNew: true, group: "classical",
+      title: "限时飞行", latin: "Vivace · perpetuum mobile", scene: "限时关卡", style: "里姆斯基-科萨科夫",
+      meter: "2/4", key: "Am", keyName: "a 小调", tempo: "vivace", loopFrom: 0,
+      lines: [4, 2, 1], drums: "2/4", drumsOn: false, ensemble: "strings", mix: [1.5, 0.8],
+      lede: "里姆斯基-科萨科夫《野蜂飞舞》的写法：一刻不停的半音阶十六分音符，在几个音之间来回盘旋，左手只点和弦。适合倒计时、限时关卡。旋律是新写的。16 小节循环。",
+      voices: [
+        { name: "小提琴", clef: "treble", role: "melody", bars: [
+          "a^g=g^f =f^f=g^g", "a^ab^a =a^g=g^f", "e^d=d^c =c^c=d^d", "e=f^fg ^g=g^f=f",
+          "a^g=g^f =f^f=g^g", "a^ab=c' ^c'=d'^d'e'", "f'e'_e'd' _d'c'b_b", "a^g=g^f =f=e^d=d",
+          "A^G=G^F =F^F=G^G", "A^AB^A =A^G=G^F", "d^c=c=B ^A=A^G=G", "F^F=GA ^A=Bc^c",
+          "e^d=d^c =c^c=d^d", "e=f^fg ^g=g^f=f", "e^dea c'ac'e'", "e'2a2 A4"
+        ]},
+        { name: "伴奏", clef: "bass", role: "bass", bars: (function () {
+          var Am = F.oom2("A,,", "E,", "A,CE"), E = F.oom2("E,,", "B,,", "^G,B,D"), Dm = F.oom2("D,,", "A,,", "A,DF");
+          return [Am, Am, E, E, Am, Am, Dm, E, Am, Am, Dm, Dm, Am, E, Am, Am];
+        })() }
+      ],
+      segments: [
+        { name: "半音阶", desc: "旋律几乎只走半音，在三四个音的范围里来回盘旋，像蜜蜂嗡嗡打转。" },
+        { from: 1, to: 8, name: "高音区", desc: "先在 A 附近盘旋，第 6 小节一路半音爬到高音 E，再滑下来。" },
+        { from: 9, to: 16, name: "低八度", desc: "同样的盘旋移到低八度，最后用一个 a 小调琶音收住。" }
+      ]
+    },
+    {
+      id: "dvorak", isNew: true, group: "classical",
+      title: "启程", latin: "Largo", scene: "启程 · 开拓", style: "德沃夏克",
+      meter: "4/4", key: "Db", keyName: "♭D 大调", tempo: "adagio", loopFrom: 0,
+      lines: [4, 2, 1], drums: "4/4", drumsOn: false, ensemble: "dvorak", presets: ["dvorak", "strings", "piano", "organ"], mix: [1.4, 0.8, 1],
+      lede: "德沃夏克《自新大陆》第二乐章的写法：只用五声音阶的思乡旋律，由圆号般温暖的音色慢慢唱出，弦乐垫着长和弦。旋律是新写的。8 小节循环。",
+      voices: [
+        { name: "圆号", clef: "treble", role: "melody", bars: [
+          "F6 E2 D4 F4", "A6 B2 A8", "B6 d2 B4 A4", "F6 E2 E8",
+          "F6 E2 D4 F4", "A6 B2 d8", "e6 d2 B4 A4", "D12 z4"
+        ]},
+        { name: "弦乐", clef: "treble", role: "inner", bars: [
+          "[F,A,D]16", "[G,B,D]8 [F,A,D]8", "[F,A,D]16", "[E,A,C]16",
+          "[F,A,D]16", "[F,B,D]16", "[G,B,D]8 [E,A,C]8", "[F,A,D]16"
+        ]},
+        { name: "低音", clef: "bass", role: "bass", bars: [
+          "D,,16", "G,,8 D,,8", "D,,16", "A,,16", "D,,16", "B,,16", "G,,8 A,,8", "D,,16"
+        ]}
+      ],
+      segments: [
+        { name: "五声音阶", desc: "旋律只用 ♭D、♭E、F、♭A、♭B 五个音，没有半音，听起来像民歌。" },
+        { from: 1, to: 4, name: "第一句", desc: "从 F 慢慢下到主音，再升到 ♭B，停在属和弦上。" },
+        { from: 5, to: 8, name: "第二句", desc: "开头一样，后半句升到高音 ♭E，最后落回低音 ♭D。" }
+      ]
+    },
+    {
+      id: "strauss", isNew: true, group: "classical",
+      title: "贵族舞会", latin: "Tempo di valse", scene: "舞会 · 贵族", style: "小约翰·施特劳斯",
+      meter: "3/4", key: "D", keyName: "D 大调", tempo: "vivace", loopFrom: 0,
+      lines: [8, 4, 4], drums: "3/4", drumsOn: false, ensemble: "strings", mix: [2, 0.7],
+      lede: "小约翰·施特劳斯维也纳圆舞曲的写法：左手“嘭-恰-恰”，第一拍低音、后两拍和弦；旋律以长音为主，一小节一个大步。旋律是新写的。16 小节循环。",
+      voices: [
+        { name: "旋律", clef: "treble", role: "melody", bars: [
+          "F4 A4 d4", "f8 e4", "g8 e4", "c8 A4", "E4 G4 c4", "g8 f4", "f8 d4", "A8 z4",
+          "F4 A4 d4", "f8 a4", "b8 g4", "d8 B4", "A4 d4 f4", "e8 g4", "c8 e4", "d8 z4"
+        ]},
+        { name: "伴奏", clef: "bass", role: "bass", bars: (function () {
+          var D = F.waltz("D,,", "F,A,D"), A7 = F.waltz("A,,", "E,G,C"), G = F.waltz("G,,", "G,B,D");
+          return [D, D, A7, A7, A7, A7, D, D, D, D, G, G, D, A7, A7, D];
+        })() }
+      ],
+      segments: [
+        { from: 1, to: 8, name: "第一段", desc: "旋律从 D 大三和弦分解上行，然后在属七和弦上停留四小节。" },
+        { from: 9, to: 16, name: "第二段", desc: "转到下属 G 大调，再经属七和弦回到主和弦。" }
+      ]
+    },
+    {
+      id: "rossini", isNew: true, group: "classical",
+      title: "骑乘竞速", latin: "Allegro vivace · galop", scene: "竞速 · 骑乘", style: "罗西尼",
+      meter: "2/4", key: "E", keyName: "E 大调", tempo: "vivace", loopFrom: 0,
+      lines: [4, 2, 1], drums: "2/4", drumsOn: true, kit: "soft", ensemble: "handel", presets: ["handel", "strings", "piano", "chip"], mix: [2, 0.75, 1.3],
+      lede: "罗西尼《威廉·退尔》序曲终曲的写法：“嗒嗒–嗒”的马蹄节奏，小号在同一个音上连打，弦乐和小军鼓一起往前赶。旋律是新写的。16 小节循环。",
+      voices: [
+        { name: "小号", clef: "treble", role: "melody", bars: [
+          "BBB2 BBe2", "BBB2 e2g2", "BBB2 BBd2", "f2d2 B4", "BBB2 BBe2", "BBB2 e2g2", "aaa2 c'2a2", "g2f2 e2d2",
+          "eee2 eeb2", "eee2 b2e'2", "fff2 ffa2", "b2a2 f2d2", "ggg2 ggb2", "aaa2 c'2e'2", "d'2b2 f2d2", "e2B2 E4"
+        ]},
+        { name: "伴奏", clef: "bass", role: "bass", bars: (function () {
+          var E = F.oom2("E,,", "B,,", "G,B,E"), B7 = F.oom2("B,,", "F,", "F,A,D"), A = F.oom2("A,,", "E,", "A,CE");
+          return [E, E, B7, B7, E, E, A, B7, E, E, B7, B7, E, A, B7, E];
+        })() }
+      ],
+      segments: [
+        { name: "马蹄", desc: "两个十六分音符加一个八分音符，一拍一组，同一个音连打，小军鼓跟着同样的节奏。" },
+        { from: 1, to: 8, name: "第一段", desc: "在主音 B 上连打，经 B7 和 A 大调绕回来。" },
+        { from: 9, to: 16, name: "高八度", desc: "连打移到高音 E，最后一路下行接回开头。" }
+      ],
+      beat: times(["g"], 15).concat(["f"]),
+      beatDefs: { g: { snare: [0, 1, 2, 4, 5, 6] }, f: { snare: [0, 1, 2, 3, 4], kick: [0], crash: [0] } }
+    },
+    {
+      id: "bizet", isNew: true, group: "classical",
+      title: "赌场", latin: "Habanera · Allegretto quasi andantino", scene: "狡猾的反派 · 赌场", style: "比才",
+      meter: "2/4", key: "Dm", keyName: "d 小调", tempo: "andante", loopFrom: 0,
+      lines: [4, 2, 1], drums: "2/4", drumsOn: false, ensemble: "gypsy", presets: ["gypsy", "strings", "guitar", "piano"], mix: [2.2, 0.6, 0.9],
+      lede: "比才《卡门》哈巴涅拉的写法：低音反复“长–短–短–短”的哈巴涅拉节奏，旋律一个半音一个半音往下滑，懒洋洋又带着危险。旋律是新写的。16 小节循环。",
+      voices: [
+        { name: "旋律", clef: "treble", role: "melody", bars: [
+          "d3^c =c2B2", "A3_A G2F2", "E3F G2A2", "B2A2 G2E2", "^c3d e2g2", "f2e2 d2^c2", "d3^c d2A2", "F4 z4",
+          "a3^g =g2f2", "f3e d2A2", "B3c d2g2", "f2e2 d2B2", "^c3d e2a2", "g2f2 e2^c2", "d3e f2a2", "e4 ^c4"
+        ]},
+        { name: "和弦", clef: "treble", role: "inner", bars: (function () {
+          function h(c) { return "[" + c + "]3[" + c + "] z2[" + c + "]2"; }
+          var Dm = h("F,A,D"), A7 = h("E,G,^C"), Gm = h("G,B,D");
+          return [Dm, Dm, A7, A7, A7, A7, Dm, Dm, Dm, Dm, Gm, Gm, A7, A7, Dm, A7];
+        })() },
+        { name: "低音", clef: "bass", role: "bass", bars: (function () {
+          function h(b, f) { return b + "3" + b + " " + f + "2" + b + "2"; }
+          var Dm = h("D,,", "A,,"), A7 = h("A,,", "E,"), Gm = h("G,,", "D,");
+          return [Dm, Dm, A7, A7, A7, A7, Dm, Dm, Dm, Dm, Gm, Gm, A7, A7, Dm, A7];
+        })() }
+      ],
+      segments: [
+        { name: "哈巴涅拉", desc: "低音每小节“附点八分–十六分–八分–八分”，和弦也按同样的节奏点。" },
+        { from: 1, to: 8, name: "下滑", desc: "旋律从 D 开始一个半音一个半音往下滑到 F，再在 A7 上转一圈。" },
+        { from: 9, to: 16, name: "第二句", desc: "从高音 A 再滑一次，经 g 小调回到 d 小调，停在属和弦上接回开头。" }
+      ]
+    },
+    {
+      id: "wagner", isNew: true, group: "classical",
+      title: "出征空战", latin: "Lebhaft · 6/8", scene: "空战 · 出征", style: "瓦格纳",
+      meter: "6/8", key: "Bm", keyName: "b 小调", tempo: "allegro", loopFrom: 0,
+      lines: [4, 2, 1], drums: "6/8", drumsOn: true, kit: "soft", ensemble: "handel", presets: ["handel", "brasschoir", "strings", "chip"], mix: [2.0, 0.9, 1, 0.9],
+      beat: ["c", "a", "a", "a", "c", "a", "a", "e"],
+      beatDefs: { a: { kick: [0, 6] }, c: { kick: [0, 6], crash: [0] }, e: { kick: [0, 3, 6], snare: [8, 9, 10, 11] } },
+      lede: "瓦格纳《女武神的骑行》的写法：铜管奏“附点–短–长”的冲锋节奏，一路往上跳；弦乐在底下飞快地来回颤动，定音鼓按附点四分音符敲。旋律是新写的。8 小节循环。",
+      voices: [
+        { name: "铜管", clef: "treble", role: "melody", bars: [
+          "F3B d8", "B3d f8", "d3f b8", "f3^a c'8", "b3f d3B f4", "e3B G3B e4", "f3^a c'3^a f4", "b8 z4"
+        ]},
+        { name: "弦乐", clef: "treble", role: "inner", bars: [
+          F.trem("B,", "D", 12), F.trem("B,", "D", 12), F.trem("B,", "D", 12), F.trem("^A,", "C", 12),
+          F.trem("B,", "D", 12), F.trem("B,", "E", 12), F.trem("^A,", "C", 12), F.trem("B,", "D", 12)
+        ]},
+        { name: "低音", clef: "bass", role: "bass", bars: [
+          "B,,6 B,,6", "B,,6 B,,6", "G,,6 G,,6", "F,,6 F,,6", "B,,6 B,,6", "E,,6 E,,6", "F,,6 F,,6", "B,,6 z6"
+        ]}
+      ],
+      segments: [
+        { name: "冲锋节奏", desc: "附点八分音符–十六分音符–附点四分音符，一个短促的前冲接一个长音，每小节往上跳一次。" },
+        { from: 1, to: 4, name: "上冲", desc: "b 小调分解和弦一路往上，经 G 大调到属和弦 ♯F 大调。" },
+        { from: 5, to: 8, name: "回落", desc: "转到 e 小调再回到 ♯F 大调，最后落回 b 小调。" }
+      ]
+    },
+    {
+      id: "debussy", isNew: true, group: "classical",
+      title: "水下遗迹", latin: "Lent · dans une brume doucement sonore", scene: "水域 · 梦境 · 记忆碎片", style: "德彪西",
+      meter: "4/4", key: "C", keyName: "全音阶 / 五声音阶", tempo: "adagio", loopFrom: 0, fx: "hall",
+      lines: [4, 2, 1], drums: "4/4", drumsOn: false, ensemble: "impression", presets: ["impression", "piano", "strings", "celesta"], mix: [1.4, 0.7, 0.9],
+      lede: "德彪西的写法：前半段用全音阶（每两个音都相隔一个全音，没有主音的引力），后半段用五声音阶的平行和弦，下方是踏板一直踩着的长低音，听起来朦胧、漂浮。默认加了大厅混响。8 小节循环。",
+      voices: [
+        { name: "长笛", clef: "treble", role: "melody", bars: [
+          "e4 ^f4 ^g4 ^f4", "e8 d8", "c4 d4 e4 ^f4", "^g12 z4",
+          "[eg]4 [df]4 [ce]4 [df]4", "[ce]4 [df]4 [eg]4 [fa]4", "[ga]8 [eg]8", "[ce]12 z4"
+        ]},
+        { name: "竖琴", clef: "bass", role: "inner", bars: [
+          F.arp("C,E,^G,C", 2, 16), F.arp("D,^F,^A,D", 2, 16), F.arp("C,E,^G,C", 2, 16), F.arp("D,^F,^A,D", 2, 16),
+          F.arp("C,G,DA", 2, 16), F.arp("C,G,DA", 2, 16), F.arp("F,CG", 2, 16), F.arp("C,G,DA", 2, 16)
+        ]},
+        { name: "低音", clef: "bass", role: "bass", bars: ["C,,16", "D,,16", "C,,16", "E,,16", "C,,16", "C,,16", "F,,16", "C,,16"] }
+      ],
+      segments: [
+        { from: 1, to: 4, name: "全音阶", desc: "C–D–E–♯F–♯G–♯A 六个音，全是全音距离；竖琴分解两个增三和弦，听不出调性，像在水下。" },
+        { from: 5, to: 8, name: "平行和弦", desc: "换成五声音阶，旋律用平行的三度、四度一起移动，这是德彪西最常用的手法。" }
+      ]
+    },
+    {
+      id: "ravel", isNew: true, group: "classical",
+      title: "逐层升级", latin: "Tempo di Bolero · crescendo", scene: "动态配器 · 逐步升级", style: "拉威尔",
+      meter: "3/4", key: "C", keyName: "C 大调", tempo: "moderato", loopFrom: 0, staves: "[1 2 3 4]",
+      lines: [4, 4, 2], drums: "3/4", drumsOn: true, kit: "soft", ensemble: "bolero", presets: ["bolero", "strings", "piano", "chip"], mix: [1.3, 0.9, 0.7, 1, 4],
+      dyn: [0.45, 0.45, 0.47, 0.47, 0.5, 0.5, 0.52, 0.52, 0.6, 0.6, 0.63, 0.63, 0.66, 0.66, 0.7, 0.7, 0.85, 0.85, 0.9, 0.9, 0.95, 0.95, 1, 1.05],
+      lede: "拉威尔《波莱罗》的办法：小军鼓从头到尾打同一个节奏型，同一段旋律反复三遍，每一遍只是加乐器、加音量。第一遍长笛独奏，第二遍圆号在高八度叠上去，第三遍弦乐加入和弦。旋律是新写的。24 小节循环。",
+      voices: (function () {
+        var M = ["c6 BcdcBA", "G4 c4 B2A2", "G6 AGFG A2", "E8 z4", "f6 efgfed", "c4 e4 d2c2", "B6 cBAB c2", "c8 z4"];
+        var CH = ["[E,G,C]4[E,G,C]4[E,G,C]4", "[E,G,C]4[E,G,C]4[E,G,C]4", "[E,G,C]4[E,G,C]4[E,G,C]4", "[E,G,C]4[E,G,C]4[E,G,C]4",
+                  "[F,A,C]4[F,A,C]4[F,A,C]4", "[E,G,C]4[E,G,C]4[E,G,C]4", "[G,B,D]4[G,B,D]4[G,B,D]4", "[E,G,C]4[E,G,C]4[E,G,C]4"];
+        var Cb = "C,4 z2 G,,2 G,,2 C,2", Fb = "F,,4 z2 C,2 C,2 F,,2", Gb = "G,,4 z2 D,2 D,2 G,,2";
+        var B = [Cb, Cb, Cb, Cb, Fb, Cb, Gb, Cb];
+        return [
+          { name: "长笛", clef: "treble", role: "melody", bars: times(M, 3) },
+          { name: "圆号（高八度）", clef: "treble", role: "inner", bars: rest(8, 12).concat(M.map(up8), M.map(up8)) },
+          { name: "弦乐", clef: "treble", role: "pad", bars: rest(16, 12).concat(CH) },
+          { name: "低音", clef: "bass", role: "bass", bars: times(B, 3) }
+        ];
+      })(),
+      beat: times(["x", "y"], 12),
+      beatDefs: {
+        x: { snare: [0, 2, 2.6667, 3.3333, 4, 6, 6.6667, 7.3333, 8, 10] },
+        y: { snare: [0, 2, 2.6667, 3.3333, 4, 6, 6.6667, 7.3333, 8, 8.6667, 9.3333, 10, 10.6667, 11.3333] }
+      },
+      segments: [
+        { name: "小军鼓", desc: "两小节一组的固定节奏型，里面有三连音十六分音符，24 小节一直不变。" },
+        { from: 1, to: 8, name: "第一遍", desc: "长笛独奏，拨弦低音按 C–G–G–C 的节奏型反复。" },
+        { from: 9, to: 16, name: "第二遍", desc: "圆号在高八度叠上同一条旋律，音量上一档。" },
+        { from: 17, to: 24, name: "第三遍", desc: "弦乐加入，每拍一个和弦，音量升到最大，然后从头开始。" }
+      ]
+    },
+    {
+      id: "holst", isNew: true, group: "classical",
+      title: "星际战争", latin: "Allegro · 5/4 ostinato", scene: "星际战争", style: "霍尔斯特",
+      meter: "5/4", key: "C", keyName: "C 调（G 持续音）", tempo: "vivace", loopFrom: 0,
+      lines: [2, 2, 1], drums: "5/4", drumsOn: true, kit: "soft", ensemble: "mars", presets: ["mars", "strings", "organ", "chip"], mix: [2.2, 0.5, 1.4, 1],
+      beat: ["o", "o", "o", "o", "o", "o", "o", "oc"],
+      beatDefs: { o: { kick: [0, 1.3333, 2.6667, 4, 6, 8, 12, 16, 18] }, oc: { kick: [0, 1.3333, 2.6667, 4, 6, 8, 12, 16, 18], crash: [0] } },
+      lede: "霍尔斯特《行星·火星》的写法：5/4 拍，弦乐用弓杆敲出固定节奏型（三连音–两个八分音符–两个四分音符–两个八分音符），一直钉在 G 上；铜管在上面一步步爬升。旋律是新写的。8 小节循环。",
+      voices: [
+        { name: "铜管", clef: "treble", role: "melody", bars: [
+          "z20", "z20", "G12 _A8", "G8 F4 _E8", "c12 _d8", "c8 _B4 _A8", "G4 _A4 =B4 c4 d4", "g20"
+        ]},
+        { name: "长号", clef: "treble", role: "inner", bars: ["z20", "z20", "[C,G,]20", "[C,G,]20", "[C,G,]20", "[C,G,]20", "[C,G,]20", "[G,D]20"] },
+        { name: "固定节奏型", clef: "bass", role: "bass", bars: times(["(3G,,2G,,2G,,2 G,,2G,,2 G,,4 G,,4 G,,2G,,2"], 8) }
+      ],
+      segments: [
+        { name: "5/4 节奏型", desc: "三连音八分音符、两个八分、两个四分、两个八分，正好五拍。低音和定音鼓一起反复，从头到尾都在 G 上。" },
+        { from: 1, to: 2, name: "只有节奏", desc: "前两小节只有固定节奏型。" },
+        { from: 3, to: 8, name: "铜管爬升", desc: "铜管从 G 到 ♭A、从 C 到 ♭D，一次半音地往上挤，最后升到高音 G。" }
+      ]
+    },
+    {
+      id: "rachmaninoff", isNew: true, group: "modern",
+      title: "终章告白", latin: "Adagio sostenuto", scene: "结局 · 告白", style: "拉赫玛尼诺夫",
+      meter: "4/4", key: "Cm", keyName: "c 小调", tempo: "andante", loopFrom: 0,
+      lines: [4, 2, 1], drums: "4/4", drumsOn: false, ensemble: "piano", presets: ["piano", "strings", "organ"], mix: [1.3, 0.75],
+      lede: "拉赫玛尼诺夫钢琴协奏曲式的浓烈写法：右手用八度奏出宽广的旋律，左手十六分音符的琶音跨两个多八度，和声里多用下属小调和属七。旋律是新写的。8 小节循环。",
+      voices: [
+        { name: "右手八度", clef: "treble", role: "melody", bars: [
+          "[Gg]8 [Aa]4 [Gg]4", "[cc']8 [Bb]4 [Aa]4", "[Aa]6 [Gg]2 [Ff]4 [Ee]4", "[Dd]12 [=B=b]4",
+          "[Ee]8 [Gg]4 [Bb]4", "[ee']8 [cc']4 [Aa]4", "[Aa]4 [Gg]4 [Ff]4 [=B,=B]4", "[Cc]12 z4"
+        ]},
+        { name: "左手琶音", clef: "bass", role: "bass", bars: [
+          F.arp("C,,G,,C,E,G,C", 1, 16), F.arp("A,,E,A,CE", 1, 16), F.arp("F,,C,F,A,C", 1, 16), F.arp("G,,D,G,=B,D", 1, 16),
+          F.arp("E,,B,,E,G,B,", 1, 16), F.arp("A,,E,A,CE", 1, 16), F.arp("F,,C,F,A,", 1, 8) + " " + F.arp("G,,D,F,=B,", 1, 8), F.arp("C,,G,,C,E,G,C", 1, 16)
+        ]}
+      ],
+      segments: [
+        { name: "左手", desc: "每小节十六个音，从低音一路分解上去再折回，跨度很大，需要踏板连起来。" },
+        { from: 1, to: 4, name: "第一句", desc: "c 小调–♭A 大调–f 小调–G 大调，旋律在第 4 小节停在导音 B 上。" },
+        { from: 5, to: 8, name: "第二句", desc: "转到关系大调 ♭E，旋律冲到高音 ♭E，再经 f 小调和 G7 落回 c 小调。" }
+      ]
+    },
+    {
+      id: "prokofiev", isNew: true, group: "modern",
+      title: "反派登场", latin: "Allegro pesante", scene: "角色主题 · 反派登场", style: "普罗科菲耶夫",
+      meter: "4/4", key: "Em", keyName: "e 小调", tempo: "andante", loopFrom: 0,
+      lines: [4, 2, 1], drums: "4/4", drumsOn: true, kit: "soft", ensemble: "villain", presets: ["villain", "strings", "organ", "chip"], mix: [2.0, 0.8, 1, 0.9],
+      beat: times(["a"], 7).concat(["e"]),
+      beatDefs: { a: { kick: [0, 8] }, e: { kick: [0], crash: [0] } },
+      lede: "普罗科菲耶夫《罗密欧与朱丽叶》骑士之舞一类的写法：沉重的附点节奏，旋律沿着和弦一路大跳往上，低音像军靴一样一拍一拍砸下去。只学写法，旋律是新写的。8 小节循环。",
+      voices: [
+        { name: "弦乐", clef: "treble", role: "melody", bars: [
+          "E3G B3e g3e B4", "c3e g3c' e'3c' g4", "A3c e3a c'3a e4", "B3^d f3b ^d'4 B4",
+          "E3G B3e g3e B4", "c3e g3c' e'3c' g4", "a3f ^d3B A3F B4", "E8 z8"
+        ]},
+        { name: "铜管", clef: "treble", role: "inner", bars: (function () {
+          function o(c) { return "z4[" + c + "]4 z4[" + c + "]4"; }
+          return [o("G,B,E"), o("G,CE"), o("A,CE"), o("B,^DF"), o("G,B,E"), o("G,CE"), o("A,^DF"), "[G,B,E]8 z8"];
+        })() },
+        { name: "低音", clef: "bass", role: "bass", bars: (function () {
+          function m(lo, hi) { return "." + lo + "2z2 ." + hi + "2z2 ." + lo + "2z2 ." + hi + "2z2"; }
+          return [m("E,,", "E,"), m("C,", "C"), m("A,,", "A,"), m("B,,", "B,"), m("E,,", "E,"), m("C,", "C"), m("B,,", "B,"), "E,,8 z8"];
+        })() }
+      ],
+      segments: [
+        { name: "附点大跳", desc: "每个音都是附点八分加十六分，旋律沿着分解和弦往上跳，一小节跨两个八度。" },
+        { from: 1, to: 4, name: "第一句", desc: "e 小调–C 大调–a 小调–B 大调，每小节换一个和弦，越跳越高。" },
+        { from: 5, to: 8, name: "第二句", desc: "重复后转到 B7 往下扑，落回低音 E。" }
+      ]
+    },
+    {
+      id: "stravinsky", isNew: true, group: "modern",
+      title: "远古部落", latin: "Augures printaniers", scene: "原始部落 · 远古 Boss", style: "斯特拉文斯基",
+      meter: "2/4", key: "C", keyName: "复合和弦", tempo: "allegro", loopFrom: 0,
+      lines: [8, 4, 2], drums: "2/4", drumsOn: true, kit: "soft", ensemble: "rite", beat: drumsFrom(RITE_ROWS, "kick").beat, beatDefs: drumsFrom(RITE_ROWS, "kick").defs, presets: ["rite", "strings", "organ", "chip"], mix: [1.4, 0.8, 1.2, 1.2],
+      lede: "斯特拉文斯基《春之祭》“春天的预兆”的写法：弦乐一直用同一个和弦砸八分音符，这个和弦是 E 大三和弦叠上 ♭E 属七和弦；重音不按小节线，落点毫无规律，由低音和大鼓标出来。只学写法，旋律是新写的。16 小节循环。",
+      voices: (function () {
+        var rows = RITE_ROWS;
+        var CH = rpt("[E,^G,B,_E_d]2", 4).replace(/ /g, "");
+        var bass = rows.map(function (r) { return r.split("").map(function (c) { return c === "x" ? "[E,,E,]2" : "z2"; }).join(""); });
+        return [
+          { name: "圆号", clef: "treble", role: "melody", bars: rest(8, 8).concat(["_e2_d2 _e4", "_e2_d2 _B4", "c2_d2 _e2f2", "_e8", "_e2_d2 _e4", "_B2c2 _d4", "c2_B2 _A4", "_B8"]) },
+          { name: "弦乐", clef: "treble", role: "inner", bars: times([CH], 16) },
+          { name: "重音", clef: "bass", role: "bass", bars: bass }
+        ];
+      })(),
+      segments: [
+        { name: "复合和弦", desc: "下面是 E 大三和弦（E–♯G–B），上面是 ♭E7 的两个音（♭E–♭D），两个调同时响。" },
+        { from: 1, to: 8, name: "不规则重音", desc: "弦乐八分音符一下不停，重音却落在小节里任意位置，低音和大鼓只在重音上出现。" },
+        { from: 9, to: 16, name: "民歌片段", desc: "圆号奏一段只有三四个音的古老旋律，重音照样乱跳。" }
+      ]
+    },
+    {
+      id: "gershwin", isNew: true, group: "modern",
+      title: "都市侦探", latin: "Moderato · blues", scene: "都市 · 侦探", style: "格什温",
+      meter: "4/4", key: "Bb", keyName: "♭B 大调", tempo: "moderato", loopFrom: 0,
+      lines: [4, 2, 1], drums: "4/4", drumsOn: false, ensemble: "piano", presets: ["piano", "jazz", "strings"], mix: [1.4, 0.8],
+      lede: "格什温《蓝色狂想曲》式的爵士写法：旋律用附点节奏模仿摇摆，里面有蓝调音（降三级的 ♭D），左手是跨步钢琴：低音和和弦一下一下交替。只学写法，旋律是新写的。8 小节循环。",
+      voices: [
+        { name: "右手", clef: "treble", role: "melody", bars: [
+          "B3c _d3=d f4 d4", "d3=e f3g =b4 d'4", "c'3b g3e c4 z4", "A3c e3f a4 f4",
+          "d3f b3d' f'4 d'4", "_d'3c' b3g e4 _d4", "B3d f3B =B3d g4", "=e3g b3g a3c' _e4"
+        ]},
+        { name: "左手", clef: "bass", role: "bass", bars: [
+          F.stride("B,,", "F,,", "D,F,G,"), F.stride("G,,", "D,", "F,=B,D"), F.stride("C,", "G,,", "E,G,B,"), F.stride("F,,", "C,", "E,A,C"),
+          F.stride("B,,", "F,,", "D,F,B,"), F.stride("E,,", "B,,", "_D,G,B,"), "F,,4[D,F,B,]4 G,,4[F,=B,D]4", "C,4[=E,G,B,]4 F,,4[_E,A,C]4"
+        ]}
+      ],
+      segments: [
+        { name: "蓝调音", desc: "第 1 小节的 ♭D 比大调的 D 低半音，马上又回到还原 D，这是爵士和蓝调的标志。" },
+        { from: 1, to: 4, name: "第一句", desc: "♭B6–G7–Cm7–F7，典型的爵士循环，旋律用附点节奏摇摆。" },
+        { from: 5, to: 8, name: "第二句", desc: "冲到高音后经 ♭E7 下行，最后两小节每两拍换一个和弦，引回开头。" }
+      ]
+    },
+    {
+      id: "reich", isNew: true, group: "modern",
+      title: "无限循环", latin: "Phase pattern · pulse", scene: "无限循环的 BGM", style: "史蒂夫·赖希、菲利普·格拉斯",
+      meter: "3/4", key: "D", keyName: "D 大调", tempo: "allegro", loopFrom: 0, staves: "[1 2 3]",
+      lines: [4, 2, 1], drums: "3/4", drumsOn: false, ensemble: "minimal", presets: ["minimal", "piano", "organ", "chip"], mix: [1, 1, 0.7],
+      lede: "赖希与格拉斯的极简主义：一个 12 个音的短音型不停反复；第二个声部奏同一个音型，但每 4 小节往前错一个音，两个声部的组合因此一直在变。下方是持续跳动的八分音符和弦。只学写法，音型是新写的。16 小节循环。",
+      voices: (function () {
+        var P = ["A", "d", "e", "f", "d", "A", "e", "B", "f", "d", "e", "A"];
+        function rot(k) { return P.slice(k).concat(P.slice(0, k)).join(""); }
+        var two = [], one = [], pad = [], CH = ["D,A,E", "B,,F,A,", "G,,D,A,", "A,,E,B,"];
+        for (var b = 0; b < 16; b++) { one.push(rot(0)); two.push(rot(Math.floor(b / 4))); pad.push(F.pulse(CH[Math.floor(b / 4)], 2, 12)); }
+        return [
+          { name: "钢琴", clef: "treble", role: "melody", bars: one },
+          { name: "马林巴（错位）", clef: "treble", role: "inner", bars: two },
+          { name: "脉冲和弦", clef: "bass", role: "pad", bars: pad }
+        ];
+      })(),
+      segments: [
+        { name: "相位", desc: "两个声部奏同一个 12 音音型，第二个声部每 4 小节往前错一个十六分音符，叠在一起的音程随之改变。" },
+        { from: 1, to: 4, name: "齐奏", desc: "两个声部完全同步。" },
+        { from: 5, to: 16, name: "错开", desc: "错开一个、两个、三个音，和弦也每 4 小节换一个：D–Bm7–G–A。" }
+      ]
+    },
+    {
+      id: "part", isNew: true, group: "modern",
+      title: "遗迹冥想", latin: "Tintinnabuli · tranquillo", scene: "冥想 · 遗迹", style: "阿沃·帕特",
+      meter: "3/4", key: "F", keyName: "F 大调", tempo: "adagio", loopFrom: 0, fx: "hall",
+      lines: [4, 4, 2], drums: "3/4", drumsOn: false, ensemble: "part", presets: ["part", "piano", "organ", "celesta"], mix: [2.4, 0.7, 1],
+      lede: "帕特《镜中镜》的“钟鸣”技法：钢琴只弹 F 大三和弦的三个音，一拍一个，永远不变；弦乐在上面拉很长的音，一步步离开 A 又回到 A。默认加了大厅混响。只学写法，旋律是新写的。16 小节循环。",
+      voices: [
+        { name: "弦乐", clef: "treble", role: "melody", bars: ["a12", "b12", "a12", "g12", "a12", "c'12", "b12", "a12", "f12", "g12", "a12", "d'12", "c'12", "b12", "a12", "a12"] },
+        { name: "钢琴", clef: "treble", role: "inner", bars: times(["F4 A4 c4"], 16) },
+        { name: "低音", clef: "bass", role: "bass", bars: (function () { var o = []; for (var b = 0; b < 16; b++) o.push(b % 4 === 0 ? "F,,12" : b % 4 === 2 ? "C,12" : "z12"); return o; })() }
+      ],
+      segments: [
+        { name: "钟鸣", desc: "钢琴声部只用主三和弦 F–A–C，像钟声一样一直响；旋律声部一步步走音阶。两者合在一起就是帕特说的“钟鸣”。" },
+        { from: 1, to: 8, name: "第一句", desc: "旋律围着 A 上下各走一步，再走两步，每次都回到 A。" },
+        { from: 9, to: 16, name: "第二句", desc: "离开得更远，升到高音 D，再慢慢回到 A。" }
+      ]
+    },
+    {
+      id: "kondo", isNew: true, group: "modern",
+      title: "蘑菇平原", latin: "Overworld · bouncy", scene: "平台跳跃 · 野外探索", style: "近藤浩治",
+      meter: "4/4", key: "C", keyName: "C 大调", tempo: "vivace", loopFrom: 0,
+      lines: [4, 2, 1], drums: "4/4", drumsOn: true, kit: "chip", ensemble: "chip", presets: ["chip", "piano", "musicbox", "strings"], mix: [2.4, 0.4, 1.2],
+      lede: "近藤浩治式的平台跳跃配乐：旋律短小、切分、蹦蹦跳跳，左手“嘭-恰”，8 小节就能无限循环。默认用 8 位机音色。只学写法，旋律是新写的。",
+      voices: [
+        { name: "旋律", clef: "treble", role: "melody", bars: [
+          "c2e2 g2e2 a2g2 e4", "z2g2 f2e2 d2c2 d4", "c2f2 a2f2 c'2a2 f4", "z2e2 g2e2 d4 c4",
+          "A2c2 e2a2 g2e2 c4", "z2^f2 a2^f2 d2^f2 a4", "g2f2 e2d2 B2d2 f4", "e2c2 G2c2 c4 z4"
+        ]},
+        { name: "伴奏", clef: "bass", role: "bass", bars: [
+          F.oom("C,", "G,,", "G,CE"), F.oom("C,", "G,,", "G,CE"), F.oom("F,,", "C,", "A,CF"), F.oom("C,", "G,,", "G,CE"),
+          F.oom("A,,", "E,", "A,CE"), F.oom("D,", "A,,", "^F,A,C"), F.oom("G,,", "D,", "F,B,D"), F.oom("C,", "G,,", "G,CE")
+        ]}
+      ],
+      segments: [
+        { name: "切分", desc: "旋律经常从反拍进来，像角色在跳。" },
+        { from: 1, to: 4, name: "第一句", desc: "C–C–F–C，旋律沿着和弦上下跳。" },
+        { from: 5, to: 8, name: "第二句", desc: "a 小调–D7–G7–C，副属和弦 D7 让结尾更有推动力。" }
+      ]
+    },
+    {
+      id: "uematsu", isNew: true, group: "modern",
+      title: "遭遇战", latin: "Battle · Allegro con fuoco", scene: "JRPG 战斗", style: "植松伸夫",
+      meter: "4/4", key: "Am", keyName: "a 小调", tempo: "vivace", loopFrom: 0,
+      lines: [4, 2, 1], drums: "4/4", drumsOn: true, kit: "edm", ensemble: "battle", presets: ["battle", "strings", "chip", "organ"], mix: [2.6, 0.8, 0.7, 0.7], gain: 0.85,
+      beat: ["c", "a", "a", "f", "a", "a", "a", "f"],
+      beatDefs: {
+        a: { kick: [0, 6, 8], snare: [4, 12], hat: [0, 2, 4, 6, 8, 10, 12, 14] },
+        c: { kick: [0, 6, 8], snare: [4, 12], hat: [2, 4, 6, 8, 10, 12, 14], crash: [0] },
+        f: { kick: [0, 6, 8], snare: [4, 12, 14, 15], hat: [0, 2, 4, 6, 8, 10] }
+      },
+      lede: "植松伸夫式的 JRPG 战斗曲：低音八度八分音符一刻不停，弦乐奏英雄式的旋律，铜管在切分位置砸和弦，配摇滚鼓。只学写法，旋律是新写的。8 小节循环。",
+      voices: [
+        { name: "弦乐", clef: "treble", role: "melody", bars: [
+          "e4 a4 b2c'2 b4", "a4 f4 g4 d4", "e4 a4 b2c'2 e'4", "d'4 c'4 b4 g4",
+          "a6 f2 d4 a4", "^g6 e2 B4 ^g4", "a4 e4 g4 d4", "f4 a4 ^g8"
+        ]},
+        { name: "铜管", clef: "treble", role: "inner", bars: (function () {
+          function s2(a, b) { var x = "[" + a + "]", y = "[" + b + "]"; return x + "3" + x + "3" + x + "2 " + y + "3" + y + "3" + y + "2"; }
+          return [F.stab("A,CE"), s2("A,CF", "B,DG"), F.stab("A,CE"), s2("A,CF", "B,DG"), F.stab("A,DF"), F.stab("^G,B,E"), s2("A,CE", "B,DG"), s2("A,CF", "^G,B,E")];
+        })() },
+        { name: "低音", clef: "bass", role: "bass", bars: [
+          F.octs("A,,", "A,", 2, 16), F.octs("F,,", "F,", 2, 8) + " " + F.octs("G,,", "G,", 2, 8), F.octs("A,,", "A,", 2, 16), F.octs("F,,", "F,", 2, 8) + " " + F.octs("G,,", "G,", 2, 8),
+          F.octs("D,,", "D,", 2, 16), F.octs("E,,", "E,", 2, 16), F.octs("A,,", "A,", 2, 8) + " " + F.octs("G,,", "G,", 2, 8), F.octs("F,,", "F,", 2, 8) + " " + F.octs("E,,", "E,", 2, 8)
+        ]}
+      ],
+      segments: [
+        { name: "低音", desc: "八度跳的八分音符一下不停，是战斗曲紧张感的来源。" },
+        { from: 1, to: 4, name: "主题", desc: "a 小调–F–G，旋律一句比一句高。" },
+        { from: 5, to: 8, name: "第二句", desc: "d 小调–E 大调，最后停在 E 上，接回开头。" }
+      ]
+    },
+    {
+      id: "shimomura", isNew: true, group: "modern",
+      title: "主菜单回忆", latin: "Andante · dolce", scene: "主菜单 · 回忆", style: "下村阳子",
+      meter: "4/4", key: "G", keyName: "G 大调", tempo: "andante", loopFrom: 0,
+      lines: [4, 2, 1], drums: "4/4", drumsOn: false, ensemble: "piano", presets: ["piano", "strings", "celesta", "musicbox"], mix: [1.5, 0.75],
+      lede: "下村阳子式的钢琴抒情主题：左手平稳的八分音符分解和弦，右手旋律简单、温柔，略带一点怀念。只学写法，旋律是新写的。8 小节循环。",
+      voices: [
+        { name: "右手", clef: "treble", role: "melody", bars: [
+          "B6 A2 G4 D4", "A6 B2 A8", "B4 d4 e4 g4", "e8 d8",
+          "d6 B2 G4 B4", "A6 d2 f8", "e6 d2 c4 B4", "A12 z4"
+        ]},
+        { name: "左手", clef: "bass", role: "bass", bars: [
+          F.arp("G,,D,G,B,", 2, 16), F.arp("F,,D,A,D", 2, 16), F.arp("E,,B,,E,G,", 2, 16), F.arp("C,G,CE", 2, 16),
+          F.arp("G,,D,G,B,", 2, 16), F.arp("D,,A,,D,F,", 2, 16), F.arp("C,G,CE", 2, 16), F.arp("D,,A,,D,F,", 2, 16)
+        ]}
+      ],
+      segments: [
+        { from: 1, to: 4, name: "第一句", desc: "G–D/♯F–Em–C，低音一级一级往下走，旋律落在 C 和弦的九音 D 上。" },
+        { from: 5, to: 8, name: "第二句", desc: "旋律升到 ♯F 后慢慢下行，停在属和弦的 A 上，等着从头再来。" }
+      ]
+    },
+    {
+      id: "sugiyama", isNew: true, group: "modern",
+      title: "王城序曲", latin: "Marcia trionfale", scene: "王城 · 冒险启程", style: "杉山浩一",
+      meter: "4/4", key: "F", keyName: "F 大调", tempo: "moderato", loopFrom: 0,
+      lines: [4, 2, 1], drums: "4/4", drumsOn: true, kit: "soft", ensemble: "handel", presets: ["handel", "brasschoir", "strings", "chip"], mix: [1.3, 0.9, 0.9],
+      beat: ["c", "a", "a", "b", "a", "a", "a", "e"],
+      beatDefs: { a: { kick: [0, 8], snare: [4, 12] }, b: { kick: [0, 8], snare: [4, 12, 14, 15] }, c: { kick: [0, 8], snare: [4, 12], crash: [0] }, e: { kick: [0, 8], snare: [4], crash: [8] } },
+      lede: "杉山浩一式的古典交响序曲：小号号角开场的附点节奏，弦乐与低音按进行曲“嘭-恰”走，小军鼓打进行曲节奏。只学写法，旋律是新写的。8 小节循环。",
+      voices: [
+        { name: "小号", clef: "treble", role: "melody", bars: [
+          "c3c f4 a4 c'4", "b3a g4 e4 c4", "d'3c' b4 a3g f4", "g8 c4 z4",
+          "c3c f4 a4 c'4", "d'3c' a4 f4 d4", "b4 d'4 c'3b g4", "f8 [Acf]4 z4"
+        ]},
+        { name: "伴奏", clef: "bass", role: "bass", bars: [
+          F.oom("F,,", "C,", "A,CF"), F.oom("C,", "G,,", "G,B,E"),
+          "B,,2z2[B,DF]2z2 F,,2z2[A,CF]2z2", F.oom("C,", "G,,", "G,B,E"),
+          F.oom("F,,", "C,", "A,CF"), F.oom("D,", "A,,", "A,DF"),
+          "B,,2z2[B,DF]2z2 C,2z2[G,B,E]2z2", F.oom("F,,", "C,", "A,CF")
+        ]}
+      ],
+      segments: [
+        { from: 1, to: 4, name: "号角", desc: "附点节奏沿 F 大三和弦往上冲，到属七和弦上停一下。" },
+        { from: 5, to: 8, name: "回答", desc: "经关系小调 d 小调和 ♭B–C 回到 F 大调，最后一下全奏和弦。" }
+      ]
+    },
+    {
+      id: "hisaishi", isNew: true, group: "modern",
+      title: "温暖日常", latin: "Andante · semplice", scene: "温暖的日常 · 飞行", style: "久石让",
+      meter: "4/4", key: "F", keyName: "F 大调", tempo: "andante", loopFrom: 0,
+      lines: [4, 2, 1], drums: "4/4", drumsOn: false, ensemble: "piano", presets: ["piano", "strings", "musicbox", "celesta"], mix: [1.5, 0.75],
+      lede: "久石让式的简单温暖：钢琴旋律几乎只用五声音阶里的音，左手按“低音–五度–十度–五度”平稳地分解和弦，和声在 IV 和 V 之间轻轻摆。只学写法，旋律是新写的。8 小节循环。",
+      voices: [
+        { name: "右手", clef: "treble", role: "melody", bars: [
+          "c4 A2c2 f8", "e6 d2 c8", "d4 c2d2 f4 a4", "g8 e8", "c4 A2c2 f8", "e6 f2 g4 a4", "f6 d2 B4 d4", "c12 z4"
+        ]},
+        { name: "左手", clef: "bass", role: "bass", bars: (function () {
+          function b(c) { var t = T(c); return rpt(t[0] + "2" + t[1] + "2" + t[2] + "2" + t[1] + "2", 2).replace(/ /g, ""); }
+          function h(c1, c2) { var t = T(c1), u = T(c2); return t[0] + "2" + t[1] + "2" + t[2] + "2" + t[1] + "2 " + u[0] + "2" + u[1] + "2" + u[2] + "2" + u[1] + "2"; }
+          return [b("F,,C,A,"), b("E,,C,G,"), b("D,,A,,F,"), h("B,,F,D", "C,G,E"), b("F,,C,A,"), b("A,,E,C"), b("B,,F,D"), b("C,G,E")];
+        })() }
+      ],
+      segments: [
+        { from: 1, to: 4, name: "第一句", desc: "F–C/E–Dm–♭B–C，低音一级级下行，旋律在高音 F 和 A 之间轻轻跳。" },
+        { from: 5, to: 8, name: "第二句", desc: "转到 a 小调再经 ♭B 回到 C，停在属和弦上，自然接回开头。" }
+      ]
+    },
+    {
+      id: "zimmer", isNew: true, group: "modern",
+      title: "穿越虫洞", latin: "Organ · building", scene: "宇宙 · 史诗时刻", style: "汉斯·季默",
+      meter: "4/4", key: "Am", keyName: "a 小调", tempo: "adagio", loopFrom: 0, fx: "hall", staves: "[1 2 3 4]",
+      lines: [4, 2, 1], drums: "4/4", drumsOn: true, kit: "soft", ensemble: "organ", presets: ["organ", "cinema", "strings", "piano"], mix: [1.6, 0.9, 0.7, 1, 1.6],
+      dyn: [0.55, 0.55, 0.6, 0.6, 0.65, 0.65, 0.7, 0.72, 0.8, 0.82, 0.85, 0.88, 0.92, 0.95, 1, 1.05],
+      beat: ["t", "t", "t", "t", "t", "t", "t", "t", "u", "v", "v", "v", "v", "v", "v", "v"],
+      beatDefs: { t: { hat: [0, 2, 4, 6, 8, 10, 12, 14] }, u: { hat: [0, 2, 4, 6, 8, 10, 12, 14], kick: [0, 8], crash: [0] }, v: { hat: [0, 2, 4, 6, 8, 10, 12, 14], kick: [0, 8] } },
+      lede: "汉斯·季默《星际穿越》式的写法：管风琴不停重复两个音的八分音符，像时钟在走；底下是管风琴最低音的长音，后半段加入高音长线和定音鼓，音量逐小节加大。默认加了大厅混响。只学写法，旋律是新写的。16 小节循环。",
+      voices: (function () {
+        var CH = ["Am", "F", "C", "G", "Am", "F", "C", "E"];
+        var OST = { Am: F.octs("e", "a", 2, 16), F: F.octs("f", "a", 2, 16), C: F.octs("e", "g", 2, 16), G: F.octs("d", "g", 2, 16), E: F.octs("^g", "b", 2, 16) };
+        var PAD = { Am: "[A,,E,C]16", F: "[F,,C,A,]16", C: "[C,G,E]16", G: "[G,,D,B,]16", E: "[E,,B,,^G,]16" };
+        var BASS = { Am: "A,,,16", F: "F,,,16", C: "C,,16", G: "G,,,16", E: "E,,,16" };
+        var seq = CH.concat(CH);
+        return [
+          { name: "高音长线", clef: "treble", role: "melody", bars: rest(8).concat(["a16", "c'16", "e'16", "d'16", "a8 b8", "c'8 d'8", "e'16", "^g'16"]) },
+          { name: "时钟音型", clef: "treble", role: "inner", bars: seq.map(function (c) { return OST[c]; }) },
+          { name: "和弦", clef: "bass", role: "pad", bars: seq.map(function (c) { return PAD[c]; }) },
+          { name: "踏板低音", clef: "bass", role: "bass", bars: seq.map(function (c) { return BASS[c]; }) }
+        ];
+      })(),
+      segments: [
+        { name: "时钟", desc: "两个音来回的八分音符和踩镲的嘀嗒声从头到尾不停，像时间在流逝。" },
+        { from: 1, to: 8, name: "铺陈", desc: "Am–F–C–G 四个和弦，只有时钟音型、和弦和最低的踏板音。" },
+        { from: 9, to: 16, name: "爬升", desc: "高音长线和定音鼓加入，每小节都更响，最后停在 E 大和弦的 ♯G 上。" }
+      ]
+    },
+    {
+      id: "chenzhiyi", isNew: true, group: "modern",
+      title: "山间港城", latin: "Pentatonic · con moto", scene: "开放世界各地区", style: "陈致逸",
+      meter: "4/4", key: "D", keyName: "D 宫调式", tempo: "moderato", loopFrom: 0,
+      lines: [4, 2, 1], drums: "4/4", drumsOn: false, ensemble: "chinese", presets: ["chinese", "strings", "piano", "chip"], mix: [1.4, 0.8],
+      lede: "陈致逸《原神》式的写法：笛子奏五声音阶旋律，古筝在下面不停地往上拨分解和弦，带着中国风的开阔感。只学写法，旋律是新写的。8 小节循环。",
+      voices: [
+        { name: "笛子", clef: "treble", role: "melody", bars: [
+          "A4 d2e2 f4 e2d2", "B6 A2 B4 d4", "e4 d2B2 d8", "e6 f2 e8",
+          "a4 f2e2 d4 e2f2", "b6 a2 f4 a4", "e4 d2B2 A4 E4", "d12 z4"
+        ]},
+        { name: "古筝", clef: "bass", role: "bass", bars: [
+          F.up("D,A,DF", 1, 16), F.up("B,,F,B,D", 1, 16), F.up("G,,D,G,B,", 1, 16), F.up("A,,E,A,C", 1, 16),
+          F.up("D,A,DF", 1, 16), F.up("B,,F,B,D", 1, 16), F.up("E,,B,,E,G,", 1, 8) + " " + F.up("A,,E,A,C", 1, 8), F.up("D,A,DF", 1, 16)
+        ]}
+      ],
+      segments: [
+        { name: "五声音阶", desc: "旋律只用 D、E、♯F、A、B 五个音，即 D 宫调式。" },
+        { from: 1, to: 4, name: "第一句", desc: "D–Bm–G–A，古筝每拍四个音往上拨。" },
+        { from: 5, to: 8, name: "第二句", desc: "旋律升到高音区，再一路下到 E，落回主音 D。" }
+      ]
+    },
+    {
+      id: "bigroom", isNew: true, group: "electronic",
+      title: "竞技开场", latin: "Big Room · 128 BPM", scene: "竞技开场 · 结算界面", style: "Big Room",
+      meter: "4/4", key: "Gm", keyName: "g 小调", tempo: "b128", tempos: "edm", loopFrom: 0, staves: "[1 2 3]",
+      lines: [4, 2, 1], drums: "4/4", drumsOn: true, kit: "edm", ensemble: "bigroom", sidechain: [1, 2],
+      presets: ["bigroom", "trance", "chip"], mix: [2.8, 0.7, 1.6, 1.1], gain: 0.62,
+      lede: "按 David Guetta、Martin Garrix 一路的 Big Room 写：128 BPM，前半段铺和弦、推 build-up，军鼓从四分音符加密到十六分；落下来以后是硬朗的四拍底鼓和一个几乎只有一个音的短促主音“drop”。旋律是新写的。16 小节循环。",
+      beat: ["bc", "b", "b", "b", "s8", "s8r", "s16", "roll", "dc", "d", "d", "d", "dc", "d", "d", "df"],
+      beatDefs: {
+        b: { kick: [0, 4, 8, 12], clap: [4, 12] }, bc: { kick: [0, 4, 8, 12], clap: [4, 12], crash: [0] },
+        s8: { kick: [0, 4, 8, 12], snare: [0, 2, 4, 6, 8, 10, 12, 14] }, s8r: { kick: [0, 4, 8, 12], snare: [0, 2, 4, 6, 8, 10, 12, 14], riser2: [0] },
+        s16: { snare: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] }, roll: { snare: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] },
+        d: { kick: [0, 4, 8, 12], clap: [4, 12], ohat: [2, 6, 10, 14] }, dc: { kick: [0, 4, 8, 12], clap: [4, 12], ohat: [2, 6, 10, 14], crash: [0] },
+        df: { kick: [0, 4, 8, 12], clap: [4, 12], snare: [13, 14, 15] }
+      },
+      voices: (function () {
+        var R = ["g2zg z2g2 z2b2a2g2", "g2zg z2g2 z2f2d2e2", "f2zf z2f2 z2d2f2b2", "a2za z2a2 z2c'2a2f2"];
+        var R2 = R.slice(0, 3).concat(["a2za z2c'2 z2f'2c'2a2"]);
+        var CH = ["G,B,D", "G,B,E", "F,B,D", "F,A,C"];
+        return [
+          { name: "主音", clef: "treble", role: "melody", bars: rest(4).concat(R, R, R2) },
+          { name: "和弦", clef: "treble", role: "pad", bars: CH.map(function (c) { return "[" + c + "]16"; }).concat(CH.map(function (c) { return "[" + c + "]16"; }),
+            CH.map(function (c) { return "[" + c + "]2z2 [" + c + "]2z2 [" + c + "]2z2 [" + c + "]2z2"; }), CH.map(function (c) { return "[" + c + "]2z2 [" + c + "]2z2 [" + c + "]2z2 [" + c + "]2z2"; })) },
+          { name: "低音", clef: "bass", role: "bass", bars: ["G,,16", "E,,16", "B,,,16", "F,,16", "G,,16", "E,,16", "B,,,16", "z16"].concat(times([F.off("G,,", 16), F.off("E,,", 16), F.off("B,,,", 16), F.off("F,,", 16)], 2)) }
+        ];
+      })(),
+      segments: [
+        { from: 1, to: 4, name: "铺垫", desc: "四拍底鼓加拍手，和弦长音铺底：Gm–♭E–♭B–F。" },
+        { from: 5, to: 8, name: "build-up", desc: "主音先露一下，军鼓从八分音符加密到十六分音符，噪声扫频往上推，第 8 小节撤空。" },
+        { from: 9, to: 16, name: "drop", desc: "主音只在同一个音上切分地打，每小节末尾才跳一下；和弦变成短促的切片，随底鼓“呼吸”。" }
+      ]
+    },
+    {
+      id: "warehouse", isNew: true, group: "electronic",
+      title: "地下工业区", latin: "Techno · 128 BPM", scene: "地下城 · 工业区", style: "Techno",
+      meter: "4/4", key: "Am", keyName: "a 小调", tempo: "b128", tempos: "edm", loopFrom: 0, staves: "[1 2 3]",
+      lines: [4, 2, 1], drums: "4/4", drumsOn: true, kit: "edm", ensemble: "warehouse", sidechain: [1, 2],
+      presets: ["warehouse", "techno", "chip"], mix: [1.3, 2.5, 0.6, 1.1], gain: 0.8,
+      lede: "按 Charlotte de Witte 一路的 Techno 写：冷硬的四拍底鼓、反拍开镲、闷响的低音，一条十六分音符的酸性贝斯线（模仿 Roland TB-303，滤波器共振很高）不停转，后段加入短促的小调和弦。旋律是新写的。16 小节循环。",
+      beat: ["ic", "i", "i", "i", "m", "m", "m", "m", "m", "m", "m", "mf", "mc", "mp", "mp", "mf"],
+      beatDefs: {
+        i: { kick: [0, 4, 8, 12], hat: [2, 6, 10, 14] }, ic: { kick: [0, 4, 8, 12], hat: [2, 6, 10, 14], crash: [0] },
+        m: { kick: [0, 4, 8, 12], clap: [4, 12], ohat: [2, 6, 10, 14], hat: [1, 3, 5, 7, 9, 11, 13, 15] },
+        mc: { kick: [0, 4, 8, 12], clap: [4, 12], ohat: [2, 6, 10, 14], hat: [1, 3, 5, 7, 9, 11, 13, 15], crash: [0] },
+        mp: { kick: [0, 4, 8, 12], clap: [4, 12], ohat: [2, 6, 10, 14], hat: [1, 3, 5, 7, 9, 11, 13, 15], rim: [3, 7, 11], perc: [14] },
+        mf: { kick: [0, 4, 8, 12], clap: [4, 12], ohat: [2, 6, 10], snare: [12, 13, 14, 15] }
+      },
+      voices: (function () {
+        var A1 = "A,A,AA, CA,A,E A,A,AA, GEA,C", A2 = "A,A,AA, CA,A,E A,A,cA, BGEC";
+        return [
+          { name: "酸性贝斯", clef: "treble", role: "melody", bars: rest(4).concat(times([A1, A1, A1, A2], 3)) },
+          { name: "和弦刺", clef: "treble", role: "pad", bars: rest(12).concat(times(["[A,CE]2z6 z2[A,CE]2z4"], 4)) },
+          { name: "低音", clef: "bass", role: "bass", bars: times([F.off("A,,", 16)], 16) }
+        ];
+      })(),
+      segments: [
+        { from: 1, to: 4, name: "骨架", desc: "只有底鼓、反拍踩镲和反拍低音，冷而空。" },
+        { from: 5, to: 12, name: "303", desc: "酸性贝斯线进来：在低音 A 上反复，偶尔跳到高八度和小三度，滤波器每个音都“哇”一下。" },
+        { from: 13, to: 16, name: "和弦刺", desc: "加入 a 小调的短促和弦和打击乐点缀，第 16 小节过门接回开头。" }
+      ]
+    },
+    {
+      id: "techhouse", isNew: true, group: "electronic",
+      title: "大厅菜单", latin: "Tech House · 124 BPM", scene: "菜单 · 大厅", style: "Tech House",
+      meter: "4/4", key: "Cm", keyName: "c 小调", tempo: "b124", tempos: "edm", loopFrom: 0, staves: "[1 2 3]",
+      lines: [4, 2, 1], drums: "4/4", drumsOn: true, kit: "edm", ensemble: "techhouse", sidechain: [1],
+      presets: ["techhouse", "techno", "chip"], mix: [2.2, 2, 1.1, 1.1], gain: 0.72,
+      lede: "按 FISHER 一路的 Tech House 写：124 BPM，律动靠一条切分的低音线撑着，沙锤和手鼓填满十六分音符，风琴和弦只在反拍偶尔一刺；后半段加入一个两三个音的小钩子。适合长时间挂着的菜单和大厅。旋律是新写的。16 小节循环。",
+      beat: ["gc", "g", "g", "g", "g", "g", "g", "gf", "gc", "g", "g", "g", "g", "g", "g", "gf"],
+      beatDefs: {
+        g: { kick: [0, 4, 8, 12], clap: [4, 12], ohat: [2, 6, 10, 14], shaker: [1, 3, 5, 7, 9, 11, 13, 15], perc: [3, 11], rim: [7, 14] },
+        gc: { kick: [0, 4, 8, 12], clap: [4, 12], ohat: [2, 6, 10, 14], shaker: [1, 3, 5, 7, 9, 11, 13, 15], perc: [3, 11], crash: [0] },
+        gf: { kick: [0, 4, 8, 12], clap: [4, 12], ohat: [2, 6, 10], shaker: [1, 3, 5, 7, 9, 11], perc: [12, 13, 14, 15] }
+      },
+      voices: (function () {
+        var B1 = "C,,2zC,, z2C,,2 z2B,,,2 C,,2E,,2", B2 = "C,,2zC,, z2C,,2 z2G,,2 F,,2E,,2";
+        var H1 = "z4 g2z2 a2g2 z2e2", H2 = "z4 g2z2 a2b2 c'2z2";
+        return [
+          { name: "钩子", clef: "treble", role: "melody", bars: rest(8).concat(times([H1, H2], 4)) },
+          { name: "风琴刺", clef: "treble", role: "pad", bars: rest(4).concat(times(["z3[B,EG] z4 z3[B,EG] z2[B,EG]2"], 12)) },
+          { name: "低音", clef: "bass", role: "bass", bars: times([B1, B1, B1, B2], 4) }
+        ];
+      })(),
+      segments: [
+        { from: 1, to: 4, name: "律动", desc: "切分的低音线加满编的打击乐：沙锤每个十六分音符一下，手鼓和边击在反拍上点缀。" },
+        { from: 5, to: 8, name: "风琴刺", desc: "Cm7 和弦在反拍上偶尔一刺，留出大量空隙。" },
+        { from: 9, to: 16, name: "钩子", desc: "一个两三个音的短句在第二拍进来，重复到底。" }
+      ]
+    },
+    {
+      id: "house", isNew: true, group: "electronic",
+      title: "海岛经营", latin: "House · 124 BPM", scene: "休闲经营 · 海岛 · 城市漫步", style: "House",
+      meter: "4/4", key: "F", keyName: "F 大调", tempo: "b124", tempos: "edm", loopFrom: 0, staves: "[1 2 3]",
+      lines: [4, 2, 1], drums: "4/4", drumsOn: true, kit: "edm", ensemble: "house", sidechain: [1, 2],
+      presets: ["house", "walker", "chip"], mix: [1.3, 0.45, 0.9, 1], gain: 0.75,
+      lede: "按 Calvin Harris、Peggy Gou、Black Coffee 一路的 House 写：124 BPM，明亮的大调，钢琴和弦按切分节奏弹“浩室钢琴”，低音在反拍上跳八度，鼓里加了非洲浩室常用的手鼓。后半段有一个 FM 钟琴音色的主旋律。旋律是新写的。16 小节循环。",
+      beat: ["hc", "h", "h", "h", "h", "h", "h", "hf", "hc", "h", "h", "h", "h", "h", "h", "hf"],
+      beatDefs: {
+        h: { kick: [0, 4, 8, 12], clap: [4, 12], ohat: [2, 6, 10, 14], hat: [1, 3, 5, 7, 9, 11, 13, 15], perc: [3, 10, 13] },
+        hc: { kick: [0, 4, 8, 12], clap: [4, 12], ohat: [2, 6, 10, 14], hat: [1, 3, 5, 7, 9, 11, 13, 15], perc: [3, 10, 13], crash: [0] },
+        hf: { kick: [0, 4, 8, 12], clap: [4, 12], ohat: [2, 6, 10], perc: [11, 12, 13, 14, 15] }
+      },
+      voices: (function () {
+        function pr(c) { var x = "[" + c + "]"; return x + "2z" + x + " z2" + x + "2 z2" + x + "2 z" + x + "z2"; }
+        var P = [pr("A,CF"), pr("A,CE"), pr("B,DF"), pr("G,CE")];
+        var M = ["c2a2 z2g2 a2f2 z4", "e2a2 z2g2 e2c2 z4", "d2f2 z2b2 a2f2 z4", "e2g2 z2c'2 b2g2 z4"];
+        var M2 = M.slice(0, 3).concat(["e2g2 z2c'2 e'4 z4"]);
+        return [
+          { name: "钟琴", clef: "treble", role: "melody", bars: rest(8).concat(M, M2) },
+          { name: "浩室钢琴", clef: "treble", role: "inner", bars: times(P, 4) },
+          { name: "低音", clef: "bass", role: "bass", bars: rest(4).concat(times(["z2F,,2 z2F,2 z2F,,2 z2F,2", "z2A,,2 z2A,2 z2A,,2 z2A,2", "z2B,,,2 z2B,,2 z2B,,,2 z2B,,2", "z2C,,2 z2C,2 z2C,,2 z2C,2"], 3)) }
+        ];
+      })(),
+      segments: [
+        { name: "浩室钢琴", desc: "每小节七下切分的和弦，有的在拍上，有的提前半拍，是 House 最典型的钢琴节奏。" },
+        { from: 1, to: 8, name: "律动", desc: "F–Am–♭B–C 的明亮循环，第 5 小节起低音进来，在反拍上跳八度。" },
+        { from: 9, to: 16, name: "主旋律", desc: "钟琴音色奏一个简单好记的句子，和钢琴的切分错开。" }
+      ]
+    },
+    {
+      id: "fredagain", isNew: true, group: "electronic",
+      title: "剧情回忆", latin: "Emotional House · 128 BPM", scene: "剧情过场 · 回忆", style: "Fred again..",
+      meter: "4/4", key: "Eb", keyName: "♭E 大调", tempo: "b128", tempos: "edm", loopFrom: 0, fx: "tape", staves: "[1 2 3]",
+      lines: [4, 2, 1], drums: "4/4", drumsOn: true, kit: "edm", ensemble: "fred", sidechain: [1, 2],
+      presets: ["fred", "house", "piano"], mix: [1.3, 0.5, 0.65, 1], gain: 0.75,
+      lede: "按 Fred again.. 的写法：一段切碎的人声采样反复出现（这里用合成的元音音色模仿），钢琴长和弦很温暖，鼓是英国车库舞曲（UK Garage）的两步节奏：底鼓不在每一拍，而是落在第 1 拍和第 3 拍后半。前 4 小节没有鼓。默认加了磁带延迟。旋律是新写的。16 小节循环。",
+      beat: ["e", "e", "e", "e", "l", "l", "l", "lf", "fc", "f", "f", "f", "f", "f", "f", "ff"],
+      beatDefs: {
+        e: {}, l: { clap: [4, 12], hat: [2, 6, 7, 10, 14, 15] }, lf: { clap: [4, 12], hat: [2, 6, 7, 10], riser: [0] },
+        f: { kick: [0, 10], clap: [4, 12], hat: [2, 6, 7, 10, 14, 15], perc: [13] },
+        fc: { kick: [0, 10], clap: [4, 12], hat: [2, 6, 7, 10, 14, 15], crash: [0] },
+        ff: { kick: [0, 10], clap: [4, 12], snare: [13, 14, 15] }
+      },
+      voices: (function () {
+        var V = ["g2zg z2g2 b2z2 g2z2", "a2za z2a2 c'2z2 a2z2", "g2zg z2g2 b2z2 e'2z2", "f2zf z2f2 d'2z2 b2z2"];
+        var P = ["[G,B,E]8 [G,B,E]6 [G,B,E]2", "[A,CE]8 [A,CE]6 [A,CE]2", "[B,EG]8 [B,EG]6 [B,EG]2", "[B,DF]8 [B,DF]6 [B,DF]2"];
+        var S = ["C,,8 C,,6 C,,2", "A,,8 A,,6 A,,2", "E,,8 E,,6 E,,2", "B,,,8 B,,,6 B,,,2"];
+        return [
+          { name: "人声切片", clef: "treble", role: "melody", bars: times(V, 4) },
+          { name: "钢琴", clef: "treble", role: "inner", bars: times(P, 4) },
+          { name: "超低音", clef: "bass", role: "bass", bars: rest(8).concat(S, S) }
+        ];
+      })(),
+      segments: [
+        { name: "人声切片", desc: "同一个元音切成短短的几下，同音反复后跳一下，像把一句话剪碎了循环。" },
+        { from: 1, to: 4, name: "只有钢琴和人声", desc: "Cm7–♭A–♭E–♭B（vi–IV–I–V），钢琴长和弦，没有鼓。" },
+        { from: 5, to: 8, name: "两步节奏", desc: "拍手和跳跃的踩镲进来，还没有底鼓，第 8 小节扫频推上去。" },
+        { from: 9, to: 16, name: "落地", desc: "底鼓按两步节奏进来，超低音跟着底鼓走，和弦随底鼓“呼吸”。" }
+      ]
+    },
+    {
+      id: "dubstep", isNew: true, group: "electronic",
+      title: "机甲 Boss", latin: "Dubstep · 140 BPM", scene: "Boss 战 · 机甲", style: "Dubstep",
+      meter: "4/4", key: "Fm", keyName: "f 小调", tempo: "b140", tempos: "edm", loopFrom: 0, staves: "[1 2 3]",
+      lines: [4, 2, 1], drums: "4/4", drumsOn: true, kit: "edm", ensemble: "dubstep", sidechain: [1],
+      presets: ["dubstep", "trance", "chip"], mix: [1.1, 0.8, 1.0, 1.6], gain: 0.64,
+      lede: "按 Skrillex 一路的 Dubstep 写：140 BPM，但鼓是半速的（底鼓在第 1 拍、军鼓在第 3 拍），所以听起来像 70 BPM 的沉重步伐；低音是“摇摆贝斯”，滤波器被一个和节拍同步的振荡器不停开合，长音摇得慢、短音摇得快。前 8 小节是琶音铺垫和 build-up。旋律是新写的。16 小节循环。",
+      beat: ["ic", "i", "i", "i", "b", "b", "br", "roll", "dc", "d", "d", "d", "dc", "d", "d", "df"],
+      beatDefs: {
+        i: { hat: [2, 6, 10, 14] }, ic: { hat: [2, 6, 10, 14], crash: [0] },
+        b: { kick: [0, 8], snare: [4, 12], hat: [0, 2, 4, 6, 8, 10, 12, 14] }, br: { snare: [0, 2, 4, 6, 8, 10, 12, 14], riser2: [0] },
+        roll: { snare: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] },
+        d: { kick: [0, 10], snare: [8], hat: [0, 2, 4, 6, 8, 10, 12, 14] }, dc: { kick: [0, 10], snare: [8], hat: [2, 4, 6, 8, 10, 12, 14], crash: [0] },
+        df: { kick: [0, 10], snare: [8, 12, 13, 14, 15] }
+      },
+      voices: (function () {
+        var AR = [F.arp("FAcf", 2, 16), F.arp("FAdf", 2, 16), F.arp("FBdf", 2, 16), F.arp("G=Bcg", 2, 16)];
+        var W = ["F,,6F,,2 A,,4 F,,4", "D,,6D,,2 F,,4 E,,4", "B,,,6B,,,2 D,,4 F,,4", "C,,4C,,4 =E,,4 G,,4"];
+        return [
+          { name: "琶音", clef: "treble", role: "melody", bars: times(AR, 2).concat(rest(8)) },
+          { name: "铺底", clef: "treble", role: "pad", bars: ["[F,A,C]16", "[F,A,D]16", "[F,B,D]16", "[G,C=E]16", "[F,A,C]16", "[F,A,D]16", "[F,B,D]16", "z16"].concat(rest(8)) },
+          { name: "摇摆贝斯", clef: "bass", role: "bass", bars: rest(8).concat(W, W) }
+        ];
+      })(),
+      segments: [
+        { from: 1, to: 4, name: "琶音", desc: "f 小调–♭D–♭B 小调–C，拨弦琶音和铺底，只有反拍踩镲。" },
+        { from: 5, to: 8, name: "build-up", desc: "鼓进来后军鼓逐渐加密，第 7–8 小节扫频推上去。" },
+        { from: 9, to: 16, name: "drop", desc: "半速鼓：底鼓第 1 拍和第 3 拍后半，军鼓第 3 拍。摇摆贝斯接管一切，长音摇得慢、短音摇得快。" }
+      ]
+    },
+    {
+      id: "prydz", isNew: true, group: "electronic",
+      title: "远景平原", latin: "Progressive House · 128 BPM", scene: "开放世界", style: "Progressive House",
+      meter: "4/4", key: "Dm", keyName: "d 小调", tempo: "b128", tempos: "edm", loopFrom: 0, fx: "autofilter", staves: "[1 2 3 4]",
+      lines: [4, 2, 1], drums: "4/4", drumsOn: true, kit: "edm", ensemble: "techno", sidechain: [1, 2, 3],
+      presets: ["techno", "trance", "chip"], mix: [1.7, 0.65, 1.1, 1, 1], gain: 0.8,
+      lede: "按 Eric Prydz 一路的 Progressive House 写：一条五个音循环的十六分音符琶音和四拍的节拍错开，每拍的重音都落在不同的音上；铺底和主旋律层层加进来。默认加了自动滤波，整首像被一只手慢慢拧开又拧上。旋律是新写的。16 小节循环。",
+      beat: ["ic", "i", "i", "i", "mc", "m", "m", "m", "mc", "m", "m", "m", "mc", "m", "m", "mf"],
+      beatDefs: {
+        i: { kick: [0, 4, 8, 12], hat: [2, 6, 10, 14] }, ic: { kick: [0, 4, 8, 12], hat: [2, 6, 10, 14], crash: [0] },
+        m: { kick: [0, 4, 8, 12], clap: [4, 12], ohat: [2, 6, 10, 14], shaker: [1, 3, 5, 7, 9, 11, 13, 15] },
+        mc: { kick: [0, 4, 8, 12], clap: [4, 12], ohat: [2, 6, 10, 14], shaker: [1, 3, 5, 7, 9, 11, 13, 15], crash: [0] },
+        mf: { kick: [0, 4, 8, 12], clap: [4, 12], snare: [12, 13, 14, 15] }
+      },
+      voices: (function () {
+        var AR = { Dm: F.up("D,A,DEF", 1, 16), Bb: F.up("B,,F,B,CD", 1, 16), F: F.up("F,CFGA", 1, 16), C: F.up("C,G,CDE", 1, 16) };
+        var seq = ["Dm", "Dm", "Bb", "Bb", "F", "F", "C", "C"];
+        var PAD = { Dm: "[F,A,D]16", Bb: "[F,B,D]16", F: "[F,A,C]16", C: "[E,G,C]16" };
+        var BASS = { Dm: F.off("D,,", 16), Bb: F.off("B,,,", 16), F: F.off("F,,", 16), C: F.off("C,,", 16) };
+        return [
+          { name: "主旋律", clef: "treble", role: "melody", bars: rest(8).concat(["a8 f4 e4", "d16", "d8 f4 a4", "b16", "c'8 a4 f4", "g16", "e8 g4 c'4", "e16"]) },
+          { name: "琶音", clef: "treble", role: "arp", bars: seq.concat(seq).map(function (c) { return AR[c]; }) },
+          { name: "铺底", clef: "treble", role: "pad", bars: rest(4).concat(seq.slice(4).concat(seq).map(function (c) { return PAD[c]; })) },
+          { name: "低音", clef: "bass", role: "bass", bars: seq.concat(seq).map(function (c) { return BASS[c]; }) }
+        ];
+      })(),
+      segments: [
+        { name: "五音琶音", desc: "每个和弦取五个音循环，五个一轮对四个一拍，重音每拍落在不同的音上。" },
+        { from: 1, to: 4, name: "开场", desc: "四拍底鼓、反拍低音和琶音。" },
+        { from: 5, to: 8, name: "加厚", desc: "铺底和弦、拍手和沙锤进来。" },
+        { from: 9, to: 16, name: "主旋律", desc: "锯齿主音奏长音旋律，两小节换一个和弦：Dm–♭B–F–C。" }
+      ]
+    },
+    {
+      id: "avicii", isNew: true, group: "electronic",
+      title: "开阔冒险", latin: "Folk EDM · 128 BPM", scene: "开阔的冒险", style: "Avicii · Daft Punk",
+      meter: "4/4", key: "G", keyName: "G 大调", tempo: "b128", tempos: "edm", loopFrom: 0, staves: "[1 2 3]",
+      lines: [4, 2, 1], drums: "4/4", drumsOn: true, kit: "edm", ensemble: "folk", sidechain: [1, 2],
+      presets: ["folk", "trance", "piano", "chip"], mix: [1.5, 0.5, 1, 1], gain: 0.75,
+      lede: "按 Avicii 的民谣电音写：前段只有原声吉他扫弦，后段换成四拍底鼓和超级锯齿主旋律，同一句旋律从吉他味变成舞池味。旋律是新写的。16 小节循环。",
+      beat: ["e", "e", "e", "e", "c", "c", "cr", "roll", "dc", "d", "d", "d", "dc", "d", "d", "df"],
+      beatDefs: {
+        e: {}, c: { clap: [4, 12], hat: [2, 6, 10, 14] }, cr: { clap: [4, 12], snare: [8, 10, 12, 14], riser2: [0] },
+        roll: { snare: [0, 2, 4, 6, 8, 9, 10, 11, 12, 13, 14, 15] },
+        d: { kick: [0, 4, 8, 12], clap: [4, 12], ohat: [2, 6, 10, 14] }, dc: { kick: [0, 4, 8, 12], clap: [4, 12], ohat: [2, 6, 10, 14], crash: [0] },
+        df: { kick: [0, 4, 8, 12], clap: [4, 12], snare: [13, 14, 15] }
+      },
+      voices: (function () {
+        function strum(c) { var x = "[" + c + "]"; return x + "2" + x + "2 z" + x + x + "2 z" + x + x + "2 " + x + "2" + x + "2"; }
+        var G = strum("G,B,DG"), D = strum("D,A,DF"), Em = strum("E,B,EG"), C = strum("C,G,CE");
+        var M = ["B2B2 d2B2 A2G2 E2D2", "D2E2 F2A2 A4 F4", "G2G2 B2G2 F2E2 D2E2", "E4 G4 E4 D4"];
+        var M2 = M.slice(0, 3).concat(["E4 G4 A4 B4"]);
+        return [
+          { name: "主旋律", clef: "treble", role: "melody", bars: rest(4).concat(M, M, M2) },
+          { name: "吉他", clef: "treble", role: "inner", bars: times([G, D, Em, C], 4) },
+          { name: "低音", clef: "bass", role: "bass", bars: rest(4).concat(["G,,8 G,,8", "D,,8 D,,8", "E,,8 E,,8", "C,,8 C,,8"], times([F.off("G,,", 16), F.off("D,,", 16), F.off("E,,", 16), F.off("C,,", 16)], 2)) }
+        ];
+      })(),
+      segments: [
+        { name: "扫弦", desc: "吉他每小节按“下 下 · 上下 · 上下 下 下”的节奏扫，和弦是 G–D–Em–C。" },
+        { from: 1, to: 8, name: "民谣段", desc: "先只有吉他，第 5 小节主旋律和拍手进来，第 7–8 小节推 build-up。" },
+        { from: 9, to: 16, name: "舞池段", desc: "四拍底鼓落下，同一句旋律换成超级锯齿，最后一小节旋律往上走接回开头。" }
+      ]
+    },
+    {
+      id: "porter", isNew: true, group: "electronic",
+      title: "天空之城", latin: "Future Bass · 100 BPM", scene: "日系 RPG · 动漫风格", style: "Porter Robinson · Madeon",
+      meter: "4/4", key: "A", keyName: "A 大调", tempo: "b100", tempos: "edm", loopFrom: 0, fx: "chorus", staves: "[1 2 3]",
+      lines: [4, 2, 1], drums: "4/4", drumsOn: true, kit: "edm", ensemble: "future", sidechain: [1, 2],
+      presets: ["future", "walker", "piano", "chip"], mix: [1.3, 0.7, 0.7, 1], gain: 0.52,
+      lede: "按 Porter Robinson、Madeon 一路的 Future Bass 写：100 BPM，明亮的大调，超级锯齿和弦随底鼓强烈地“呼吸”，人声切片奏主旋律，带一点动漫片头的味道。默认加了合唱加宽。旋律是新写的。16 小节循环。",
+      beat: ["ec", "e", "e", "e", "b", "b", "br", "roll", "dc", "d", "d", "d", "dc", "d", "d", "df"],
+      beatDefs: {
+        e: { hat: [4, 12] }, ec: { hat: [4, 12], crash: [0] },
+        b: { kick: [0, 8], clap: [4, 12], hat: [0, 2, 4, 6, 8, 10, 12, 14] }, br: { kick: [0, 4, 8, 12], clap: [4, 12], riser2: [0] },
+        roll: { snare: [0, 2, 4, 6, 8, 9, 10, 11, 12, 13, 14, 15] },
+        d: { kick: [0, 7, 10], clap: [4, 12], hat: [0, 2, 4, 6, 8, 10, 12, 14] }, dc: { kick: [0, 7, 10], clap: [4, 12], hat: [2, 4, 6, 8, 10, 12, 14], crash: [0] },
+        df: { kick: [0, 7, 10], clap: [4], snare: [12, 13, 14, 15] }
+      },
+      voices: (function () {
+        var M = ["e2c2 e2f2 e4 c4", "B2e2 g2e2 f4 e4", "c2f2 a2f2 e4 c4", "d2f2 a2f2 e8"];
+        var CH = ["A,CE", "B,EG", "A,CF", "A,DF"];
+        var HOLD = CH.map(function (c) { return "[" + c + "]16"; }), STAB = CH.map(function (c) { return F.stab(c); });
+        var SUB = ["A,,,", "E,,", "F,,", "D,,"];
+        function sync(n) { return n + "4 z2 " + n + "2 z2 " + n + "2 " + n + "4"; }
+        return [
+          { name: "人声切片", clef: "treble", role: "melody", bars: rest(4).concat(M, M, M) },
+          { name: "锯齿和弦", clef: "treble", role: "inner", bars: HOLD.concat(HOLD, STAB, STAB) },
+          { name: "超低音", clef: "bass", role: "bass", bars: rest(4).concat(SUB.slice(0, 3).map(function (n) { return n + "16"; }), ["z16"], SUB.map(sync), SUB.map(sync)) }
+        ];
+      })(),
+      segments: [
+        { name: "和声", desc: "A–E–♯Fm–D（I–V–vi–IV），最常见也最“热血”的流行和弦进行。" },
+        { from: 1, to: 8, name: "铺垫", desc: "锯齿和弦长音铺开，第 5 小节人声切片进来，第 7–8 小节推 build-up。" },
+        { from: 9, to: 16, name: "drop", desc: "和弦改成 3+3+2 的切分，侧链压得很深，每下底鼓都像整个画面被吸进去再弹出来。" }
+      ]
+    }
   ];
+  var GROUP_ORDER = { classical: 0, modern: 1, electronic: 2 };
+  PIECES.sort(function (a, b) { return GROUP_ORDER[a.group] - GROUP_ORDER[b.group]; });
 
   /* =====================================================================
      Instruments and presets
@@ -1148,6 +2267,12 @@ a.length>D&&(D=a.length,p=0|1.25*D+7200,r=new Int8Array(p));a=u.lame_encode_buff
     { id: "flute", name: "长笛", reverb: 0.3, group: "古典" },
     { id: "xylophone", name: "木琴", reverb: 0.26, group: "古典" },
     { id: "musicbox", name: "八音盒", reverb: 0.3, group: "古典" },
+    { id: "brass", name: "小号 / 铜管", reverb: 0.35, group: "古典" },
+    { id: "horn", name: "圆号", reverb: 0.4, group: "古典" },
+    { id: "harp", name: "竖琴", reverb: 0.4, group: "古典" },
+    { id: "celesta", name: "钢片琴", reverb: 0.35, group: "古典" },
+    { id: "guitar", name: "古典吉他", reverb: 0.25, group: "古典" },
+    { id: "zheng", name: "古筝", reverb: 0.35, group: "古典" },
     { id: "pulse", name: "方波（8 位）", reverb: 0, echo: true, group: "8 位" },
     { id: "triangle", name: "三角波（8 位）", reverb: 0, group: "8 位" },
     { id: "supersaw", name: "超级锯齿", reverb: 0.35, echo: true, group: "电子" },
@@ -1155,7 +2280,14 @@ a.length>D&&(D=a.length,p=0|1.25*D+7200,r=new Int8Array(p));a=u.lame_encode_buff
     { id: "lead", name: "锯齿主音", reverb: 0.45, echo: true, group: "电子" },
     { id: "pad", name: "铺底", reverb: 0.45, group: "电子" },
     { id: "synthbass", name: "合成贝斯", reverb: 0.04, group: "电子" },
-    { id: "sub", name: "超低音", reverb: 0, group: "电子" }
+    { id: "sub", name: "超低音", reverb: 0, group: "电子" },
+    { id: "epiano", name: "电钢琴", reverb: 0.3, group: "电子" },
+    { id: "bell", name: "FM 钟琴", reverb: 0.4, echo: true, group: "电子" },
+    { id: "vox", name: "人声切片", reverb: 0.3, echo: true, group: "电子" },
+    { id: "bigroom", name: "大房主音", reverb: 0.3, echo: true, group: "电子" },
+    { id: "stab", name: "和弦刺", reverb: 0.3, group: "电子" },
+    { id: "acid", name: "303 酸性贝斯", reverb: 0.1, echo: true, group: "电子" },
+    { id: "wobble", name: "摇摆贝斯", reverb: 0.03, group: "电子" }
   ];
   var INST = {}; INSTRUMENTS.forEach(function (x) { INST[x.id] = x; });
   var PRESETS = [
@@ -1170,7 +2302,37 @@ a.length>D&&(D=a.length,p=0|1.25*D+7200,r=new Int8Array(p));a=u.lame_encode_buff
     { id: "macabre", name: "木琴与拨奏", map: { melody: "xylophone", inner: "pizz", bass: "pizz" } },
     { id: "trance", name: "超级锯齿", map: { melody: "supersaw", inner: "pluck", arp: "pluck", pad: "pad", bass: "synthbass" } },
     { id: "walker", name: "拨弦电音", map: { melody: "pluck", inner: "piano", pad: "pad", bass: "sub" } },
-    { id: "techno", name: "模拟合成器", map: { melody: "lead", inner: "pluck", arp: "pluck", pad: "pad", bass: "synthbass" } }
+    { id: "techno", name: "模拟合成器", map: { melody: "lead", inner: "pluck", arp: "pluck", pad: "pad", bass: "synthbass" } },
+    { id: "handel", name: "小号与弦乐", map: { melody: "brass", inner: "strings", bass: "strings" } },
+    { id: "guitar", name: "古典吉他", map: { melody: "guitar", inner: "guitar", bass: "guitar" } },
+    { id: "celesta", name: "钢片琴与拨奏", map: { melody: "celesta", inner: "pizz", bass: "pizz" } },
+    { id: "fairy", name: "长笛与拨奏", map: { melody: "flute", inner: "pizz", bass: "pizz" } },
+    { id: "gypsy", name: "弦乐与拨奏", map: { melody: "strings", inner: "pizz", bass: "pizz" } },
+    { id: "brasschoir", name: "铜管合奏", map: { melody: "brass", inner: "horn", bass: "horn" } },
+    { id: "dvorak", name: "圆号与弦乐", map: { melody: "horn", inner: "strings", bass: "strings" } },
+    { id: "impression", name: "长笛与竖琴", map: { melody: "flute", inner: "harp", bass: "strings" } },
+    { id: "bolero", name: "长笛、钢片琴与弦乐", map: { melody: "flute", inner: "celesta", pad: "strings", bass: "pizz" } },
+    { id: "mars", name: "铜管与弦乐", map: { melody: "brass", inner: "horn", bass: "strings" } },
+    { id: "villain", name: "弦乐、铜管与大管", map: { melody: "strings", inner: "brass", bass: "bassoon" } },
+    { id: "rite", name: "弦乐齐奏与圆号", map: { melody: "horn", inner: "strings", bass: "strings" } },
+    { id: "jazz", name: "电钢琴", map: { melody: "epiano", inner: "epiano", bass: "epiano" } },
+    { id: "minimal", name: "钢琴、木琴与风琴", map: { melody: "piano", inner: "xylophone", pad: "organ", bass: "organ" } },
+    { id: "part", name: "弦乐与钢琴", map: { melody: "strings", inner: "piano", bass: "piano" } },
+    { id: "battle", name: "弦乐、铜管与合成贝斯", map: { melody: "strings", inner: "brass", bass: "synthbass" } },
+    { id: "cinema", name: "合成器电影感", map: { melody: "lead", inner: "pluck", pad: "pad", bass: "sub" } },
+    { id: "chinese", name: "笛子与古筝", map: { melody: "flute", inner: "zheng", bass: "zheng" } },
+    { id: "bigroom", name: "大房主音", map: { melody: "bigroom", inner: "stab", pad: "stab", bass: "synthbass" } },
+    { id: "warehouse", name: "303 酸性", map: { melody: "acid", inner: "stab", pad: "stab", bass: "sub" } },
+    { id: "techhouse", name: "风琴刺与贝斯", map: { melody: "pluck", inner: "stab", pad: "stab", bass: "synthbass" } },
+    { id: "house", name: "钟琴与浩室钢琴", map: { melody: "bell", inner: "piano", pad: "pad", bass: "synthbass" } },
+    { id: "fred", name: "人声切片与钢琴", map: { melody: "vox", inner: "piano", pad: "pad", bass: "sub" } },
+    { id: "dubstep", name: "摇摆贝斯", map: { melody: "pluck", inner: "pluck", pad: "pad", bass: "wobble" } },
+    { id: "folk", name: "吉他与超级锯齿", map: { melody: "supersaw", inner: "guitar", pad: "pad", bass: "synthbass" } },
+    { id: "future", name: "未来贝斯", map: { melody: "vox", inner: "supersaw", pad: "supersaw", bass: "sub" } }
+  ];
+  var FX = [
+    { id: "none", name: "无" }, { id: "hall", name: "大厅混响" }, { id: "chorus", name: "合唱加宽" }, { id: "flanger", name: "镶边" },
+    { id: "phaser", name: "相位" }, { id: "autofilter", name: "自动滤波" }, { id: "tape", name: "磁带延迟" }, { id: "lofi", name: "低保真" }
   ];
   var ROLE_FALLBACK = { arp: "inner", pad: "inner", inner: "melody" };
   function instFor(presetId, role) {
@@ -1197,6 +2359,7 @@ a.length>D&&(D=a.length,p=0|1.25*D+7200,r=new Int8Array(p));a=u.lame_encode_buff
     { id: "b124", name: "浩室", hint: "House · Techno", bpm: 124 },
     { id: "b128", name: "大房", hint: "Big Room", bpm: 128 },
     { id: "b138", name: "迷幻", hint: "Trance", bpm: 138 },
+    { id: "b140", name: "重低", hint: "Dubstep", bpm: 140 },
     { id: "b150", name: "硬派", hint: "Hard", bpm: 150 }
   ];
   var TEMPO = {}; TEMPOS.concat(EDM_TEMPOS).forEach(function (x) { TEMPO[x.id] = x; });
@@ -1208,9 +2371,18 @@ a.length>D&&(D=a.length,p=0|1.25*D+7200,r=new Int8Array(p));a=u.lame_encode_buff
   var KEYSIG = { "Dm": { B: -1 }, "G": { F: 1 }, "D": { F: 1, C: 1 }, "Am": {}, "Bb": { B: -1, E: -1 }, "Cm": { B: -1, E: -1, A: -1 },
     "Em": { F: 1 }, "Bm": { F: 1, C: 1 }, "C": {}, "Gm": { B: -1, E: -1 }, "Fm": { B: -1, E: -1, A: -1, D: -1 } };
   var BASE = { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 };
-  var METER_TICKS = { "4/4": 96, "3/4": 72, "3/8": 36, "2/4": 48 };
+  var METER_TICKS = { "4/4": 96, "3/4": 72, "3/8": 36, "2/4": 48, "6/8": 72, "5/4": 120 };
+  var KEY_ACC = { C: 0, G: 1, D: 2, A: 3, E: 4, B: 5, "F#": 6, F: -1, Bb: -2, Eb: -3, Ab: -4, Db: -5, Gb: -6,
+    Am: 0, Em: 1, Bm: 2, "F#m": 3, "C#m": 4, "G#m": 5, Dm: -1, Gm: -2, Cm: -3, Fm: -4, Bbm: -5, Ebm: -6 };
+  function sigOf(k) {
+    if (KEYSIG[k]) return KEYSIG[k];
+    var n = KEY_ACC[k] || 0, o = {};
+    if (n > 0) "FCGDAEB".slice(0, n).split("").forEach(function (L) { o[L] = 1; });
+    if (n < 0) "BEADGCF".slice(0, -n).split("").forEach(function (L) { o[L] = -1; });
+    return (KEYSIG[k] = o);
+  }
   function parseBar(src, key) {
-    var ks = KEYSIG[key], ev = [], acc = {}, i = 0, trip = 0, deco = {};
+    var ks = sigOf(key), ev = [], acc = {}, i = 0, trip = 0, deco = {};
     function readPitch() {
       var a = null;
       while ("^_=".indexOf(src[i]) >= 0) { if (src[i] === "=") a = 0; else a = (a || 0) + (src[i] === "^" ? 1 : -1); i++; }
@@ -1257,7 +2429,12 @@ a.length>D&&(D=a.length,p=0|1.25*D+7200,r=new Int8Array(p));a=u.lame_encode_buff
     "2/4": function (b, last) {
       if (last || b % 4 === 3) return { kick: [0], hat: [2], snare: [4, 6, 7] };
       return { kick: [0], hat: [2, 6], snare: [4] };
-    }
+    },
+    "6/8": function (b, last) {
+      if (last || b % 4 === 3) return { kick: [0, 6], hat: [2, 4], snare: [8, 9, 10, 11] };
+      return { kick: [0], hat: [2, 4, 8, 10], snare: [6] };
+    },
+    "5/4": function (b, last) { return { kick: [0, 12], hat: [4, 12], snare: [8, 16] }; }
   };
   PIECES.forEach(function (p) {
     p.barTicks = METER_TICKS[p.meter];
@@ -1285,10 +2462,10 @@ a.length>D&&(D=a.length,p=0|1.25*D+7200,r=new Int8Array(p));a=u.lame_encode_buff
     }
     p.events = [].concat.apply([], p.tl).filter(function (e) { return !e.rest; }).concat(drums)
       .sort(function (a, c) { return a.t - c.t || a.voice - c.voice; });
-    var sig = KEYSIG[p.key]; p.scale = [0, 2, 4, 5, 7, 9, 11].map(function (pc, k) { return (pc + (sig["CDEFGAB"[k]] || 0) + 12) % 12; });
+    var sig = sigOf(p.key); p.scale = [0, 2, 4, 5, 7, 9, 11].map(function (pc, k) { return (pc + (sig["CDEFGAB"[k]] || 0) + 12) % 12; });
     // viewer state per piece
     p.state = { tempoId: p.tempo, tempo: TEMPO[p.tempo].bpm, preset: p.ensemble, inst: p.voices.map(function (v) { return instFor(p.ensemble, v.role); }),
-                on: p.voices.map(function () { return true; }), kit: p.drumsOn ? (p.kit || "chip") : "off", lastKit: p.kit || "chip" };
+                on: p.voices.map(function () { return true; }), kit: p.drumsOn ? (p.kit || "chip") : "off", lastKit: p.kit || "chip", fx: p.fx || "none" };
   });
 
   function buildAbc(p, perLine, full) {
@@ -1386,10 +2563,52 @@ a.length>D&&(D=a.length,p=0|1.25*D+7200,r=new Int8Array(p));a=u.lame_encode_buff
     stair = new Float32Array(1024);
     for (var k = 0; k < stair.length; k++) { var x = k / (stair.length - 1); stair[k] = Math.round(x * 15) / 15 * 2 - 1; }
   }
-  function impulse() {
-    var len = Math.floor(ctx.sampleRate * 2.2), buf = ctx.createBuffer(2, len, ctx.sampleRate);
-    for (var c = 0; c < 2; c++) { var d = buf.getChannelData(c); for (var k = 0; k < len; k++) d[k] = (Math.random() * 2 - 1) * Math.pow(1 - k / len, 3.2); }
+  function impulse(sec, pw) {
+    var len = Math.floor(ctx.sampleRate * (sec || 2.2)), buf = ctx.createBuffer(2, len, ctx.sampleRate);
+    for (var c = 0; c < 2; c++) { var d = buf.getChannelData(c); for (var k = 0; k < len; k++) d[k] = (Math.random() * 2 - 1) * Math.pow(1 - k / len, pw || 3.2); }
     return buf;
+  }
+  // Master effects: every path is built, only the chosen one is open, so switching is instant.
+  var fxPaths = {}, fxOsc = [];
+  function buildFx(src, dst) {
+    var sel = cur.state.fx || "none"; fxPaths = {}; fxOsc = [];
+    function path(id, build) { var g = ctx.createGain(); g.gain.value = id === sel ? 1 : 0; build(g); g.connect(dst); fxPaths[id] = g; }
+    function lfo(rate, depth, target) { var o = ctx.createOscillator(), og = ctx.createGain(); o.frequency.value = rate; og.gain.value = depth; o.connect(og); og.connect(target); o.start(); fxOsc.push(o); }
+    function gain(v) { var g = ctx.createGain(); g.gain.value = v; return g; }
+    path("none", function (g) { src.connect(g); });
+    path("hall", function (g) { var d = gain(0.8), w = gain(0.6), cv = ctx.createConvolver(); cv.buffer = impulse(3.8, 2.4); src.connect(d); d.connect(g); src.connect(cv); cv.connect(w); w.connect(g); });
+    path("chorus", function (g) {
+      var d = gain(0.75); src.connect(d); d.connect(g);
+      [[0.019, 0.71, -0.8], [0.027, 0.93, 0.8]].forEach(function (c) {
+        var dl = ctx.createDelay(0.1), pn = ctx.createStereoPanner(), w = gain(0.5); dl.delayTime.value = c[0]; pn.pan.value = c[2];
+        lfo(c[1], 0.0035, dl.delayTime); src.connect(dl); dl.connect(pn); pn.connect(w); w.connect(g);
+      });
+    });
+    path("flanger", function (g) {
+      var d = gain(0.7), dl = ctx.createDelay(0.05), fb = gain(0.6), w = gain(0.65); dl.delayTime.value = 0.004;
+      lfo(0.22, 0.003, dl.delayTime); src.connect(d); d.connect(g); src.connect(dl); dl.connect(fb); fb.connect(dl); dl.connect(w); w.connect(g);
+    });
+    path("phaser", function (g) {
+      var d = gain(0.7), w = gain(0.7), node = src;
+      for (var k = 0; k < 4; k++) { var ap = ctx.createBiquadFilter(); ap.type = "allpass"; ap.frequency.value = 900; ap.Q.value = 0.7; lfo(0.35, 650, ap.frequency); node.connect(ap); node = ap; }
+      src.connect(d); d.connect(g); node.connect(w); w.connect(g);
+    });
+    path("autofilter", function (g) {
+      var lp = ctx.createBiquadFilter(); lp.type = "lowpass"; lp.Q.value = 4; lp.frequency.value = 2400;
+      lfo(1 / (cur.barTicks * secTick() * 2), 2000, lp.frequency); src.connect(lp); lp.connect(g);
+    });
+    path("tape", function (g) {
+      var d = gain(0.85), dl = ctx.createDelay(2), fb = gain(0.45), lp = ctx.createBiquadFilter(), hp = ctx.createBiquadFilter(), w = gain(0.45);
+      dl.delayTime.value = 18 * secTick(); lp.type = "lowpass"; lp.frequency.value = 2400; hp.type = "highpass"; hp.frequency.value = 280;
+      lfo(0.6, 0.0016, dl.delayTime);
+      src.connect(d); d.connect(g); src.connect(dl); dl.connect(lp); lp.connect(hp); hp.connect(fb); fb.connect(dl); hp.connect(w); w.connect(g);
+    });
+    path("lofi", function (g) {
+      var ws = ctx.createWaveShaper(), lp = ctx.createBiquadFilter(), hp = ctx.createBiquadFilter(), c = new Float32Array(2048);
+      for (var k = 0; k < c.length; k++) { var x = k / (c.length - 1) * 2 - 1; c[k] = Math.round(x * 24) / 24; }
+      ws.curve = c; lp.type = "lowpass"; lp.frequency.value = 3200; hp.type = "highpass"; hp.frequency.value = 180;
+      src.connect(ws); ws.connect(lp); lp.connect(hp); hp.connect(g);
+    });
   }
 
   // Each synth: (midi, when, dur seconds, out node, opts) and returns nothing.
@@ -1542,6 +2761,120 @@ a.length>D&&(D=a.length,p=0|1.25*D+7200,r=new Int8Array(p));a=u.lame_encode_buff
       osc("sine", f, when, end, sh); osc("sine", f * 2, when, end, sh, 0.35); osc("triangle", f * 4, when, end, sh, 0.06);
       sh.connect(g); g.connect(out);
     },
+    brass: function (m, when, dur, out) {
+      var f = freq(m), lp = ctx.createBiquadFilter(), g = ctx.createGain(), end = when + dur + 0.3;
+      lp.type = "lowpass"; lp.Q.value = 0.9;
+      lp.frequency.setValueAtTime(300 + f, when); lp.frequency.linearRampToValueAtTime(Math.min(6500, f * 7 + 900), when + 0.05);
+      lp.frequency.setTargetAtTime(Math.min(5000, f * 4 + 700), when + 0.07, 0.3);
+      env(g, when, 0.085, 0.028, dur * 0.93, 0.06);
+      var a = osc("sawtooth", f, when, end, lp); osc("sawtooth", f * 1.003, when, end, lp, 0.7);
+      if (dur > 0.4) vibrato(a, f, when, end, 0.004, 0.3);
+      lp.connect(g); g.connect(out);
+    },
+    horn: function (m, when, dur, out) {
+      var f = freq(m), lp = ctx.createBiquadFilter(), g = ctx.createGain(), end = when + dur + 0.4;
+      lp.type = "lowpass"; lp.Q.value = 0.6; lp.frequency.setValueAtTime(200 + f, when); lp.frequency.linearRampToValueAtTime(Math.min(2600, f * 2.6 + 500), when + 0.09);
+      env(g, when, 0.13, Math.min(0.07, dur * 0.4), dur * 0.94, 0.1);
+      var a = osc("triangle", f, when, end, lp); osc("sawtooth", f, when, end, lp, 0.35);
+      if (dur > 0.45) vibrato(a, f, when, end, 0.003, 0.35);
+      lp.connect(g); g.connect(out);
+    },
+    harp: function (m, when, dur, out) {
+      var f = freq(m), lp = ctx.createBiquadFilter(), g = ctx.createGain(), end = when + 2.4;
+      var tau = Math.max(0.25, Math.min(1.1, 1.4 - (m - 40) * 0.02));
+      lp.type = "lowpass"; lp.frequency.setValueAtTime(Math.min(8000, f * 6 + 1500), when); lp.frequency.setTargetAtTime(f * 2.5 + 400, when, 0.25);
+      g.gain.setValueAtTime(0, when); g.gain.linearRampToValueAtTime(0.2, when + 0.002); g.gain.setTargetAtTime(0.0001, when + 0.002, tau);
+      osc("triangle", f, when, end, lp); osc("sine", f * 2, when, end, lp, 0.3); osc("sine", f * 3, when, when + 0.3, lp, 0.08);
+      lp.connect(g); g.connect(out);
+    },
+    celesta: function (m, when, dur, out) {
+      var f = freq(m), g = ctx.createGain(), g2 = ctx.createGain(), end = when + 1.8;
+      g.gain.setValueAtTime(0, when); g.gain.linearRampToValueAtTime(0.2, when + 0.003); g.gain.setTargetAtTime(0.0001, when + 0.003, 0.5);
+      g2.gain.setValueAtTime(0.06, when); g2.gain.setTargetAtTime(0.0001, when, 0.06);
+      osc("sine", f, when, end, g); osc("sine", f * 2, when, end, g, 0.15); osc("sine", f * 4, when, when + 0.3, g2);
+      g.connect(out); g2.connect(out);
+    },
+    guitar: function (m, when, dur, out) {
+      var f = freq(m), lp = ctx.createBiquadFilter(), g = ctx.createGain(), end = when + Math.min(2.2, dur + 1.2);
+      lp.type = "lowpass"; lp.Q.value = 1.2; lp.frequency.setValueAtTime(Math.min(7000, f * 6 + 2000), when); lp.frequency.setTargetAtTime(f * 2 + 400, when, 0.15);
+      g.gain.setValueAtTime(0, when); g.gain.linearRampToValueAtTime(0.16, when + 0.002); g.gain.setTargetAtTime(0.0001, when + 0.002, 0.55);
+      g.gain.setTargetAtTime(0, when + dur + 0.05, 0.12);
+      osc("sawtooth", f, when, end, lp, 0.7); osc("triangle", f, when, end, lp);
+      lp.connect(g); g.connect(out);
+    },
+    zheng: function (m, when, dur, out) {
+      var f = freq(m), lp = ctx.createBiquadFilter(), g = ctx.createGain(), end = when + 2.2;
+      lp.type = "lowpass"; lp.Q.value = 1.5; lp.frequency.setValueAtTime(Math.min(9000, f * 8 + 2500), when); lp.frequency.setTargetAtTime(f * 3 + 600, when, 0.2);
+      g.gain.setValueAtTime(0, when); g.gain.linearRampToValueAtTime(0.17, when + 0.002); g.gain.setTargetAtTime(0.0001, when + 0.002, 0.7);
+      var a = ctx.createOscillator(), b = ctx.createOscillator(), bg = ctx.createGain();
+      a.type = "sawtooth"; b.type = "triangle"; bg.gain.value = 0.6;
+      [a, b].forEach(function (o) { o.frequency.setValueAtTime(f * 0.985, when); o.frequency.linearRampToValueAtTime(f, when + 0.045); o.start(when); o.stop(end); });
+      a.connect(bg); bg.connect(lp); b.connect(lp);
+      if (dur > 0.4) { vibrato(a, f, when, end, 0.006, 0.3); vibrato(b, f, when, end, 0.006, 0.3); }
+      lp.connect(g); g.connect(out);
+    },
+    epiano: function (m, when, dur, out) {
+      var f = freq(m), c = ctx.createOscillator(), mo = ctx.createOscillator(), mg = ctx.createGain(), g = ctx.createGain(), end = when + dur + 1;
+      c.frequency.value = f; mo.frequency.value = f; mg.gain.setValueAtTime(f * 1.4, when); mg.gain.setTargetAtTime(f * 0.15, when, 0.25);
+      mo.connect(mg); mg.connect(c.frequency);
+      g.gain.setValueAtTime(0, when); g.gain.linearRampToValueAtTime(0.2, when + 0.004); g.gain.setTargetAtTime(0.0001, when + 0.004, 1.1); g.gain.setTargetAtTime(0, when + dur, 0.12);
+      c.connect(g); g.connect(out); c.start(when); mo.start(when); c.stop(end); mo.stop(end);
+    },
+    bell: function (m, when, dur, out) {
+      var f = freq(m), c = ctx.createOscillator(), mo = ctx.createOscillator(), mg = ctx.createGain(), g = ctx.createGain(), end = when + 2.5;
+      c.frequency.value = f; mo.frequency.value = f * 3.5; mg.gain.setValueAtTime(f * 3, when); mg.gain.setTargetAtTime(f * 0.3, when, 0.4);
+      mo.connect(mg); mg.connect(c.frequency);
+      g.gain.setValueAtTime(0, when); g.gain.linearRampToValueAtTime(0.15, when + 0.003); g.gain.setTargetAtTime(0.0001, when + 0.003, 0.9);
+      c.connect(g); g.connect(out); c.start(when); mo.start(when); c.stop(end); mo.stop(end);
+    },
+    vox: function (m, when, dur, out) {
+      var f = freq(m), g = ctx.createGain(), end = when + dur + 0.15, gate = Math.max(0.05, dur * 0.75), o = ctx.createOscillator();
+      o.type = "sawtooth"; o.frequency.setValueAtTime(f * 0.97, when); o.frequency.linearRampToValueAtTime(f, when + 0.03);
+      [[750, 7, 1], [1150, 9, 0.6], [2600, 10, 0.25]].forEach(function (fm) {
+        var bp = ctx.createBiquadFilter(), bg = ctx.createGain(); bp.type = "bandpass"; bp.frequency.value = fm[0]; bp.Q.value = fm[1]; bg.gain.value = fm[2];
+        o.connect(bp); bp.connect(bg); bg.connect(g);
+      });
+      g.gain.setValueAtTime(0, when); g.gain.linearRampToValueAtTime(0.75, when + 0.006); g.gain.setTargetAtTime(0, when + gate, 0.03);
+      g.connect(out); o.start(when); o.stop(end);
+    },
+    bigroom: function (m, when, dur, out) {
+      var f = freq(m), lp = ctx.createBiquadFilter(), g = ctx.createGain(), end = when + dur + 0.4;
+      lp.type = "lowpass"; lp.Q.value = 1; lp.frequency.value = Math.min(9000, f * 8 + 2000);
+      g.gain.setValueAtTime(0, when); g.gain.linearRampToValueAtTime(0.09, when + 0.003); g.gain.setTargetAtTime(0.04, when + 0.003, 0.12); g.gain.setTargetAtTime(0, when + dur * 0.9, 0.04);
+      [-12, 0, 12].forEach(function (c) {
+        var o = ctx.createOscillator(); o.type = "sawtooth"; o.detune.value = c;
+        o.frequency.setValueAtTime(f * 1.5, when); o.frequency.exponentialRampToValueAtTime(f, when + 0.025);
+        o.connect(lp); o.start(when); o.stop(end);
+      });
+      var q = ctx.createOscillator(), qg = ctx.createGain(); q.type = "square"; q.frequency.value = f / 2; qg.gain.value = 0.5; q.connect(qg); qg.connect(lp); q.start(when); q.stop(end);
+      lp.connect(g); g.connect(out);
+    },
+    stab: function (m, when, dur, out) {
+      var f = freq(m), lp = ctx.createBiquadFilter(), g = ctx.createGain(), end = when + 0.7;
+      lp.type = "lowpass"; lp.Q.value = 2; lp.frequency.setValueAtTime(Math.min(8000, f * 6 + 2000), when); lp.frequency.setTargetAtTime(f * 1.5 + 400, when, 0.08);
+      g.gain.setValueAtTime(0, when); g.gain.linearRampToValueAtTime(0.09, when + 0.002); g.gain.setTargetAtTime(0.0001, when + 0.002, Math.min(0.2, dur * 0.6 + 0.05));
+      osc("sawtooth", f, when, end, lp); osc("square", f * 2, when, end, lp, 0.3); osc("sawtooth", f * 1.006, when, end, lp, 0.6);
+      lp.connect(g); g.connect(out);
+    },
+    acid: function (m, when, dur, out) {
+      var f = freq(m), lp = ctx.createBiquadFilter(), sh = ctx.createWaveShaper(), g = ctx.createGain(), end = when + dur + 0.1, gate = Math.max(0.04, dur * 0.8);
+      lp.type = "lowpass"; lp.Q.value = 14;
+      lp.frequency.setValueAtTime(Math.min(5000, f * 3 + 1600), when); lp.frequency.setTargetAtTime(f * 1.3 + 220, when + 0.002, 0.07);
+      sh.curve = soft;
+      g.gain.setValueAtTime(0, when); g.gain.linearRampToValueAtTime(0.14, when + 0.002); g.gain.setTargetAtTime(0, when + gate, 0.015);
+      osc("sawtooth", f, when, end, lp); lp.connect(sh); sh.connect(g); g.connect(out);
+    },
+    wobble: function (m, when, dur, out) {
+      var f = freq(m), lp = ctx.createBiquadFilter(), sh = ctx.createWaveShaper(), g = ctx.createGain(), end = when + dur + 0.1, gate = Math.max(0.05, dur * 0.95);
+      var beat = 60 / cur.state.tempo, rate = (dur >= beat * 1.4 ? 2 : 4) / beat;
+      lp.type = "lowpass"; lp.Q.value = 9; lp.frequency.value = 700;
+      var l = ctx.createOscillator(), lg = ctx.createGain(); l.type = "sine"; l.frequency.value = rate; lg.gain.value = 620;
+      l.connect(lg); lg.connect(lp.frequency); l.start(when); l.stop(end);
+      sh.curve = soft;
+      g.gain.setValueAtTime(0, when); g.gain.linearRampToValueAtTime(0.3, when + 0.004); g.gain.setTargetAtTime(0, when + gate, 0.02);
+      osc("sawtooth", f, when, end, lp); osc("square", f / 2, when, end, lp, 0.6); osc("sawtooth", f * 1.008, when, end, lp, 0.6);
+      lp.connect(sh); sh.connect(g); g.connect(out);
+    },
     pulse: function (m, when, dur, out) {
       var o = ctx.createOscillator(), g = ctx.createGain(), f = freq(m), gate = Math.max(0.03, dur * 0.9);
       o.setPeriodicWave(waves.pulse); o.frequency.value = f;
@@ -1588,9 +2921,12 @@ a.length>D&&(D=a.length,p=0|1.25*D+7200,r=new Int8Array(p));a=u.lame_encode_buff
       else if (kind === "ohat") burst(noise.hi, when, 0.2, 0.05, 7000, out);
       else if (kind === "crash") burst(noise.hi, when, 1.8, 0.08, 4200, out);
       else if (kind === "riser" || kind === "riser2") riser(when, dur, out);
+      else if (kind === "rim") { thump(when, 1800, 1650, 0.03, 0.1, "triangle", out); burst(noise.hi, when, 0.02, 0.05, 3000, out); }
+      else if (kind === "perc") thump(when, 340, 250, 0.2, 0.32, "sine", out);
+      else if (kind === "shaker") burst(noise.hi, when, 0.05, 0.028, 6500, out);
       return;
     }
-    kind = { clap: "snare", ohat: "hat" }[kind] || kind;
+    kind = { clap: "snare", ohat: "hat", rim: "hat", shaker: "hat", perc: "kick" }[kind] || kind;
     if (kind === "riser" || kind === "riser2") return;
     if (kit === "chip") {
       if (kind === "kick") { thump(when, 170, 44, 0.14, 0.55, "triangle", out); burst(noise.low, when, 0.03, 0.1, 200, out); }
@@ -1680,7 +3016,15 @@ a.length>D&&(D=a.length,p=0|1.25*D+7200,r=new Int8Array(p));a=u.lame_encode_buff
     raf = requestAnimationFrame(frame);
   }
 
+  function playPiece(id, keepPlaying) {
+    if (cur.id === id && playing && !keepPlaying) { stop(); return; }
+    if (cur.id !== id) select(id);
+    try { history.replaceState(null, "", "#" + id); } catch (e) {}
+    start(0);
+  }
   function setButton(on) {
+    Array.prototype.forEach.call(document.querySelectorAll(".item.playing"), function (n) { n.classList.remove("playing"); });
+    if (on) { var it = document.querySelector('.item[data-id="' + cur.id + '"]'); if (it) it.classList.add("playing"); }
     playBtn.setAttribute("aria-pressed", on ? "true" : "false");
     playLabel.textContent = on ? "停止" : "播放";
     playIcon.setAttribute("d", on ? "M2 2h8v8H2z" : "M2 1l9 5-9 5z");
@@ -1698,6 +3042,7 @@ a.length>D&&(D=a.length,p=0|1.25*D+7200,r=new Int8Array(p));a=u.lame_encode_buff
     chan[d].gain.setTargetAtTime(cur.state.kit === "off" ? 0 : mixOf(d), ctx.currentTime, 0.015);
     rSend[d].gain.setTargetAtTime(cur.state.kit === "soft" ? 0.2 : cur.state.kit === "edm" ? 0.07 : 0, ctx.currentTime, 0.02);
     echoDelay.delayTime.setTargetAtTime(18 * secTick(), ctx.currentTime, 0.05);
+    Object.keys(fxPaths).forEach(function (k) { fxPaths[k].gain.setTargetAtTime(k === (cur.state.fx || "none") ? 1 : 0, ctx.currentTime, 0.03); });
   }
   function start(fromBar) {
     var AC = window.AudioContext || window.webkitAudioContext;
@@ -1717,7 +3062,7 @@ a.length>D&&(D=a.length,p=0|1.25*D+7200,r=new Int8Array(p));a=u.lame_encode_buff
   // The mixer: per-voice gain (mute), echo send, reverb send, then a compressor.
   function buildGraph() {
     var comp = ctx.createDynamicsCompressor(); comp.threshold.value = -14; comp.ratio.value = 8; comp.attack.value = 0.003; comp.release.value = 0.2;
-    master = ctx.createGain(); master.gain.value = 0.75 * (cur.gain || 1); master.connect(comp); comp.connect(ctx.destination);
+    master = ctx.createGain(); master.gain.value = 0.75 * (cur.gain || 1); buildFx(master, comp); comp.connect(ctx.destination);
     verb = ctx.createConvolver(); verb.buffer = impulse(); var vg = ctx.createGain(); vg.gain.value = 0.5; verb.connect(vg); vg.connect(master);
     echoIn = ctx.createGain(); echoDelay = ctx.createDelay(2); echoDelay.delayTime.value = 18 * secTick();
     echoIn.connect(echoDelay); echoDelay.connect(master);
@@ -1733,7 +3078,7 @@ a.length>D&&(D=a.length,p=0|1.25*D+7200,r=new Int8Array(p));a=u.lame_encode_buff
   // Render the current arrangement to an AudioBuffer without playing it.
   function renderOffline(p, passes) {
     if (playing) stop();
-    var keep = { ctx: ctx, waves: waves, noise: noise, stair: stair, soft: soft, chan: chan, duck: duck, eSend: eSend, rSend: rSend, verb: verb, echoIn: echoIn, echoDelay: echoDelay };
+    var keep = { ctx: ctx, waves: waves, noise: noise, stair: stair, soft: soft, chan: chan, duck: duck, eSend: eSend, rSend: rSend, verb: verb, echoIn: echoIn, echoDelay: echoDelay, fxPaths: fxPaths, fxOsc: fxOsc };
     var loops = p.loopT === null ? 1 : passes;
     var musicTicks = p.total + (loops - 1) * (p.total - (p.loopT || 0));
     var lead = 0.05, musicSec = musicTicks * secTick(), sr = 44100;
@@ -1758,7 +3103,7 @@ a.length>D&&(D=a.length,p=0|1.25*D+7200,r=new Int8Array(p));a=u.lame_encode_buff
     }
     var job = off.startRendering();
     ctx = keep.ctx; waves = keep.waves; noise = keep.noise; stair = keep.stair; soft = keep.soft; master = null;
-    chan = keep.chan; duck = keep.duck; eSend = keep.eSend; rSend = keep.rSend; verb = keep.verb; echoIn = keep.echoIn; echoDelay = keep.echoDelay;
+    chan = keep.chan; duck = keep.duck; eSend = keep.eSend; rSend = keep.rSend; verb = keep.verb; echoIn = keep.echoIn; echoDelay = keep.echoDelay; fxPaths = keep.fxPaths; fxOsc = keep.fxOsc;
     return job;
   }
 
@@ -1819,7 +3164,7 @@ a.length>D&&(D=a.length,p=0|1.25*D+7200,r=new Int8Array(p));a=u.lame_encode_buff
 
   function halt() {
     playing = false; clearInterval(timer); cancelAnimationFrame(raf);
-    if (master) { var old = master; old.gain.setTargetAtTime(0, ctx.currentTime, 0.03); setTimeout(function () { try { old.disconnect(); } catch (e) {} }, 500); master = null; }
+    if (master) { var old = master, oldOsc = fxOsc; old.gain.setTargetAtTime(0, ctx.currentTime, 0.03); setTimeout(function () { try { old.disconnect(); } catch (e) {} oldOsc.forEach(function (o) { try { o.stop(); } catch (e) {} }); }, 500); master = null; fxOsc = []; }
   }
   function stop() { halt(); lit.forEach(function (_, v) { setLit(v, null); }); markSeg(-1); setButton(false); }
 
@@ -1832,7 +3177,7 @@ a.length>D&&(D=a.length,p=0|1.25*D+7200,r=new Int8Array(p));a=u.lame_encode_buff
 
   var noJs = document.getElementById("nojs"); if (noJs) noJs.hidden = true;
   listEl.innerHTML = "";
-  var GROUP_NAME = { classical: "古典", electronic: "电子 · DJ 曲风" }, lastGroup = null;
+  var GROUP_NAME = { classical: "古典", modern: "20 世纪与游戏影视", electronic: "电子 · DJ 曲风" }, lastGroup = null;
   PIECES.forEach(function (p) {
     if (p.group !== lastGroup) { var gh = document.createElement("li"); gh.className = "grp"; gh.textContent = GROUP_NAME[p.group]; listEl.appendChild(gh); lastGroup = p.group; }
     var li = document.createElement("li"), b = document.createElement("button");
@@ -1841,7 +3186,7 @@ a.length>D&&(D=a.length,p=0|1.25*D+7200,r=new Int8Array(p));a=u.lame_encode_buff
     var m = document.createElement("span"); m.className = "m"; m.textContent = p.style + " · " + p.scene + " · " + p.meter + " · " + p.keyName;
     if (p.isNew) { var n = document.createElement("span"); n.className = "new"; n.textContent = "新写"; b.appendChild(n); }
     b.appendChild(t); b.appendChild(m);
-    b.addEventListener("click", function () { if (location.hash !== "#" + p.id) location.hash = p.id; else select(p.id); });
+    b.addEventListener("click", function () { playPiece(p.id); });
     li.appendChild(b); listEl.appendChild(li);
   });
 
@@ -1888,6 +3233,12 @@ a.length>D&&(D=a.length,p=0|1.25*D+7200,r=new Int8Array(p));a=u.lame_encode_buff
     cb.addEventListener("change", function () { cur.state.kit = cb.checked ? (cur.state.lastKit || "chip") : "off"; sel.value = cur.state.kit; applySends(); });
     sel.addEventListener("change", function () { cur.state.kit = sel.value; if (sel.value !== "off") cur.state.lastKit = sel.value; cb.checked = sel.value !== "off"; applySends(); });
     lab.appendChild(cb); lab.appendChild(sp); row.appendChild(lab); row.appendChild(sel); tracksEl.appendChild(row);
+    var frow = el("div", "track"), flab = el("span", "mute fxlab", "效果"), fsel = el("select");
+    fsel.id = "fx-" + cur.id; fsel.setAttribute("aria-label", "整体效果");
+    FX.forEach(function (x) { var o = el("option", null, x.name); o.value = x.id; fsel.appendChild(o); });
+    fsel.value = cur.state.fx || "none";
+    fsel.addEventListener("change", function () { cur.state.fx = fsel.value; applySends(); });
+    frow.appendChild(flab); frow.appendChild(fsel); tracksEl.appendChild(frow);
   }
 
   function buildMap() {
@@ -1996,55 +3347,55 @@ a.length>D&&(D=a.length,p=0|1.25*D+7200,r=new Int8Array(p));a=u.lame_encode_buff
     { title: "巴洛克", line: "classical", right: "可引用原曲", items: [
       { name: "巴赫", works: "《平均律钢琴曲集》、二声部创意曲、《赋格的艺术》", how: "多条独立旋律线同时进行的对位与赋格", scene: "迷宫、魔王城、Boss 战", pieces: ["inventio", "boss-bach", "fugue"] },
       { name: "帕赫贝尔", works: "D 大调《卡农》", how: "同一组低音反复，几个声部错开进入同一条旋律", scene: "存档点、片尾", pieces: ["canon"] },
-      { name: "维瓦尔第", works: "《四季》（《夏》第三乐章、《冬》第一乐章）", how: "弦乐齐奏的快速重复音和琶音", scene: "追逐、暴风雨关卡" },
-      { name: "亨德尔", works: "《弥赛亚》“哈利路亚”、《水上音乐》", how: "宏大的号角式主调和声", scene: "加冕、胜利、王城" },
-      { name: "斯卡拉蒂", works: "555 首键盘奏鸣曲", how: "单乐章、短小，带西班牙吉他味的跳音", scene: "小游戏、解谜" }
+      { name: "维瓦尔第", works: "《四季》（《夏》第三乐章、《冬》第一乐章）", how: "弦乐齐奏的快速重复音和琶音", scene: "追逐、暴风雨关卡", pieces: ["vivaldi"] },
+      { name: "亨德尔", works: "《弥赛亚》“哈利路亚”、《水上音乐》", how: "宏大的号角式主调和声", scene: "加冕、胜利、王城", pieces: ["handel"] },
+      { name: "斯卡拉蒂", works: "555 首键盘奏鸣曲", how: "单乐章、短小，带西班牙吉他味的跳音", scene: "小游戏、解谜", pieces: ["scarlatti"] }
     ]},
     { title: "古典时期", line: "classical", right: "可引用原曲", items: [
       { name: "莫扎特", works: "钢琴奏鸣曲 K.545、《小夜曲》", how: "阿尔贝蒂低音配 4+4 小节问答句", scene: "城镇、城堡大厅", pieces: ["mozart"] },
-      { name: "海顿", works: "《惊愕交响曲》、《皇帝四重奏》", how: "安静中突然一记强奏", scene: "惊吓、机关触发" },
+      { name: "海顿", works: "《惊愕交响曲》、《皇帝四重奏》", how: "安静中突然一记强奏", scene: "惊吓、机关触发", pieces: ["haydn"] },
       { name: "贝多芬", works: "《致爱丽丝》、《月光奏鸣曲》、第五交响曲", how: "短动机的反复与变奏", scene: "宅邸、夜晚、命运时刻", pieces: ["elise"] }
     ]},
     { title: "浪漫派", line: "classical", right: "可引用原曲", items: [
       { name: "舒伯特", works: "《鳟鱼》、《魔王》", how: "伴奏音型描绘画面，像水流、马蹄", scene: "村庄、钓鱼", pieces: ["trout"] },
-      { name: "肖邦", works: "降 E 大调夜曲 Op.9 No.2、幻想即兴曲、革命练习曲", how: "左手大跨度分解和弦，右手带装饰音的歌唱旋律", scene: "夜晚城镇、回忆" },
-      { name: "李斯特", works: "《钟》、《爱之梦》第 3 首、第 2 号匈牙利狂想曲", how: "炫技的高音区重复音", scene: "魔法学院、Boss 二阶段" },
-      { name: "门德尔松", works: "《仲夏夜之梦》", how: "轻快的断奏弦乐", scene: "精灵森林" },
-      { name: "勃拉姆斯", works: "第 5 号匈牙利舞曲、《摇篮曲》", how: "吉普赛式的忽快忽慢", scene: "集市、酒馆" },
-      { name: "柴可夫斯基", works: "《胡桃夹子》（糖梅仙子之舞）、《天鹅湖》", how: "钢片琴配拨弦", scene: "八音盒、商店、圣诞活动" },
+      { name: "肖邦", works: "降 E 大调夜曲 Op.9 No.2、幻想即兴曲、革命练习曲", how: "左手大跨度分解和弦，右手带装饰音的歌唱旋律", scene: "夜晚城镇、回忆", pieces: ["chopin"] },
+      { name: "李斯特", works: "《钟》、《爱之梦》第 3 首、第 2 号匈牙利狂想曲", how: "炫技的高音区重复音", scene: "魔法学院、Boss 二阶段", pieces: ["liszt"] },
+      { name: "门德尔松", works: "《仲夏夜之梦》", how: "轻快的断奏弦乐", scene: "精灵森林", pieces: ["mendelssohn"] },
+      { name: "勃拉姆斯", works: "第 5 号匈牙利舞曲、《摇篮曲》", how: "吉普赛式的忽快忽慢", scene: "集市、酒馆", pieces: ["brahms"] },
+      { name: "柴可夫斯基", works: "《胡桃夹子》（糖梅仙子之舞）、《天鹅湖》", how: "钢片琴配拨弦", scene: "八音盒、商店、圣诞活动", pieces: ["tchaikovsky"] },
       { name: "格里格", works: "《培尔·金特》：《山魔王的大厅》、《晨景》", how: "同一动机反复，越来越快、越来越响", scene: "潜入转追逐、新手村清晨", pieces: ["grieg"] },
-      { name: "穆索尔斯基", works: "《图画展览会》、《荒山之夜》", how: "“漫步”主题串起各段", scene: "大地图移动、亡灵" },
-      { name: "里姆斯基-科萨科夫", works: "《野蜂飞舞》、《天方夜谭》", how: "连续快速的半音阶跑动", scene: "限时关卡、沙漠与异域" },
+      { name: "穆索尔斯基", works: "《图画展览会》、《荒山之夜》", how: "“漫步”主题串起各段", scene: "大地图移动、亡灵", pieces: ["mussorgsky"] },
+      { name: "里姆斯基-科萨科夫", works: "《野蜂飞舞》、《天方夜谭》", how: "连续快速的半音阶跑动", scene: "限时关卡、沙漠与异域", pieces: ["rimsky"] },
       { name: "圣-桑", works: "《骷髅之舞》、《动物狂欢节》", how: "三全音、木琴模仿骨头、圆舞曲", scene: "墓地、万圣节", pieces: ["macabre"] },
-      { name: "德沃夏克", works: "《自新大陆》交响曲、《幽默曲》", how: "五声音阶的思乡旋律", scene: "启程、开拓" },
-      { name: "小约翰·施特劳斯", works: "《蓝色多瑙河》、《皇帝圆舞曲》", how: "维也纳圆舞曲的“嘭-恰-恰”", scene: "舞会、贵族" },
-      { name: "罗西尼", works: "《威廉·退尔》序曲终曲", how: "马蹄般的加洛普节奏", scene: "竞速、骑乘" },
-      { name: "比才", works: "《卡门》（哈巴涅拉、斗牛士之歌）", how: "哈巴涅拉节奏型", scene: "狡猾的反派、赌场" },
-      { name: "瓦格纳", works: "《女武神的骑行》", how: "铜管主导动机", scene: "空战、出征" }
+      { name: "德沃夏克", works: "《自新大陆》交响曲、《幽默曲》", how: "五声音阶的思乡旋律", scene: "启程、开拓", pieces: ["dvorak"] },
+      { name: "小约翰·施特劳斯", works: "《蓝色多瑙河》、《皇帝圆舞曲》", how: "维也纳圆舞曲的“嘭-恰-恰”", scene: "舞会、贵族", pieces: ["strauss"] },
+      { name: "罗西尼", works: "《威廉·退尔》序曲终曲", how: "马蹄般的加洛普节奏", scene: "竞速、骑乘", pieces: ["rossini"] },
+      { name: "比才", works: "《卡门》（哈巴涅拉、斗牛士之歌）", how: "哈巴涅拉节奏型", scene: "狡猾的反派、赌场", pieces: ["bizet"] },
+      { name: "瓦格纳", works: "《女武神的骑行》", how: "铜管主导动机", scene: "空战、出征", pieces: ["wagner"] }
     ]},
     { title: "印象派与世纪之交", line: "classical", right: "可引用原曲", items: [
-      { name: "德彪西", works: "《月光》、《亚麻色头发的少女》、《大海》", how: "全音阶、平行和弦、踏板延音", scene: "水域、梦境、记忆碎片" },
+      { name: "德彪西", works: "《月光》、《亚麻色头发的少女》、《大海》", how: "全音阶、平行和弦、踏板延音", scene: "水域、梦境、记忆碎片", pieces: ["debussy"] },
       { name: "萨蒂", works: "《裸体歌舞》第 1 首", how: "慢三拍，两个和弦来回摆", scene: "存档点、安静的室内", pieces: ["satie"] },
-      { name: "拉威尔", works: "《波莱罗》、《小丑的晨歌》", how: "一条旋律反复，只靠配器逐层叠加推向高潮", scene: "动态配器、逐步升级" },
-      { name: "霍尔斯特", works: "《行星》（火星、木星）", how: "5/4 拍的固定低音", scene: "星际战争" }
+      { name: "拉威尔", works: "《波莱罗》、《小丑的晨歌》", how: "一条旋律反复，只靠配器逐层叠加推向高潮", scene: "动态配器、逐步升级", pieces: ["ravel"] },
+      { name: "霍尔斯特", works: "《行星》（火星、木星）", how: "5/4 拍的固定低音", scene: "星际战争", pieces: ["holst"] }
     ]},
-    { title: "20 世纪与现代", line: "classical", right: "只学写法", items: [
-      { name: "拉赫玛尼诺夫", works: "第二钢琴协奏曲、帕格尼尼主题狂想曲", how: "浓烈的俄式钢琴浪漫", scene: "结局、告白" },
-      { name: "普罗科菲耶夫", works: "《彼得与狼》、《罗密欧与朱丽叶》骑士之舞", how: "一个角色对应一种乐器", scene: "角色主题、反派登场" },
-      { name: "斯特拉文斯基", works: "《春之祭》", how: "不规则重音、多调叠置", scene: "原始部落、远古 Boss" },
-      { name: "格什温", works: "《蓝色狂想曲》", how: "爵士与古典的混合", scene: "都市、侦探" },
-      { name: "史蒂夫·赖希、菲利普·格拉斯", works: "《18 位音乐家的音乐》、《Koyaanisqatsi》", how: "极简主义的重复与缓慢相位偏移", scene: "无限循环的 BGM" },
-      { name: "阿沃·帕特", works: "《镜中镜》", how: "极简的“钟鸣”技法", scene: "冥想、遗迹" }
+    { title: "20 世纪与现代", line: "modern", right: "只学写法", items: [
+      { name: "拉赫玛尼诺夫", works: "第二钢琴协奏曲、帕格尼尼主题狂想曲", how: "浓烈的俄式钢琴浪漫", scene: "结局、告白", pieces: ["rachmaninoff"] },
+      { name: "普罗科菲耶夫", works: "《彼得与狼》、《罗密欧与朱丽叶》骑士之舞", how: "一个角色对应一种乐器", scene: "角色主题、反派登场", pieces: ["prokofiev"] },
+      { name: "斯特拉文斯基", works: "《春之祭》", how: "不规则重音、多调叠置", scene: "原始部落、远古 Boss", pieces: ["stravinsky"] },
+      { name: "格什温", works: "《蓝色狂想曲》", how: "爵士与古典的混合", scene: "都市、侦探", pieces: ["gershwin"] },
+      { name: "史蒂夫·赖希、菲利普·格拉斯", works: "《18 位音乐家的音乐》、《Koyaanisqatsi》", how: "极简主义的重复与缓慢相位偏移", scene: "无限循环的 BGM", pieces: ["reich"] },
+      { name: "阿沃·帕特", works: "《镜中镜》", how: "极简的“钟鸣”技法", scene: "冥想、遗迹", pieces: ["part"] }
     ]},
-    { title: "游戏与影视", line: "classical", right: "只学写法", items: [
+    { title: "游戏与影视", line: "modern", right: "只学写法", items: [
       { name: "8 位机芯片音乐", works: "红白机时代的《超级马里奥兄弟》《恶魔城》", how: "两个方波、一个三角波加噪声，只靠两三条旋律线撑起整首", scene: "复古关卡、Boss 战", pieces: ["boss-chip"] },
-      { name: "近藤浩治", works: "《超级马里奥》、《塞尔达传说》", how: "短小好记、可无限循环的主题", scene: "平台跳跃、野外探索" },
-      { name: "植松伸夫", works: "《最终幻想》系列", how: "管弦乐与摇滚结合的战斗曲", scene: "JRPG 战斗、城镇" },
-      { name: "下村阳子", works: "《王国之心》", how: "钢琴为主的抒情主题", scene: "主菜单、回忆" },
-      { name: "杉山浩一", works: "《勇者斗恶龙》", how: "古典交响写法的序曲与进行曲", scene: "王城、冒险启程" },
-      { name: "久石让", works: "宫崎骏电影（《千与千寻》《龙猫》）", how: "简单的钢琴旋律配弦乐", scene: "温暖的日常、飞行" },
-      { name: "汉斯·季默", works: "《星际穿越》、《盗梦空间》", how: "管风琴长音与持续的节奏脉冲", scene: "宇宙、史诗时刻" },
-      { name: "陈致逸", works: "《原神》", how: "管弦乐融入各地民族乐器", scene: "开放世界各地区" }
+      { name: "近藤浩治", works: "《超级马里奥》、《塞尔达传说》", how: "短小好记、可无限循环的主题", scene: "平台跳跃、野外探索", pieces: ["kondo"] },
+      { name: "植松伸夫", works: "《最终幻想》系列", how: "管弦乐与摇滚结合的战斗曲", scene: "JRPG 战斗、城镇", pieces: ["uematsu"] },
+      { name: "下村阳子", works: "《王国之心》", how: "钢琴为主的抒情主题", scene: "主菜单、回忆", pieces: ["shimomura"] },
+      { name: "杉山浩一", works: "《勇者斗恶龙》", how: "古典交响写法的序曲与进行曲", scene: "王城、冒险启程", pieces: ["sugiyama"] },
+      { name: "久石让", works: "宫崎骏电影（《千与千寻》《龙猫》）", how: "简单的钢琴旋律配弦乐", scene: "温暖的日常、飞行", pieces: ["hisaishi"] },
+      { name: "汉斯·季默", works: "《星际穿越》、《盗梦空间》", how: "管风琴长音与持续的节奏脉冲", scene: "宇宙、史诗时刻", pieces: ["zimmer"] },
+      { name: "陈致逸", works: "《原神》", how: "管弦乐融入各地民族乐器", scene: "开放世界各地区", pieces: ["chenzhiyi"] }
     ]},
     { title: "Trance", line: "electronic", right: "只学曲风", items: [
       { name: "Armin van Buuren · Tiësto", rank: "DJ Mag 2026 第 7、第 22", works: "《This Is What It Feels Like》、《Adagio for Strings》", how: "138 BPM，十六分音符琶音，超级锯齿主旋律，长 build-up", scene: "飞行、宇宙航行", pieces: ["trance"] }
@@ -2056,15 +3407,15 @@ a.length>D&&(D=a.length,p=0|1.25*D+7200,r=new Int8Array(p));a=u.lame_encode_buff
       { name: "Anyma", rank: "DJ Mag 2026 第 3", works: "《Hypnotized》（与 Ellie Goulding 合作）", how: "三音循环琶音，暗色铺底，长音主旋律", scene: "科幻、赛博、巨型建筑", pieces: ["techno"] }
     ]},
     { title: "其他曲风", line: "electronic", right: "只学曲风", items: [
-      { name: "David Guetta · Martin Garrix · Timmy Trumpet", rank: "DJ Mag 2026 第 1、2、8", works: "《Titanium》、《Animals》、《Freaks》", how: "Big Room：大音量的底鼓与短促的主音“drop”", scene: "竞技开场、结算界面" },
-      { name: "Charlotte de Witte", rank: "DJ Mag 2026 第 6，No.1 Techno DJ", works: "以 DJ 现场为主", how: "Techno：冷硬的四拍底鼓、工业质感", scene: "地下城、工业区" },
-      { name: "FISHER", rank: "DJ Mag 2026 第 9", works: "《Losing It》", how: "Tech House：律动重复，适合长时间循环", scene: "菜单、大厅" },
-      { name: "Calvin Harris · Peggy Gou · Black Coffee", rank: "DJ Mag 2026 第 11、13、14", works: "《Summer》、《(It Goes Like) Nanana》、《Drive》", how: "House 与非洲浩室：明亮、轻松的律动", scene: "休闲经营、海岛、城市漫步" },
-      { name: "Fred again..", rank: "DJ Mag 2026 第 16", works: "《Marea (We've Lost Dancing)》、《Rumble》", how: "情绪化浩室 / UK Garage，人声采样讲故事", scene: "剧情过场、回忆" },
-      { name: "Skrillex", rank: "DJ Mag 2026 第 25", works: "《Scary Monsters and Nice Sprites》", how: "Dubstep：半速的重低音“wobble”", scene: "Boss 战、机甲" },
-      { name: "Eric Prydz", rank: "DJ Mag 2026 第 62", works: "《Opus》", how: "Progressive House：漫长的渐进铺垫", scene: "开放世界" },
-      { name: "Avicii · Daft Punk", rank: "已故 · 已解散", works: "《Levels》、《Wake Me Up》；《One More Time》、《创：战纪》原声", how: "民谣电音；法式浩室与电影配乐", scene: "开阔的冒险、赛博叙事" },
-      { name: "Porter Robinson · Madeon", works: "《Shelter》、《Language》", how: "动漫感的明亮合成器与情绪化和声", scene: "日系 RPG、动漫风格作品" }
+      { name: "David Guetta · Martin Garrix · Timmy Trumpet", rank: "DJ Mag 2026 第 1、2、8", works: "《Titanium》、《Animals》、《Freaks》", how: "Big Room：大音量的底鼓与短促的主音“drop”", scene: "竞技开场、结算界面", pieces: ["bigroom"] },
+      { name: "Charlotte de Witte", rank: "DJ Mag 2026 第 6，No.1 Techno DJ", works: "以 DJ 现场为主", how: "Techno：冷硬的四拍底鼓、工业质感", scene: "地下城、工业区", pieces: ["warehouse"] },
+      { name: "FISHER", rank: "DJ Mag 2026 第 9", works: "《Losing It》", how: "Tech House：律动重复，适合长时间循环", scene: "菜单、大厅", pieces: ["techhouse"] },
+      { name: "Calvin Harris · Peggy Gou · Black Coffee", rank: "DJ Mag 2026 第 11、13、14", works: "《Summer》、《(It Goes Like) Nanana》、《Drive》", how: "House 与非洲浩室：明亮、轻松的律动", scene: "休闲经营、海岛、城市漫步", pieces: ["house"] },
+      { name: "Fred again..", rank: "DJ Mag 2026 第 16", works: "《Marea (We've Lost Dancing)》、《Rumble》", how: "情绪化浩室 / UK Garage，人声采样讲故事", scene: "剧情过场、回忆", pieces: ["fredagain"] },
+      { name: "Skrillex", rank: "DJ Mag 2026 第 25", works: "《Scary Monsters and Nice Sprites》", how: "Dubstep：半速的重低音“wobble”", scene: "Boss 战、机甲", pieces: ["dubstep"] },
+      { name: "Eric Prydz", rank: "DJ Mag 2026 第 62", works: "《Opus》", how: "Progressive House：漫长的渐进铺垫", scene: "开放世界", pieces: ["prydz"] },
+      { name: "Avicii · Daft Punk", rank: "已故 · 已解散", works: "《Levels》、《Wake Me Up》；《One More Time》、《创：战纪》原声", how: "民谣电音；法式浩室与电影配乐", scene: "开阔的冒险、赛博叙事", pieces: ["avicii"] },
+      { name: "Porter Robinson · Madeon", works: "《Shelter》、《Language》", how: "动漫感的明亮合成器与情绪化和声", scene: "日系 RPG、动漫风格作品", pieces: ["porter"] }
     ]}
   ];
 
@@ -2076,12 +3427,12 @@ a.length>D&&(D=a.length,p=0|1.25*D+7200,r=new Int8Array(p));a=u.lame_encode_buff
     STYLE_GROUPS.forEach(function (g) {
       var box = el("div", "sgroup"), h = el("div", "sgroup-h");
       h.appendChild(el("h3", null, g.title));
-      h.appendChild(el("span", "line", g.line === "classical" ? "古典线" : "电子线"));
+      h.appendChild(el("span", "line", g.line === "electronic" ? "电子线" : "古典线"));
       h.appendChild(el("span", "right" + (g.right === "可引用原曲" ? " pd" : ""), g.right));
       box.appendChild(h);
       var grid = el("div", "scards");
       g.items.forEach(function (it) {
-        if (g.line === "classical") nC++; else nD++;
+        if (g.line !== "electronic") nC++; else nD++;
         var done = it.pieces && it.pieces.length, c = el("article", "sty" + (done ? " done" : ""));
         c.appendChild(el("h4", null, it.name));
         if (it.rank) c.appendChild(el("span", "rank", it.rank));
@@ -2092,7 +3443,7 @@ a.length>D&&(D=a.length,p=0|1.25*D+7200,r=new Int8Array(p));a=u.lame_encode_buff
           nDone++;
           it.pieces.forEach(function (id) {
             var a = el("a", "chip", byId[id] ? byId[id].title : id); a.href = "#" + id;
-            a.addEventListener("click", function () { setTimeout(function () { document.querySelector(".player").scrollIntoView({ behavior: "smooth", block: "start" }); }, 0); });
+            a.addEventListener("click", function (e) { e.preventDefault(); playPiece(id, true); document.querySelector(".player").scrollIntoView({ behavior: "smooth", block: "start" }); });
             foot.appendChild(a);
           });
         } else foot.appendChild(el("span", "todo", "待写"));
